@@ -19,8 +19,11 @@ window.SITE = {
   license: 'Лицензия № 24026583, ДКМФК МЗ РК по г. Астана',
 
   instagramHref: 'https://www.instagram.com/aiva.clinic',
+  instagramHandle: '@aiva.clinic',
   youtubeHref: 'https://www.youtube.com/channel/UC1EBxPu6hds8KHRhQzTv8gw',
   tiktokHref: 'https://www.tiktok.com/@aiva.clinic',
+  tiktokHandle: '@aiva.clinic',
+  youtubeHandle: 'AIVA CLINIC',
 
   gisHref: 'https://2gis.kz/astana/search/%D1%84%D1%88%D0%BC%D1%84/firm/70000001090259641?m=71.482275%2C51.082042%2F14.72&immersive=on',
   gisReviewsHref: 'https://2gis.kz/astana/firm/70000001090259641/tab/reviews',

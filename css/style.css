@@ -407,13 +407,13 @@ a.chip:hover { transform: scale(1.15); }
 /* ============================================================
    11. Соцсети + вкладки
    ============================================================ */
-.social { overflow: hidden; padding-bottom: 0; }
-.deco-soc-1 { width: 300px; height: 300px; left: -170px; top: 330px; color: var(--peach-pale); transform: rotate(35deg); }
-.deco-soc-2 { width: 220px; height: 220px; right: -90px; top: 60px; color: var(--peach-pale); transform: rotate(-20deg); }
+.social { overflow: hidden; padding-bottom: 20px; }
+.deco-soc-1 { width: 250px; height: 230px; right: max(10px, calc(50% - 540px)); top: 110px; color: #dcecd3; transform: rotate(12deg); }
+.deco-soc-2 { width: 560px; height: 520px; right: max(-140px, calc(50% - 760px)); top: 470px; color: #dcecd3; transform: rotate(196deg); }
 
-.tabs-head { display: grid; grid-template-columns: 1fr 1fr; }
+.tabs-head { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; }
 .tabs-head button {
-  padding: 14px 10px 16px; font-size: 20px; font-weight: 600; text-transform: uppercase; color: var(--muted);
+  padding: 14px 10px 16px; font-size: 20px; font-weight: 600; text-transform: uppercase; color: #9a9a9a;
   border-bottom: 1px solid var(--line); transition: color .3s, border-color .3s;
 }
 .tabs-head button:hover { color: var(--text); }
@@ -422,31 +422,34 @@ a.chip:hover { transform: scale(1.15); }
 .tab-pane.is-active { display: block; animation: paneIn .5s ease; }
 @keyframes paneIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
 
-.social-pane { position: relative; display: flex; align-items: center; justify-content: center; gap: 80px; padding: 100px 0 70px; }
-.social-pane > *:not(.deco) { position: relative; z-index: 1; }
-.deco-soc-l { width: 440px; height: 440px; left: 20px; top: 70px; color: var(--green-deco); }
-.deco-soc-r { width: 440px; height: 440px; right: 0; top: 60px; color: var(--green-deco); transform: scaleX(-1); }
+.social-pane { position: relative; display: grid; grid-template-columns: 420px 1fr; align-items: center; gap: 100px; padding: 70px 90px 80px; }
 
-/* макет телефона (заглушка под скриншот профиля) */
-.phone { width: 210px; height: 430px; padding: 8px; border-radius: 36px; background: #cfc8bd; box-shadow: inset 0 0 0 2px #a59e92, 0 30px 50px -20px rgba(0, 0, 0, .35); transition: transform .4s ease; }
-.phone:hover { transform: translateY(-6px) rotate(-2deg); }
-.phone-screen { height: 100%; padding: 26px 10px 10px; border-radius: 29px; background: #fff; overflow: hidden; }
-.phone-top { display: flex; align-items: center; gap: 12px; }
-.phone-top > i { width: 46px; height: 46px; border-radius: 50%; background: var(--grad); flex: none; }
-.phone-top div { display: flex; gap: 10px; }
-.phone-top b { width: 26px; height: 22px; border-radius: 4px; background: #eee; }
-.phone-lines { margin: 10px 0; }
-.phone-lines s { display: block; height: 5px; margin-bottom: 5px; border-radius: 3px; background: #ececec; }
-.phone-lines s:nth-child(2) { width: 80%; }
-.phone-lines s:nth-child(3) { width: 55%; }
-.phone-stories { display: flex; justify-content: space-between; margin-bottom: 10px; }
-.phone-stories i { width: 36px; height: 36px; border-radius: 50%; background: var(--green-2); box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--muted); }
-.phone-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
-.phone-grid i { aspect-ratio: 1; background: var(--green); opacity: .85; }
-.phone-grid i:nth-child(even) { background: var(--green-light); opacity: 1; }
+/* телефон с профилем: аватар, ник, кнопка и сетка фото клиники */
+.sphone {
+  display: block; width: 360px; max-width: 100%; margin: 0 auto; padding: 22px 20px 20px;
+  background: #fff; border: 9px solid #555; border-radius: 58px;
+  box-shadow: 0 46px 70px -36px rgba(0, 0, 0, .35); transition: transform .4s ease, box-shadow .4s ease;
+}
+.sphone:hover { transform: translateY(-8px); box-shadow: 0 56px 80px -36px rgba(0, 0, 0, .4); }
+.sphone > span { display: block; }
+.sphone-notch { width: 140px; height: 28px; margin: 0 auto 26px; border-radius: 20px; background: #555; }
+.sphone .sphone-head { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+.sphone-ava { display: grid; place-items: center; width: 70px; height: 70px; border-radius: 50%; background: var(--green-light); flex: none; }
+.sphone-ava img { width: 44px; height: 44px; }
+.sphone-head strong { display: block; font-size: 17px; line-height: 1.3; color: var(--text); word-break: break-word; }
+.sphone-head small { font-size: 14px; color: #8a8a8a; }
+.sphone .sphone-follow {
+  display: flex; align-items: center; justify-content: center; gap: 8px; height: 46px; margin-bottom: 18px;
+  border-radius: 12px; background: var(--green); color: #fff; font-size: 15px; font-weight: 600;
+}
+.sphone-follow svg { width: 20px; height: 20px; }
+.sphone .sphone-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.sphone-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; transition: transform .4s ease; }
+.sphone:hover .sphone-grid img { transform: scale(1.03); }
+.sphone-bar { width: 120px; height: 5px; margin: 26px auto 0; border-radius: 3px; background: #555; }
 
-.video-ph { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; width: 480px; max-width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius); background: var(--gray-bg); border: 1px solid var(--line); color: var(--text); font-weight: 500; }
-.video-ph svg { width: 64px; height: 54px; color: var(--green); }
+.social-text p { max-width: 470px; margin-bottom: 36px; font-size: 22px; line-height: 1.65; }
+.social-text .btn svg { width: 24px; height: 24px; }
 
 /* ============================================================
    12. Список услуг
@@ -585,7 +588,9 @@ a.chip:hover { transform: scale(1.15); }
   .cta-visual img { width: 300px; margin-top: 10px; }
   .family-card { aspect-ratio: 4 / 3; }
   .family-caption { left: 14px; bottom: 14px; font-size: 18px; padding: 16px; }
-  .social-pane { flex-direction: column; gap: 40px; padding: 50px 0; }
+  .social-pane { grid-template-columns: 1fr; gap: 40px; padding: 50px 0; text-align: center; }
+  .social-text p { margin-left: auto; margin-right: auto; font-size: 18px; }
+  .deco-soc-1, .deco-soc-2 { display: none; }
   .links h2 { font-size: 28px; }
   .links-grid, .maps-grid { grid-template-columns: 1fr; }
   .contact { grid-template-columns: 1fr; padding-top: 30px; }
@@ -610,7 +615,9 @@ a.chip:hover { transform: scale(1.15); }
   .h2 { font-size: 24px; }
   .h2 br { display: none; }
   .cards { grid-template-columns: 1fr; }
-  .tabs-head button { font-size: 15px; }
+  .tabs-head button { font-size: 14px; padding-left: 4px; padding-right: 4px; }
+  .sphone { width: 320px; border-radius: 50px; }
+  .social-text .btn { width: 100%; }
   .cta-btns { align-items: stretch; }
   .cta-body > .btn-grad { width: 100%; }
   .btn-outline { height: 54px; font-size: 16px; padding: 0 20px; }

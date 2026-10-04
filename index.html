@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=4">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -28,6 +28,7 @@
   <symbol id="i-arrow" viewBox="0 0 52 14"><path d="M0 7h49M43 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="tri-outline" viewBox="0 0 320 290"><path d="M34 62 L286 22 Q304 20 300 38 L236 262 Q230 280 216 268 L26 92 Q14 68 34 62 Z" fill="none" stroke="currentColor" stroke-width="12" stroke-linejoin="round"/></symbol>
+  <symbol id="tri-thin" viewBox="0 0 320 290"><path d="M24 58 L296 26 L214 272 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></symbol>
   <symbol id="tri-solid" viewBox="0 0 100 100"><path d="M12 16 L88 8 Q96 8 93 16 L66 88 Q62 96 56 90 L8 26 Q4 18 12 16 Z" fill="currentColor"/></symbol>
   <symbol id="tri-pattern" viewBox="0 0 520 520">
     <g fill="currentColor">
@@ -421,37 +422,71 @@
 
 <!-- ============ 11. СОЦСЕТИ ============ -->
 <section class="section social" id="social">
-  <svg class="deco deco-soc-1"><use href="#tri-solid"/></svg>
-  <svg class="deco deco-soc-2"><use href="#tri-solid"/></svg>
+  <svg class="deco deco-soc-1"><use href="#tri-thin"/></svg>
+  <svg class="deco deco-soc-2"><use href="#tri-thin"/></svg>
   <div class="container container-narrow">
     <p class="eyebrow reveal">Социальные сети</p>
-    <h2 class="h2 reveal">AIVA CLINIC <br>в социальных сетях</h2>
+    <h2 class="h2 reveal">Делимся акциями, советами <br>и новостями клиники</h2>
 
     <div class="tabs reveal" data-tabs>
       <div class="tabs-head">
         <button class="is-active" type="button">INSTAGRAM</button>
+        <button type="button">TIKTOK</button>
         <button type="button">YOUTUBE</button>
       </div>
       <div class="tabs-body">
         <div class="tab-pane is-active">
           <div class="social-pane">
-            <svg class="deco deco-soc-l"><use href="#tri-pattern"/></svg>
-            <svg class="deco deco-soc-r"><use href="#tri-pattern"/></svg>
-            <div class="phone"><div class="phone-screen">
-              <div class="phone-top"><i></i><div><b></b><b></b><b></b></div></div>
-              <div class="phone-lines"><s></s><s></s><s></s></div>
-              <div class="phone-stories"><i></i><i></i><i></i><i></i></div>
-              <div class="phone-grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            </div></div>
-            <a class="btn btn-grad btn-lg glow" data-href="instagramHref" href="https://www.instagram.com/aiva.clinic" target="_blank" rel="noopener">Посмотреть наш Instagram</a>
+            <a class="sphone" data-href="instagramHref" href="https://www.instagram.com/aiva.clinic" target="_blank" rel="noopener" aria-label="Посмотреть наш Instagram">
+              <span class="sphone-notch"></span>
+              <span class="sphone-head">
+                <span class="sphone-ava"><img src="img/favicon.png" alt=""></span>
+                <span><strong data-bind="instagramHandle">@aiva.clinic</strong><small>AIVA CLINIC · Астана</small></span>
+              </span>
+              <span class="sphone-follow"><svg><use href="#i-insta"/></svg>Подписаться</span>
+              <span class="sphone-grid"><img loading="lazy" src="img/service-2.jpg" alt=""><img loading="lazy" src="img/about-2.jpg" alt=""><img loading="lazy" src="img/service-6.jpg" alt=""><img loading="lazy" src="img/step-3.jpg" alt=""><img loading="lazy" src="img/hero-2.jpg" alt=""><img loading="lazy" src="img/service-4.jpg" alt=""></span>
+              <span class="sphone-bar"></span>
+            </a>
+            <div class="social-text">
+              <p>Рассказываем о специальных предложениях, процедурах и жизни клиники. Подписывайтесь, чтобы не пропустить новости.</p>
+              <a class="btn btn-grad btn-lg glow" data-href="instagramHref" href="https://www.instagram.com/aiva.clinic" target="_blank" rel="noopener"><svg><use href="#i-insta"/></svg>Посмотреть наш Instagram</a>
+            </div>
           </div>
         </div>
         <div class="tab-pane">
           <div class="social-pane">
-            <svg class="deco deco-soc-l"><use href="#tri-pattern"/></svg>
-            <svg class="deco deco-soc-r"><use href="#tri-pattern"/></svg>
-            <div class="video-ph"><svg><use href="#i-yt"/></svg><span>Видео AIVA CLINIC на YouTube</span></div>
-            <a class="btn btn-grad btn-lg glow" data-href="youtubeHref" href="https://www.youtube.com/channel/UC1EBxPu6hds8KHRhQzTv8gw" target="_blank" rel="noopener">Посмотреть наш YouTube</a>
+            <a class="sphone" data-href="tiktokHref" href="https://www.tiktok.com/@aiva.clinic" target="_blank" rel="noopener" aria-label="Посмотреть наш TikTok">
+              <span class="sphone-notch"></span>
+              <span class="sphone-head">
+                <span class="sphone-ava"><img src="img/favicon.png" alt=""></span>
+                <span><strong data-bind="tiktokHandle">@aiva.clinic</strong><small>AIVA CLINIC · Астана</small></span>
+              </span>
+              <span class="sphone-follow"><svg><use href="#i-tt"/></svg>Подписаться</span>
+              <span class="sphone-grid"><img loading="lazy" src="img/hero-2.jpg" alt=""><img loading="lazy" src="img/service-4.jpg" alt=""><img loading="lazy" src="img/about-3.jpg" alt=""><img loading="lazy" src="img/service-6.jpg" alt=""><img loading="lazy" src="img/service-3.jpg" alt=""><img loading="lazy" src="img/about-2.jpg" alt=""></span>
+              <span class="sphone-bar"></span>
+            </a>
+            <div class="social-text">
+              <p>Короткие видео о процедурах, оборудовании и буднях клиники. Подписывайтесь, чтобы видеть новое первыми.</p>
+              <a class="btn btn-grad btn-lg glow" data-href="tiktokHref" href="https://www.tiktok.com/@aiva.clinic" target="_blank" rel="noopener"><svg><use href="#i-tt"/></svg>Посмотреть наш TikTok</a>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane">
+          <div class="social-pane">
+            <a class="sphone" data-href="youtubeHref" href="https://www.youtube.com/channel/UC1EBxPu6hds8KHRhQzTv8gw" target="_blank" rel="noopener" aria-label="Посмотреть наш YouTube">
+              <span class="sphone-notch"></span>
+              <span class="sphone-head">
+                <span class="sphone-ava"><img src="img/favicon.png" alt=""></span>
+                <span><strong data-bind="youtubeHandle">AIVA CLINIC</strong><small>YouTube-канал клиники</small></span>
+              </span>
+              <span class="sphone-follow"><svg><use href="#i-yt"/></svg>Подписаться</span>
+              <span class="sphone-grid"><img loading="lazy" src="img/about-2.jpg" alt=""><img loading="lazy" src="img/hero-3.jpg" alt=""><img loading="lazy" src="img/step-3.jpg" alt=""><img loading="lazy" src="img/service-2.jpg" alt=""><img loading="lazy" src="img/hero-2.jpg" alt=""><img loading="lazy" src="img/service-4.jpg" alt=""></span>
+              <span class="sphone-bar"></span>
+            </a>
+            <div class="social-text">
+              <p>Видео о направлениях клиники, процедурах и восстановлении. Подписывайтесь на канал, чтобы не пропустить новые выпуски.</p>
+              <a class="btn btn-grad btn-lg glow" data-href="youtubeHref" href="https://www.youtube.com/channel/UC1EBxPu6hds8KHRhQzTv8gw" target="_blank" rel="noopener"><svg><use href="#i-yt"/></svg>Посмотреть наш YouTube</a>
+            </div>
           </div>
         </div>
       </div>
@@ -538,7 +573,7 @@
 <!-- Плавающая кнопка WhatsApp -->
 <a class="wa-float" data-href="whatsappHref" href="https://wa.me/77087332881" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-chat"/></svg></a>
 
-<script src="js/config.js"></script>
-<script src="js/main.js"></script>
+<script src="js/config.js?v=4"></script>
+<script src="js/main.js?v=4"></script>
 </body>
 </html>
