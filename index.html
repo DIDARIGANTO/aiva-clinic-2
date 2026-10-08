@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=7">
+<link rel="stylesheet" href="css/style.css?v=8">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -85,7 +85,7 @@
     <a href="#about">О клинике</a>
     <a href="#services">Услуги</a>
     <a href="#steps">Первый приём</a>
-    <a href="#prices">Все услуги</a>
+    <a href="#prices">Прайс</a>
     <a href="#reviews">Отзывы</a>
     <a href="#social">Соцсети</a>
     <a href="#contacts">Контакты</a>
@@ -102,7 +102,7 @@
       <a href="#about">О клинике</a>
       <a href="#services">Услуги</a>
       <a href="#steps">Первый приём</a>
-      <a href="#prices">Все услуги</a>
+      <a href="#prices">Прайс</a>
       <a href="#reviews">Отзывы</a>
       <a href="#social">Соцсети</a>
       <a href="#contacts">Контакты</a>
@@ -183,101 +183,12 @@
   </div>
 </section>
 
-<!-- ============ 4. ОТЗЫВЫ: цифры и рейтинги ============
-     Цифры взяты со страницы клиники в 2ГИС (на 4 октября 2026 г.) — обновляйте их вручную. -->
-<section class="section reviews" id="reviews">
-  <svg class="deco deco-rev-1"><use href="#tri-solid"/></svg>
-  <svg class="deco deco-rev-2"><use href="#tri-solid"/></svg>
-  <div class="container">
-    <p class="eyebrow reveal">Отзывы</p>
-    <h2 class="h2 reveal">Нам доверяют <br>своё здоровье</h2>
-
-    <div class="reviews-visual reveal">
-      <div class="zoom reviews-photo"><img loading="lazy" src="img/reviews.jpg" alt="Пациентка в AIVA CLINIC"></div>
-      <div class="stat stat-left rock"><b>307</b><span>оценок пациентов <br>в 2ГИС</span></div>
-      <div class="stat stat-right rock"><b>173</b><span>отзыва <br>в 2ГИС</span></div>
-    </div>
-
-    <div class="ratings">
-      <a class="rating reveal" data-href="gisReviewsHref" href="https://2gis.kz/astana/firm/70000001090259641/tab/reviews" target="_blank" rel="noopener"><span class="rating-logo">2<i class="c-gis">GIS</i></span><p><b>4.7</b> из 5</p><u>в отзывах 2GIS</u></a>
-      <a class="rating reveal" data-href="yandexHref" href="#" target="_blank" rel="noopener"><span class="rating-logo"><i class="c-ya">Я</i>ндекс</span><strong>Оставьте отзыв</strong><u>на Яндекс Картах</u></a>
-      <a class="rating reveal" data-href="instagramHref" href="https://www.instagram.com/aiva.clinic" target="_blank" rel="noopener"><span class="rating-logo"><i class="c-insta">Instagram</i></span><strong>@aiva.clinic</strong><u>наш профиль</u></a>
-    </div>
-
-    <div class="center reveal" style="margin-top:60px"><a class="btn btn-grad btn-lg glow" data-href="gisReviewsHref" href="https://2gis.kz/astana/firm/70000001090259641/tab/reviews" target="_blank" rel="noopener">Посмотреть все отзывы</a></div>
-  </div>
-</section>
-
-<!-- ============ 5. СЛАЙДЕР ОТЗЫВОВ ============
-     Блок скрыт, пока нет отзывов, которые клиника согласовала для публикации.
-     Чтобы включить: уберите строки «ОТЗЫВЫ-НАЧАЛО» и «ОТЗЫВЫ-КОНЕЦ» и вставьте тексты.
-ОТЗЫВЫ-НАЧАЛО
-<section class="section review-slider">
-  <div class="container">
-    <div class="rs reveal" data-slider>
-      <button class="rs-arrow rs-prev" type="button" aria-label="Назад"><svg><use href="#i-chev"/></svg></button>
-      <div class="rs-viewport">
-        <div class="rs-track">
-          <article class="rs-card">
-            <header><span class="rs-ava">А</span><div><strong>Имя пациента</strong><small>дата отзыва · источник</small></div></header>
-            <p>Текст отзыва.</p>
-          </article>
-          <article class="rs-card">
-            <header><span class="rs-ava">Б</span><div><strong>Имя пациента</strong><small>дата отзыва · источник</small></div></header>
-            <p>Текст отзыва.</p>
-          </article>
-        </div>
-      </div>
-      <button class="rs-arrow rs-next" type="button" aria-label="Вперёд"><svg><use href="#i-chev"/></svg></button>
-    </div>
-  </div>
-</section>
-ОТЗЫВЫ-КОНЕЦ -->
-
-<!-- ============ 6. УСЛУГИ ============ -->
-<section class="section services" id="services">
-  <div class="container">
-    <p class="eyebrow reveal">Наши услуги</p>
-    <h2 class="h2 reveal">Терапия, физиотерапия <br>и реабилитация</h2>
-
-    <div class="cards">
-      <a class="card reveal" href="#svc-doctors"><div class="zoom"><img loading="lazy" src="img/service-1.jpg" alt="Врач AIVA CLINIC"></div><h3>Консультации врачей</h3><p>Терапевт, врач общей практики, гастроэнтеролог, эндокринолог, травматолог-ортопед, уролог-андролог.</p></a>
-      <a class="card reveal" href="#svc-uzi"><div class="zoom"><img loading="lazy" src="img/service-2.jpg" alt="Зона ожидания AIVA CLINIC"></div><h3>Ультразвуковая <br>диагностика</h3><p>УЗИ органов и сосудов, комплексные УЗИ. Подобрать объём диагностики поможет врач.</p></a>
-      <a class="card reveal" href="#svc-checkup"><div class="zoom"><img loading="lazy" src="img/service-3.jpg" alt="Холл AIVA CLINIC"></div><h3>Чек-апы</h3><p>Базовый чек-ап, обследования печени, щитовидной железы, сосудов и суставов.</p></a>
-      <a class="card reveal" href="#svc-physio"><div class="zoom"><img loading="lazy" src="img/service-4.jpg" alt="Аппарат для физиотерапии"></div><h3>Физиотерапия</h3><p>TECAR-терапия, магнитотерапия, ударно-волновая и ультразвуковая терапия, прессотерапия.</p></a>
-      <a class="card reveal" href="#svc-rehab"><div class="zoom"><img loading="lazy" src="img/service-5.jpg" alt="Пациентка на экзостоле"></div><h3>Реабилитация</h3><p>Лечебная физкультура, лечебный массаж и индивидуальные программы восстановления.</p></a>
-      <a class="card reveal" href="#svc-iv"><div class="zoom"><img loading="lazy" src="img/service-6.jpg" alt="Кресла для капельниц"></div><h3>Процедурный кабинет</h3><p>Капельницы, внутривенные, внутримышечные и подкожные инъекции по назначению врача.</p></a>
-    </div>
-  </div>
-  <svg class="deco deco-serv-1 rock"><use href="#tri-outline"/></svg>
-  <svg class="deco deco-serv-2 rock"><use href="#tri-outline"/></svg>
-</section>
-
-<!-- ============ 7. ПЕРВЫЙ ПРИЁМ (шаги) ============ -->
-<section class="section steps" id="steps">
-  <div class="container">
-    <p class="eyebrow reveal">Первый прием</p>
-    <h2 class="h2 reveal">С чего начать <br>заботу о здоровье</h2>
-
-    <div class="step reveal">
-      <div class="step-text"><h3><svg><use href="#i-arrow"/></svg>Запись</h3><p>Если вы не знаете, к какому врачу обратиться, свяжитесь с администратором. Мы поможем выбрать специалиста и удобное время для консультации.</p></div>
-      <div class="zoom step-img"><img loading="lazy" src="img/step-1.jpg" alt="Пациентка с болью в шее"></div>
-    </div>
-    <div class="step step-rev reveal">
-      <div class="step-text"><h3><svg><use href="#i-arrow"/></svg>Консультация врача</h3><p>На приём можно взять результаты предыдущих обследований и список принимаемых препаратов, чтобы врач мог учесть их при консультации.</p></div>
-      <div class="zoom step-img"><img loading="lazy" src="img/step-2.jpg" alt="Врач AIVA CLINIC на консультации"></div>
-    </div>
-    <div class="step reveal">
-      <div class="step-text"><h3><svg><use href="#i-arrow"/></svg>Обследование и восстановление</h3><p>Подобрать необходимый объём диагностики поможет врач. Программа восстановления может объединять ЛФК, массаж и аппаратные процедуры по показаниям.</p></div>
-      <div class="zoom step-img"><img loading="lazy" src="img/step-3.jpg" alt="Экзостол в AIVA CLINIC"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 8. ВСЕ УСЛУГИ (аккордеон) ============ -->
+<!-- ============ 4. ПРАЙС-ЛИСТ (аккордеон) ============ -->
 <section class="section faq" id="prices">
   <div class="container container-narrow">
-    <h2 class="h2 h2-sm reveal">Консультации, диагностика, <br>процедуры и восстановление</h2>
+    <p class="eyebrow reveal">Прайс-лист</p>
+    <h2 class="h2 h2-sm reveal">Цены на услуги <br>AIVA CLINIC</h2>
+    <p class="price-note reveal">Консультации, диагностика, процедуры и восстановление. Актуальные цены уточняйте у администратора по телефону или в WhatsApp.</p>
     <div class="acc reveal" data-accordion>
 
       <div class="acc-item is-open" id="svc-doctors">
@@ -383,6 +294,97 @@
         <div class="acc-body"><div><p>В составе чек-апов доступны общий анализ крови, биохимические показатели, гормональные исследования и другие анализы. Возможность сдачи отдельных анализов, полный перечень, стоимость и подготовку уточняйте при записи.</p></div></div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. ОТЗЫВЫ: цифры и рейтинги ============
+     Цифры взяты со страницы клиники в 2ГИС (на 4 октября 2026 г.) — обновляйте их вручную. -->
+<section class="section reviews" id="reviews">
+  <svg class="deco deco-rev-1"><use href="#tri-solid"/></svg>
+  <svg class="deco deco-rev-2"><use href="#tri-solid"/></svg>
+  <div class="container">
+    <p class="eyebrow reveal">Отзывы</p>
+    <h2 class="h2 reveal">Нам доверяют <br>своё здоровье</h2>
+
+    <div class="reviews-visual reveal">
+      <div class="zoom reviews-photo"><img loading="lazy" src="img/reviews.jpg" alt="Пациентка в AIVA CLINIC"></div>
+      <div class="stat stat-left rock"><b>307</b><span>оценок пациентов <br>в 2ГИС</span></div>
+      <div class="stat stat-right rock"><b>173</b><span>отзыва <br>в 2ГИС</span></div>
+    </div>
+
+    <div class="ratings">
+      <a class="rating reveal" data-href="gisReviewsHref" href="https://2gis.kz/astana/firm/70000001090259641/tab/reviews" target="_blank" rel="noopener"><span class="rating-logo">2<i class="c-gis">GIS</i></span><p><b>4.7</b> из 5</p><u>в отзывах 2GIS</u></a>
+      <a class="rating reveal" data-href="yandexHref" href="#" target="_blank" rel="noopener"><span class="rating-logo"><i class="c-ya">Я</i>ндекс</span><strong>Оставьте отзыв</strong><u>на Яндекс Картах</u></a>
+      <a class="rating reveal" data-href="instagramHref" href="https://www.instagram.com/aiva.clinic" target="_blank" rel="noopener"><span class="rating-logo"><i class="c-insta">Instagram</i></span><strong>@aiva.clinic</strong><u>наш профиль</u></a>
+    </div>
+
+    <div class="center reveal" style="margin-top:60px"><a class="btn btn-grad btn-lg glow" data-href="gisReviewsHref" href="https://2gis.kz/astana/firm/70000001090259641/tab/reviews" target="_blank" rel="noopener">Посмотреть все отзывы</a></div>
+  </div>
+</section>
+
+<!-- ============ 5. СЛАЙДЕР ОТЗЫВОВ ============
+     Блок скрыт, пока нет отзывов, которые клиника согласовала для публикации.
+     Чтобы включить: уберите строки «ОТЗЫВЫ-НАЧАЛО» и «ОТЗЫВЫ-КОНЕЦ» и вставьте тексты.
+ОТЗЫВЫ-НАЧАЛО
+<section class="section review-slider">
+  <div class="container">
+    <div class="rs reveal" data-slider>
+      <button class="rs-arrow rs-prev" type="button" aria-label="Назад"><svg><use href="#i-chev"/></svg></button>
+      <div class="rs-viewport">
+        <div class="rs-track">
+          <article class="rs-card">
+            <header><span class="rs-ava">А</span><div><strong>Имя пациента</strong><small>дата отзыва · источник</small></div></header>
+            <p>Текст отзыва.</p>
+          </article>
+          <article class="rs-card">
+            <header><span class="rs-ava">Б</span><div><strong>Имя пациента</strong><small>дата отзыва · источник</small></div></header>
+            <p>Текст отзыва.</p>
+          </article>
+        </div>
+      </div>
+      <button class="rs-arrow rs-next" type="button" aria-label="Вперёд"><svg><use href="#i-chev"/></svg></button>
+    </div>
+  </div>
+</section>
+ОТЗЫВЫ-КОНЕЦ -->
+
+<!-- ============ 6. УСЛУГИ ============ -->
+<section class="section services" id="services">
+  <div class="container">
+    <p class="eyebrow reveal">Наши услуги</p>
+    <h2 class="h2 reveal">Терапия, физиотерапия <br>и реабилитация</h2>
+
+    <div class="cards">
+      <a class="card reveal" href="#svc-doctors"><div class="zoom"><img loading="lazy" src="img/service-1.jpg" alt="Врач AIVA CLINIC"></div><h3>Консультации врачей</h3><p>Терапевт, врач общей практики, гастроэнтеролог, эндокринолог, травматолог-ортопед, уролог-андролог.</p></a>
+      <a class="card reveal" href="#svc-uzi"><div class="zoom"><img loading="lazy" src="img/service-2.jpg" alt="Зона ожидания AIVA CLINIC"></div><h3>Ультразвуковая <br>диагностика</h3><p>УЗИ органов и сосудов, комплексные УЗИ. Подобрать объём диагностики поможет врач.</p></a>
+      <a class="card reveal" href="#svc-checkup"><div class="zoom"><img loading="lazy" src="img/service-3.jpg" alt="Холл AIVA CLINIC"></div><h3>Чек-апы</h3><p>Базовый чек-ап, обследования печени, щитовидной железы, сосудов и суставов.</p></a>
+      <a class="card reveal" href="#svc-physio"><div class="zoom"><img loading="lazy" src="img/service-4.jpg" alt="Аппарат для физиотерапии"></div><h3>Физиотерапия</h3><p>TECAR-терапия, магнитотерапия, ударно-волновая и ультразвуковая терапия, прессотерапия.</p></a>
+      <a class="card reveal" href="#svc-rehab"><div class="zoom"><img loading="lazy" src="img/service-5.jpg" alt="Пациентка на экзостоле"></div><h3>Реабилитация</h3><p>Лечебная физкультура, лечебный массаж и индивидуальные программы восстановления.</p></a>
+      <a class="card reveal" href="#svc-iv"><div class="zoom"><img loading="lazy" src="img/service-6.jpg" alt="Кресла для капельниц"></div><h3>Процедурный кабинет</h3><p>Капельницы, внутривенные, внутримышечные и подкожные инъекции по назначению врача.</p></a>
+    </div>
+  </div>
+  <svg class="deco deco-serv-1 rock"><use href="#tri-outline"/></svg>
+  <svg class="deco deco-serv-2 rock"><use href="#tri-outline"/></svg>
+</section>
+
+<!-- ============ 7. ПЕРВЫЙ ПРИЁМ (шаги) ============ -->
+<section class="section steps" id="steps">
+  <div class="container">
+    <p class="eyebrow reveal">Первый прием</p>
+    <h2 class="h2 reveal">С чего начать <br>заботу о здоровье</h2>
+
+    <div class="step reveal">
+      <div class="step-text"><h3><svg><use href="#i-arrow"/></svg>Запись</h3><p>Если вы не знаете, к какому врачу обратиться, свяжитесь с администратором. Мы поможем выбрать специалиста и удобное время для консультации.</p></div>
+      <div class="zoom step-img"><img loading="lazy" src="img/step-1.jpg" alt="Пациентка с болью в шее"></div>
+    </div>
+    <div class="step step-rev reveal">
+      <div class="step-text"><h3><svg><use href="#i-arrow"/></svg>Консультация врача</h3><p>На приём можно взять результаты предыдущих обследований и список принимаемых препаратов, чтобы врач мог учесть их при консультации.</p></div>
+      <div class="zoom step-img"><img loading="lazy" src="img/step-2.jpg" alt="Врач AIVA CLINIC на консультации"></div>
+    </div>
+    <div class="step reveal">
+      <div class="step-text"><h3><svg><use href="#i-arrow"/></svg>Обследование и восстановление</h3><p>Подобрать необходимый объём диагностики поможет врач. Программа восстановления может объединять ЛФК, массаж и аппаратные процедуры по показаниям.</p></div>
+      <div class="zoom step-img"><img loading="lazy" src="img/step-3.jpg" alt="Экзостол в AIVA CLINIC"></div>
     </div>
   </div>
 </section>
@@ -560,7 +562,7 @@
 <!-- Плавающая кнопка WhatsApp -->
 <a class="wa-float" data-href="whatsappHref" href="https://wa.me/77472274096" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-chat"/></svg></a>
 
-<script src="js/config.js?v=7"></script>
-<script src="js/main.js?v=7"></script>
+<script src="js/config.js?v=8"></script>
+<script src="js/main.js?v=8"></script>
 </body>
 </html>
