@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=9">
+<link rel="stylesheet" href="css/style.css?v=10">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -83,11 +83,10 @@
   <a class="logo" href="#top"><img src="img/logo.png" alt="AIVA CLINIC" width="854" height="211"></a>
   <nav>
     <a href="#about">О клинике</a>
-    <a href="#services">Услуги</a>
-    <a href="#steps">Первый приём</a>
-    <a href="#prices">Прайс</a>
+    <a href="#prices">Прайс-лист</a>
+    <a href="#doctors">Наши врачи</a>
     <a href="#reviews">Отзывы</a>
-    <a href="#social">Соцсети</a>
+    <a href="#offers">Акции</a>
     <a href="#contacts">Контакты</a>
   </nav>
   <button class="burger" type="button" aria-label="Меню" data-menu-open><span></span><span></span><span></span></button>
@@ -100,11 +99,10 @@
     <button class="menu-close" type="button" aria-label="Закрыть" data-menu-close></button>
     <nav>
       <a href="#about">О клинике</a>
-      <a href="#services">Услуги</a>
-      <a href="#steps">Первый приём</a>
-      <a href="#prices">Прайс</a>
+      <a href="#prices">Прайс-лист</a>
+      <a href="#doctors">Наши врачи</a>
       <a href="#reviews">Отзывы</a>
-      <a href="#social">Соцсети</a>
+      <a href="#offers">Акции</a>
       <a href="#contacts">Контакты</a>
     </nav>
     <p class="menu-slogan">Помогаем вернуться к активной жизни.</p>
@@ -129,8 +127,9 @@
   </div>
 
   <div class="hero-photos" data-hero-slider>
-    <img class="hero-slide is-active" src="img/hero-2.jpg" alt="Кабинет экзотерапии AIVA CLINIC">
-    <img class="hero-slide" loading="lazy" src="img/hero-3.jpg" alt="Процедурный кабинет AIVA CLINIC">
+    <img class="hero-slide is-active" src="img/hero-1.jpg" alt="Активная жизнь без боли">
+    <img class="hero-slide" loading="lazy" src="img/hero-2.jpg" alt="Здоровье и спокойствие">
+    <img class="hero-slide" loading="lazy" src="img/hero-3.jpg" alt="Боль в спине — повод обратиться к врачу">
   </div>
 </section>
 
@@ -293,6 +292,81 @@
         <button class="acc-head" type="button">Лабораторные анализы<i></i></button>
         <div class="acc-body"><div><p>В составе чек-апов доступны общий анализ крови, биохимические показатели, гормональные исследования и другие анализы. Возможность сдачи отдельных анализов, полный перечень, стоимость и подготовку уточняйте при записи.</p></div></div>
       </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. НАШИ ВРАЧИ ============ -->
+<section class="section doctors" id="doctors">
+  <div class="container">
+    <p class="eyebrow reveal">Наши врачи</p>
+    <h2 class="h2 reveal">Специалисты <br>AIVA CLINIC</h2>
+    <div class="doctors-grid">
+      <article class="doctor reveal"><div class="zoom"><img loading="lazy" src="img/doctor-1.jpg" alt="Саламбекова Жулдыз Сериковна"></div><h3>Саламбекова Жулдыз Сериковна</h3><p>Главный врач, терапевт</p></article>
+      <article class="doctor reveal"><div class="zoom"><img loading="lazy" src="img/doctor-2.jpg" alt="Потапова Элона Гайковна"></div><h3>Потапова Элона Гайковна</h3><p>Заведующая отделением физиотерапии и реабилитации, травматолог-ортопед, нейрохирург</p></article>
+      <article class="doctor reveal"><div class="zoom"><img loading="lazy" src="img/doctor-3.jpg" alt="Ахметов Ринат Нургазыевич"></div><h3>Ахметов Ринат Нургазыевич</h3><p>Врач общей практики</p></article>
+      <article class="doctor reveal"><div class="zoom"><img loading="lazy" src="img/doctor-4.jpg" alt="Атыгаева Асем Максатовна"></div><h3>Атыгаева Асем Максатовна</h3><p>Врач общей практики, эндокринолог</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. АКЦИИ ============ -->
+<section class="section offers" id="offers">
+  <div class="container">
+    <p class="eyebrow reveal">Акции</p>
+    <h2 class="h2 reveal">Специальные <br>предложения</h2>
+    <div class="offers-grid">
+
+      <article class="offer reveal">
+        <div class="zoom"><img loading="lazy" src="img/offer-1.jpg" alt="Ультразвуковая диагностика"></div>
+        <div class="offer-body">
+          <h3>Комплексные УЗИ</h3>
+          <ul>
+            <li><span>Комплекс №1: органы брюшной полости, почки, щитовидная железа</span><b><s>22 000</s>18 000 ₸</b></li>
+            <li><span>Комплекс №2: почки, мочевой пузырь, предстательная железа</span><b><s>22 000</s>15 000 ₸</b></li>
+            <li><span>Комплекс №3: щитовидная железа, молочные железы, органы малого таза</span><b><s>26 000</s>20 000 ₸</b></li>
+          </ul>
+          <p class="offer-note">Продолжительность каждого комплекса — 1 час.</p>
+          <a class="btn btn-grad btn-sm" data-href="whatsappHref" href="https://wa.me/77472274096" target="_blank" rel="noopener">Записаться</a>
+        </div>
+      </article>
+
+      <article class="offer reveal">
+        <div class="zoom"><img loading="lazy" src="img/offer-2.jpg" alt="Экзотерапия"></div>
+        <div class="offer-body">
+          <h3>Экзотерапия</h3>
+          <p>Магнитно-волновой массаж на специальном аппарате. Во время процедуры вы просто лежите и отдыхаете — без ручного массажа и переодевания.</p>
+          <ul class="offer-list">
+            <li>расслабляет напряжённые мышцы;</li>
+            <li>уменьшает дискомфорт и скованность;</li>
+            <li>улучшает общее самочувствие;</li>
+            <li>ускоряет восстановление после нагрузок.</li>
+          </ul>
+          <p class="offer-price">5 минут — 6 000 ₸</p>
+          <p class="offer-bonus">При покупке курса от 5 процедур — скидка 30%</p>
+          <p class="offer-note">Имеются противопоказания. Перед процедурой необходима консультация специалиста.</p>
+          <a class="btn btn-grad btn-sm" data-href="whatsappHref" href="https://wa.me/77472274096" target="_blank" rel="noopener">Записаться</a>
+        </div>
+      </article>
+
+      <article class="offer reveal">
+        <div class="zoom"><img loading="lazy" src="img/offer-3.jpg" alt="Врач AIVA CLINIC"></div>
+        <div class="offer-body">
+          <h3>Чек-ап печени</h3>
+          <p>В программу входят:</p>
+          <ul class="offer-list">
+            <li>общий анализ крови (ОАК);</li>
+            <li>АЛТ, АСТ, ГГТП;</li>
+            <li>глюкоза крови;</li>
+            <li>общий холестерин;</li>
+            <li>УЗИ органов брюшной полости;</li>
+            <li>приём врача — в подарок.</li>
+          </ul>
+          <p class="offer-price">21 000 ₸</p>
+          <a class="btn btn-grad btn-sm" data-href="whatsappHref" href="https://wa.me/77472274096" target="_blank" rel="noopener">Записаться</a>
+        </div>
+      </article>
 
     </div>
   </div>
@@ -554,7 +628,7 @@
       <small>© <span data-bind="year">2026</span> AIVA CLINIC. Все права защищены</small>
     </div>
     <div><h4>Основное</h4><a href="#top">Главная</a><a href="#about">О клинике</a><a href="#services">Услуги</a></div>
-    <div><h4>Клиника</h4><a href="#steps">Первый приём</a><a href="#reviews">Отзывы о клинике</a><a href="#contacts">Контакты</a></div>
+    <div><h4>Клиника</h4><a href="#doctors">Наши врачи</a><a href="#offers">Акции</a><a href="#reviews">Отзывы о клинике</a><a href="#contacts">Контакты</a></div>
     <div><h4>Услуги</h4><a href="#svc-doctors">Консультации врачей</a><a href="#svc-uzi">Диагностика</a><a href="#svc-physio">Физиотерапия</a><a href="#svc-rehab">Реабилитация</a></div>
   </div>
 </footer>
@@ -562,7 +636,7 @@
 <!-- Плавающая кнопка WhatsApp -->
 <a class="wa-float" data-href="whatsappHref" href="https://wa.me/77472274096" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-chat"/></svg></a>
 
-<script src="js/config.js?v=9"></script>
-<script src="js/main.js?v=9"></script>
+<script src="js/config.js?v=10"></script>
+<script src="js/main.js?v=10"></script>
 </body>
 </html>

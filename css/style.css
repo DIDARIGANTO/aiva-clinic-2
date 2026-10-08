@@ -269,6 +269,42 @@ a.chip:hover { transform: scale(1.15); }
 .about-photos img.is-active { opacity: 1; transform: none; }
 
 /* ============================================================
+   Наши врачи
+   ============================================================ */
+.doctors-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.doctor {
+  padding: 18px 18px 26px; text-align: center; background: #fff; border: 1px solid var(--green); border-radius: var(--radius);
+  transition: opacity 1s ease, transform 1s ease, box-shadow .3s;
+}
+.doctor:hover { box-shadow: 0 24px 50px -24px rgba(114, 186, 69, .7); }
+.doctor .zoom { aspect-ratio: 3 / 4; border-radius: 20px; margin-bottom: 18px; }
+.doctor h3 { font-size: 17px; line-height: 1.3; font-weight: 700; color: var(--green-dark); margin-bottom: 8px; }
+.doctor p { font-size: 14px; line-height: 1.4; }
+
+/* ============================================================
+   Акции
+   ============================================================ */
+.offers { background: var(--peach-pale); }
+.offers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
+.offer {
+  display: flex; flex-direction: column; overflow: hidden; background: #fff; border: 1px solid var(--green); border-radius: var(--radius);
+  transition: opacity 1s ease, transform 1s ease, box-shadow .3s;
+}
+.offer:hover { box-shadow: 0 24px 50px -24px rgba(114, 186, 69, .7); }
+.offer .zoom { aspect-ratio: 3 / 2; border-radius: 0; }
+.offer-body { display: flex; flex-direction: column; gap: 12px; flex: 1; padding: 24px 26px 30px; font-size: 14px; line-height: 1.5; }
+.offer h3 { font-size: 24px; line-height: 1.2; font-weight: 700; color: var(--green-dark); }
+.offer-body ul:not(.offer-list) li { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.offer-body ul:not(.offer-list) b { white-space: nowrap; font-size: 16px; color: var(--green-dark); }
+.offer-body s { margin-right: 6px; font-size: 13px; font-weight: 400; color: #9a9a9a; }
+.offer-list li { position: relative; padding-left: 18px; margin-bottom: 4px; }
+.offer-list li::before { content: ''; position: absolute; left: 2px; top: 8px; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+.offer-price { font-size: 26px; font-weight: 700; color: var(--green-dark); }
+.offer-bonus { font-weight: 600; color: var(--green-dark); }
+.offer-note { font-size: 13px; color: #8a8a8a; }
+.offer .btn { margin-top: auto; align-self: flex-start; }
+
+/* ============================================================
    4. Отзывы: фото, цифры, рейтинги
    ============================================================ */
 .reviews { overflow: hidden; }
@@ -570,6 +606,8 @@ a.chip:hover { transform: scale(1.15); }
   .rs-card header { flex-wrap: wrap; }
   .stars { margin-left: 0; }
   .cards { grid-template-columns: 1fr 1fr; }
+  .doctors-grid { grid-template-columns: 1fr 1fr; }
+  .offers-grid { grid-template-columns: 1fr; }
   .services { padding-bottom: 90px; }
   .step, .step-rev { grid-template-columns: 1fr; gap: 20px; margin-bottom: 50px; }
   .step-rev .step-text { order: 0; }
@@ -607,6 +645,7 @@ a.chip:hover { transform: scale(1.15); }
   .h2 { font-size: 24px; }
   .h2 br { display: none; }
   .cards { grid-template-columns: 1fr; }
+  .doctors-grid { grid-template-columns: 1fr; }
   .tabs-head button { font-size: 14px; padding-left: 4px; padding-right: 4px; }
   .sphone { width: 320px; border-radius: 50px; }
   .social-text .btn { width: 100%; }
