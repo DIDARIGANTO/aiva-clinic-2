@@ -18,8 +18,8 @@ window.SITE = {
   address: 'Астана, ул. Е 669, 13',
   license: 'Лицензия № 24026583, ДКМФК МЗ РК по г. Астана',
 
-  instagramHref: 'https://www.instagram.com/aiva.clinic',
-  instagramHandle: '@aiva.clinic',
+  instagramHref: 'https://www.instagram.com/aiva.clinic_astana',
+  instagramHandle: '@aiva.clinic_astana',
   youtubeHref: 'https://www.youtube.com/channel/UC1EBxPu6hds8KHRhQzTv8gw',
   tiktokHref: 'https://www.tiktok.com/@aiva.clinic',
   tiktokHandle: '@aiva.clinic',
