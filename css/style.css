@@ -457,19 +457,6 @@ a.chip:hover { transform: scale(1.15); }
 .social-text .btn svg { width: 24px; height: 24px; }
 
 /* ============================================================
-   12. Список услуг
-   ============================================================ */
-.links { padding: 56px 0 60px; background: var(--peach-pale); }
-.links h2 { font-size: 40px; line-height: 1.2; font-weight: 700; color: var(--ink); margin-bottom: 26px; }
-.links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.links-card { padding: 26px 30px 30px; background: #fff; border: 1px solid #f6e2cb; border-radius: 16px; min-height: 190px; }
-.links-card h3 { font-size: 20px; font-weight: 700; color: var(--ink); margin-bottom: 14px; }
-.links-card li { position: relative; padding-left: 22px; margin-bottom: 10px; font-size: 14px; }
-.links-card li::before { content: ''; position: absolute; left: 8px; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--ink); }
-.links-card a { color: var(--green-dark); text-decoration: underline; text-underline-offset: 3px; }
-.links-card a:hover { color: var(--green); }
-
-/* ============================================================
    13. Контакты
    ============================================================ */
 .contacts { padding: 70px 0 60px; background: var(--contacts); color: #fff; }
@@ -596,8 +583,7 @@ a.chip:hover { transform: scale(1.15); }
   .social-pane { grid-template-columns: 1fr; gap: 40px; padding: 50px 0; text-align: center; }
   .social-text p { margin-left: auto; margin-right: auto; font-size: 18px; }
   .deco-soc-1, .deco-soc-2 { display: none; }
-  .links h2 { font-size: 28px; }
-  .links-grid, .maps-grid { grid-template-columns: 1fr; }
+  .maps-grid { grid-template-columns: 1fr; }
   .contact { grid-template-columns: 1fr; padding-top: 30px; }
   .contact-info h2 { font-size: 28px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
