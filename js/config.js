@@ -9,9 +9,9 @@ window.SITE = {
   tagline: 'клиника терапии, физиотерапии и реабилитации',
   year: '2026',
 
-  phone: '+7 (708) 733-28-81',
-  phoneHref: 'tel:+77087332881',
-  whatsappHref: 'https://wa.me/77087332881',
+  phone: '+7 (747) 227-40-96',
+  phoneHref: 'tel:+77472274096',
+  whatsappHref: 'https://wa.me/77472274096',
   hours: 'Ежедневно с 08:00 до 20:00, без выходных',
   hoursShort: 'Ежедневно с 08:00 до 20:00',
 
