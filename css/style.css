@@ -171,23 +171,42 @@ a.chip:hover { transform: scale(1.15); }
 .stickynav nav a:hover::after { transform: scaleX(1); }
 .stickynav .burger { display: none; }
 
-/* выезжающее меню */
+/* выезжающее меню: фирменный зелёный фон, эмблема-орнамент, контакты и кнопки */
 .menu { position: fixed; inset: 0; z-index: 100; visibility: hidden; }
 .menu.is-open { visibility: visible; }
 .menu-backdrop { position: absolute; inset: 0; background: rgba(25, 43, 27, .45); opacity: 0; transition: opacity .3s; }
 .menu.is-open .menu-backdrop { opacity: 1; }
 .menu-panel {
-  position: absolute; top: 0; right: 0; bottom: 0; width: min(420px, 100%);
-  display: flex; flex-direction: column; padding: 90px 50px 40px; background: #fff;
+  position: absolute; top: 0; right: 0; bottom: 0; width: min(420px, 100%); overflow: hidden auto;
+  display: flex; flex-direction: column; padding: 96px 44px 40px; color: #fff;
+  background: linear-gradient(170deg, #3c7857 0%, #2f6448 100%);
   transform: translateX(100%); transition: transform .35s ease, visibility .35s;
 }
 .menu.is-open .menu-panel { transform: none; }
-.menu-panel nav { display: flex; flex-direction: column; gap: 18px; font-size: 24px; font-weight: 600; }
-.menu-panel nav a:hover { color: var(--green); }
-.menu-slogan { margin-top: auto; font-size: 15px; }
-.menu-copy { margin-top: 12px; font-size: 13px; color: #9a9a9a; }
-.menu-close { position: absolute; top: 24px; right: 24px; width: 46px; height: 46px; border-radius: 10px; background: var(--grad); }
-.menu-close::before, .menu-close::after { content: ''; position: absolute; left: 11px; right: 11px; top: 22px; height: 2.500px; border-radius: 2px; background: #fff; transform: rotate(45deg); }
+.menu-ornament {
+  position: absolute; right: -120px; top: 32%; width: 420px; height: 420px; opacity: .10; pointer-events: none;
+  filter: brightness(0) invert(1);
+}
+.menu-panel > *:not(.menu-ornament) { position: relative; z-index: 1; }
+.menu-panel nav { display: flex; flex-direction: column; gap: 14px; font-size: 30px; font-weight: 400; line-height: 1.25; }
+.menu-panel nav a { transition: color .2s, transform .2s; }
+.menu-panel nav a:hover { color: var(--yellow); transform: translateX(4px); }
+.menu-footer { margin-top: auto; padding-top: 48px; }
+.menu-slogan { font-size: 16px; line-height: 1.5; margin-bottom: 18px; }
+.menu-contact { display: flex; flex-direction: column; gap: 2px; margin-bottom: 20px; font-size: 14px; line-height: 1.5; color: rgba(255, 255, 255, .85); }
+.menu-contact a { font-size: 18px; font-weight: 600; color: #fff; }
+.menu-soc { display: flex; gap: 12px; margin-bottom: 24px; }
+.menu-soc a { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: #fff; color: var(--green-dark); transition: transform .2s, background-color .2s; }
+.menu-soc a:hover { background: var(--yellow); transform: scale(1.06); }
+.menu-soc svg { width: 24px; height: 24px; }
+.menu-btn {
+  display: flex; align-items: center; justify-content: center; width: fit-content; min-width: 220px; height: 60px; padding: 0 36px; margin-bottom: 12px;
+  border-radius: 40px; background: #fff; color: var(--green-dark); font-size: 18px; font-weight: 700; transition: transform .2s, background-color .2s;
+}
+.menu-btn:hover { background: var(--yellow); transform: scale(1.03); }
+.menu-close { position: absolute; top: 28px; right: 28px; width: 46px; height: 46px; border-radius: 10px; background: rgba(255, 255, 255, .14); transition: background-color .2s; }
+.menu-close:hover { background: rgba(255, 255, 255, .26); }
+.menu-close::before, .menu-close::after { content: ''; position: absolute; left: 12px; right: 12px; top: 22px; height: 2.5px; border-radius: 2px; background: #fff; transform: rotate(45deg); }
 .menu-close::after { transform: rotate(-45deg); }
 
 /* ============================================================

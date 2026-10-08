@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=11">
+<link rel="stylesheet" href="css/style.css?v=12">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -94,6 +94,7 @@
 <div class="menu" aria-hidden="true">
   <div class="menu-backdrop" data-menu-close></div>
   <aside class="menu-panel">
+    <img class="menu-ornament" src="img/favicon.png" alt="" aria-hidden="true">
     <button class="menu-close" type="button" aria-label="Закрыть" data-menu-close></button>
     <nav>
       <a href="#about">О клинике</a>
@@ -103,8 +104,17 @@
       <a href="#offers">Акции</a>
       <a href="#contacts">Контакты</a>
     </nav>
-    <p class="menu-slogan">Помогаем вернуться к активной жизни.</p>
-    <p class="menu-copy">© AIVA CLINIC</p>
+    <div class="menu-footer">
+      <p class="menu-slogan">Помогаем вернуться к активной жизни.<br>© AIVA CLINIC</p>
+      <p class="menu-contact"><a data-href="phoneHref" href="tel:+77472274096" data-bind="phone">+7 (747) 227-40-96</a><span data-bind="hoursShort">Ежедневно с 08:00 до 20:00</span><span data-bind="address">Астана, ул. Е 669, 13</span></p>
+      <div class="menu-soc">
+        <a data-href="instagramHref" href="https://www.instagram.com/aiva.clinic_astana" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-insta"/></svg></a>
+        <a data-href="tiktokHref" href="https://www.tiktok.com/@aiva.clinic" target="_blank" rel="noopener" aria-label="TikTok"><svg><use href="#i-tt"/></svg></a>
+        <a data-href="youtubeHref" href="https://www.youtube.com/channel/UC1EBxPu6hds8KHRhQzTv8gw" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 28 24"><use href="#i-yt"/></svg></a>
+      </div>
+      <a class="menu-btn" data-href="whatsappHref" href="https://wa.me/77472274096" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="menu-btn" data-href="gisReviewsHref" href="https://2gis.kz/astana/firm/70000001090259641/tab/reviews" target="_blank" rel="noopener">Оценить работу</a>
+    </div>
   </aside>
 </div>
 
@@ -634,7 +644,7 @@
 <!-- Плавающая кнопка WhatsApp -->
 <a class="wa-float" data-href="whatsappHref" href="https://wa.me/77472274096" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-chat"/></svg></a>
 
-<script src="js/config.js?v=11"></script>
-<script src="js/main.js?v=11"></script>
+<script src="js/config.js?v=12"></script>
+<script src="js/main.js?v=12"></script>
 </body>
 </html>
