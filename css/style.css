@@ -298,6 +298,11 @@ a.chip:hover { transform: scale(1.15); }
   position: absolute; left: 0; top: 26px; padding: 8px 46px 8px 44px; font-size: 26px; font-weight: 700; color: #2b2b2b;
   background: linear-gradient(90deg, #eef7e8, #fff);
 }
+/* фирменные цвета в названиях площадок */
+.rating-logo i { font-style: normal; }
+.c-gis { color: #2fb34a; }
+.c-ya { color: #fc3f1d; }
+.c-insta { background: linear-gradient(90deg, #f9a825 0%, #ee2a7b 50%, #6228d7 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .rating p { font-size: 26px; }
 .rating b { font-size: 56px; line-height: 1; font-weight: 700; color: var(--green); margin-right: 6px; }
 .rating u { font-size: 13px; margin-top: 6px; }
