@@ -434,7 +434,7 @@ a.chip:hover { transform: scale(1.15); }
 .acc-body ul { padding-bottom: 36px; max-width: 1040px; }
 .acc-body li { position: relative; padding-left: 20px; margin-top: 10px; font-size: 14px; line-height: 1.6; }
 .acc-body li::before { content: ''; position: absolute; left: 2px; top: 9px; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
-.acc-body ul + p, .acc-body p + ul { margin-top: -22px; }
+.acc-body p + ul { margin-top: 2px; }
 
 /* ============================================================
    9. Запись
