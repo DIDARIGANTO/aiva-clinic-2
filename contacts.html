@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Контакты — AIVA CLINIC</title>
+<meta name="description" content="AIVA CLINIC: Астана, ул. Е 669, 13. Ежедневно с 08:00 до 20:00. Телефон и WhatsApp +7 (747) 227-40-96.">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=16">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="page-inner">
+
+<main>
+
+<!-- ============ 13. КОНТАКТЫ ============ -->
+<section class="contacts" id="contacts">
+  <div class="container">
+    <div class="contact contact-single">
+      <div class="contact-info">
+        <h2 data-bind="address">Астана, ул. Е 669, 13</h2>
+        <p><svg><use href="#i-clock"/></svg><span data-bind="hours">Ежедневно с 08:00 до 20:00, без выходных</span></p>
+        <p><svg><use href="#i-phone"/></svg><a data-href="phoneHref" href="tel:+77472274096" data-bind="phone">+7 (747) 227-40-96</a></p>
+        <a class="btn btn-outline" data-href="whatsappHref" href="https://wa.me/77472274096" target="_blank" rel="noopener"><svg><use href="#i-chat"/></svg>Написать в WhatsApp</a>
+        <a class="btn btn-outline" data-href="gisHref" href="#" target="_blank" rel="noopener"><svg><use href="#i-route"/></svg>Проложить маршрут в 2GIS</a>
+        <p class="contact-license"><svg><use href="#i-doc"/></svg><span data-bind="license">Лицензия № 24026583, ДКМФК МЗ РК по г. Астана</span></p>
+      </div>
+      <div class="contact-map">
+        <iframe src="https://yandex.kz/map-widget/v1/?ll=71.481355%2C51.087490&mode=search&oid=132063384129&ol=biz&z=16" loading="lazy" title="AIVA CLINIC на карте" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 14. КЛИНИКА НА КАРТАХ ============ -->
+<section class="maps">
+  <div class="container container-narrow">
+    <div class="maps-head"><h2>AIVA CLINIC на картах</h2><a href="#contacts">Адрес и контакты →</a></div>
+    <div class="maps-grid">
+      <div class="maps-card">
+        <strong data-bind="address">Астана, ул. Е 669, 13</strong>
+        <div>
+          <a class="pill" data-href="gisHref" href="#" target="_blank" rel="noopener"><i class="chip chip-2">2</i>2ГИС</a>
+          <a class="pill" data-href="yandexHref" href="#" target="_blank" rel="noopener"><i class="chip chip-y">Я</i>Яндекс Карты</a>
+          <a class="pill" data-href="instagramHref" href="https://www.instagram.com/aiva.clinic_astana" target="_blank" rel="noopener"><i class="chip chip-i"></i>Instagram</a>
+        </div>
+      </div>
+      <div class="maps-card">
+        <strong>Режим работы</strong>
+        <p><span data-bind="hours">Ежедневно с 08:00 до 20:00, без выходных</span><br>Телефон и WhatsApp: <a data-href="phoneHref" href="tel:+77472274096" data-bind="phone">+7 (747) 227-40-96</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="js/config.js?v=16"></script>
+<script src="js/layout.js?v=16"></script>
+<script src="js/main.js?v=16"></script>
+</body>
+</html>

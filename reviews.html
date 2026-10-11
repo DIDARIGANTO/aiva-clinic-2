@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Отзывы — AIVA CLINIC</title>
+<meta name="description" content="Отзывы пациентов AIVA CLINIC в 2ГИС и на Яндекс Картах.">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=16">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="page-inner">
+
+<main>
+
+<!-- ============ 4. ОТЗЫВЫ: цифры и рейтинги ============
+     Цифры взяты со страницы клиники в 2ГИС (на 4 октября 2026 г.) — обновляйте их вручную. -->
+<section class="section reviews" id="reviews">
+  <svg class="deco deco-rev-1"><use href="#tri-solid"/></svg>
+  <svg class="deco deco-rev-2"><use href="#tri-solid"/></svg>
+  <div class="container">
+    <p class="eyebrow reveal">Отзывы</p>
+    <h2 class="h2 reveal">Нам доверяют <br>своё здоровье</h2>
+
+    <div class="reviews-visual reveal">
+      <div class="zoom reviews-photo"><img loading="lazy" src="img/reviews.jpg" alt="Пациентка в AIVA CLINIC"></div>
+      <div class="stat stat-left rock"><b>307</b><span>оценок пациентов <br>в 2ГИС</span></div>
+      <div class="stat stat-right rock"><b>173</b><span>отзыва <br>в 2ГИС</span></div>
+    </div>
+
+    <div class="ratings">
+      <a class="rating reveal" data-href="gisReviewsHref" href="https://2gis.kz/astana/firm/70000001090259641/tab/reviews" target="_blank" rel="noopener"><span class="rating-logo">2<i class="c-gis">GIS</i></span><p><b>4.7</b> из 5</p><u>в отзывах 2GIS</u></a>
+      <a class="rating reveal" data-href="yandexHref" href="#" target="_blank" rel="noopener"><span class="rating-logo"><i class="c-ya">Я</i>ндекс</span><strong>Оставьте отзыв</strong><u>на Яндекс Картах</u></a>
+      <a class="rating reveal" data-href="instagramHref" href="https://www.instagram.com/aiva.clinic_astana" target="_blank" rel="noopener"><span class="rating-logo"><i class="c-insta">Instagram</i></span><strong>@aiva.clinic_astana</strong><u>наш профиль</u></a>
+    </div>
+
+    <div class="center reveal" style="margin-top:60px"><a class="btn btn-grad btn-lg glow" data-href="gisReviewsHref" href="https://2gis.kz/astana/firm/70000001090259641/tab/reviews" target="_blank" rel="noopener">Посмотреть все отзывы</a></div>
+  </div>
+</section>
+
+<!-- ============ 5. СЛАЙДЕР ОТЗЫВОВ ============
+     Блок скрыт, пока нет отзывов, которые клиника согласовала для публикации.
+     Чтобы включить: уберите строки «ОТЗЫВЫ-НАЧАЛО» и «ОТЗЫВЫ-КОНЕЦ» и вставьте тексты.
+ОТЗЫВЫ-НАЧАЛО
+<section class="section review-slider">
+  <div class="container">
+    <div class="rs reveal" data-slider>
+      <button class="rs-arrow rs-prev" type="button" aria-label="Назад"><svg><use href="#i-chev"/></svg></button>
+      <div class="rs-viewport">
+        <div class="rs-track">
+          <article class="rs-card">
+            <header><span class="rs-ava">А</span><div><strong>Имя пациента</strong><small>дата отзыва · источник</small></div></header>
+            <p>Текст отзыва.</p>
+          </article>
+          <article class="rs-card">
+            <header><span class="rs-ava">Б</span><div><strong>Имя пациента</strong><small>дата отзыва · источник</small></div></header>
+            <p>Текст отзыва.</p>
+          </article>
+        </div>
+      </div>
+      <button class="rs-arrow rs-next" type="button" aria-label="Вперёд"><svg><use href="#i-chev"/></svg></button>
+    </div>
+  </div>
+</section>
+ОТЗЫВЫ-КОНЕЦ -->
+
+<!-- ============ 9. ЗАПИСЬ ============ -->
+<section class="section cta" id="booking">
+  <div class="container">
+    <div class="cta-card reveal">
+      <div class="cta-body">
+        <p class="eyebrow eyebrow-left">Запись на приём</p>
+        <h2 class="h2 h2-left h2-sm">Запишитесь <br>в AIVA CLINIC</h2>
+        <p class="cta-lead">Сделайте первый шаг к заботе о своём здоровье — запишитесь на консультацию.</p>
+        <p class="cta-note">Для записи свяжитесь с клиникой напрямую</p>
+        <div class="cta-btns">
+          <a class="btn btn-solid btn-sm" data-href="phoneHref" href="tel:+77472274096">Позвонить <span data-bind="phone">+7 (747) 227-40-96</span></a>
+          <a class="btn btn-light btn-sm" data-href="whatsappHref" href="https://wa.me/77472274096" target="_blank" rel="noopener">Написать в WhatsApp</a>
+        </div>
+        <a class="btn btn-grad btn-lg glow glow-on" data-href="whatsappHref" href="https://wa.me/77472274096" target="_blank" rel="noopener">Записаться</a>
+      </div>
+      <div class="cta-visual">
+        <svg class="deco deco-cta"><use href="#tri-pattern"/></svg>
+        <img loading="lazy" src="img/cta-person.jpg" alt="Врач AIVA CLINIC">
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="js/config.js?v=16"></script>
+<script src="js/layout.js?v=16"></script>
+<script src="js/main.js?v=16"></script>
+</body>
+</html>
