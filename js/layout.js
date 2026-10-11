@@ -68,7 +68,7 @@
 </div>
 
 <!-- Липкое меню (появляется при прокрутке) -->
-<div class="stickynav" aria-hidden="true">
+<div class="stickynav">
   <a class="logo" href="index.html"><img src="img/logo.png" alt="AIVA CLINIC" width="854" height="211"></a>
   <nav>
     <a href="about.html">О клинике</a>

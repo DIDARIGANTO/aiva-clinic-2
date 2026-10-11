@@ -155,14 +155,14 @@ a.chip:hover { transform: scale(1.15); }
 .chip-i { background: linear-gradient(45deg, #f9ce34, #ee2a7b 55%, #6228d7); }
 
 /* липкое меню */
+/* строка меню: на компьютере видна сразу под шапкой и прилипает к верху при прокрутке */
 .stickynav {
-  position: fixed; inset: 0 0 auto 0; z-index: 50;
+  position: sticky; top: 0; z-index: 50;
   display: flex; align-items: center; justify-content: space-between; gap: 30px;
   height: 80px; padding: 0 var(--side); background: #fff;
   box-shadow: 0 4px 24px rgba(0, 0, 0, .06);
-  transform: translateY(-110%); transition: transform .35s ease;
+  transition: transform .35s ease;
 }
-.stickynav.is-visible { transform: none; }
 .stickynav nav { display: flex; gap: 34px; margin-left: auto; font-size: 17px; font-weight: 500; color: #1e1e1e; }
 .stickynav nav a { position: relative; padding: 6px 0; }
 .stickynav nav a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--green); transform: scaleX(0); transform-origin: left; transition: transform .25s; }
@@ -659,7 +659,9 @@ a.chip:hover { transform: scale(1.15); }
   .topbar .top-info, .top-social { display: none; }
   .branchbar { grid-template-columns: 1fr 1fr; padding: 12px 20px; }
   .branchbar-title, .branchbar-all { display: none; }
-  .stickynav { padding: 0 20px; height: 64px; }
+  /* на телефоне строка меню появляется только при прокрутке, чтобы не дублировать шапку */
+  .stickynav { position: fixed; inset: 0 0 auto 0; padding: 0 20px; height: 64px; transform: translateY(-110%); }
+  .stickynav.is-visible { transform: none; }
   .stickynav nav { display: none; }
   .stickynav .burger { display: flex; }
 
