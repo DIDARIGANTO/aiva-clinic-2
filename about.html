@@ -9,96 +9,52 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=17">
+<link rel="stylesheet" href="css/style.css?v=18">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body class="page-inner">
 
 <main>
 
-<!-- ============ 3. О КЛИНИКЕ (переключатель) ============ -->
-<section class="section about" id="about">
+<!-- ============ О КЛИНИКЕ ============ -->
+<section class="section" id="about">
   <div class="container">
-    <div class="about-card reveal">
-      <svg class="deco deco-about"><use href="#tri-pattern"/></svg>
-      <p class="eyebrow eyebrow-left">О клинике</p>
-      <h2 class="h2 h2-left">Врачи, диагностика и восстановление — <br>в одной клинике</h2>
-      <p class="about-lead">AIVA CLINIC объединяет консультации врачей, диагностику, физиотерапию и восстановление. К нам можно обратиться с жалобами на самочувствие, для обследования или подбора программы реабилитации.</p>
-
-      <div class="about-grid" data-about>
-        <ul class="about-list">
-          <li class="is-active" data-about-item="0">
-            <h3><svg class="tri"><use href="#tri-solid"/></svg>Начинаем с консультации</h3>
-            <p>Важно понять, что беспокоит человека, как давно появились жалобы и какие обследования или лечение уже проводились.</p>
-          </li>
-          <li data-about-item="1">
-            <h3><svg class="tri"><use href="#tri-solid"/></svg>Подбираем помощь индивидуально</h3>
-            <p>Учитываем состояние здоровья, противопоказания и цели пациента при выборе обследований, лечения и восстановления.</p>
-          </li>
-          <li data-about-item="2">
-            <h3><svg class="tri"><use href="#tri-solid"/></svg>Объясняем дальнейшие шаги</h3>
-            <p>Пациенту важно понимать, зачем назначена процедура, как подготовиться и когда необходим повторный приём.</p>
-          </li>
-        </ul>
-        <div class="about-photos">
-          <img class="is-active" src="img/about-1.jpg" alt="Врач AIVA CLINIC на приёме">
-          <img loading="lazy" src="img/about-2.jpg" alt="Кабинет аппаратной физиотерапии">
-          <img loading="lazy" src="img/about-3.jpg" alt="Кабинет экзотерапии">
-        </div>
-      </div>
+    <p class="eyebrow reveal">О клинике</p>
+    <h2 class="h2 reveal">Врачи, диагностика <br>и восстановление в одной клинике</h2>
+    <p class="teaser-text reveal">AIVA CLINIC объединяет консультации врачей, диагностику, физиотерапию и восстановление. К нам можно обратиться с жалобами на самочувствие, для обследования или подбора программы реабилитации.</p>
+    <div class="trio">
+      <div class="trio-item reveal"><svg class="tri"><use href="#tri-solid"/></svg><h3>Начинаем с консультации</h3><p>Важно понять, что беспокоит человека, как давно появились жалобы и какие обследования или лечение уже проводились.</p></div>
+      <div class="trio-item reveal"><svg class="tri"><use href="#tri-solid"/></svg><h3>Подбираем помощь индивидуально</h3><p>Учитываем состояние здоровья, противопоказания и цели пациента при выборе обследований, лечения и восстановления.</p></div>
+      <div class="trio-item reveal"><svg class="tri"><use href="#tri-solid"/></svg><h3>Объясняем дальнейшие шаги</h3><p>Пациенту важно понимать, зачем назначена процедура, как подготовиться и когда необходим повторный приём.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============ 7. ПЕРВЫЙ ПРИЁМ (шаги) ============ -->
-<section class="section steps" id="steps">
+<!-- ============ ПЕРВЫЙ ПРИЁМ ============ -->
+<section class="section teaser-gray" id="steps">
   <div class="container">
-    <p class="eyebrow reveal">Первый прием</p>
+    <p class="eyebrow reveal">Первый приём</p>
     <h2 class="h2 reveal">С чего начать <br>заботу о здоровье</h2>
-
-    <div class="step reveal">
-      <div class="step-text"><h3><svg><use href="#i-arrow"/></svg>Запись</h3><p>Если вы не знаете, к какому врачу обратиться, свяжитесь с администратором. Мы поможем выбрать специалиста и удобное время для консультации.</p></div>
-      <div class="zoom step-img"><img loading="lazy" src="img/step-1.jpg" alt="Пациентка с болью в шее"></div>
-    </div>
-    <div class="step step-rev reveal">
-      <div class="step-text"><h3><svg><use href="#i-arrow"/></svg>Консультация врача</h3><p>На приём можно взять результаты предыдущих обследований и список принимаемых препаратов, чтобы врач мог учесть их при консультации.</p></div>
-      <div class="zoom step-img"><img loading="lazy" src="img/step-2.jpg" alt="Врач AIVA CLINIC на консультации"></div>
-    </div>
-    <div class="step reveal">
-      <div class="step-text"><h3><svg><use href="#i-arrow"/></svg>Обследование и восстановление</h3><p>Подобрать необходимый объём диагностики поможет врач. Программа восстановления может объединять ЛФК, массаж и аппаратные процедуры по показаниям.</p></div>
-      <div class="zoom step-img"><img loading="lazy" src="img/step-3.jpg" alt="Экзостол в AIVA CLINIC"></div>
+    <div class="trio">
+      <div class="trio-item reveal"><span class="trio-num">1</span><h3>Запись</h3><p>Если вы не знаете, к какому врачу обратиться, свяжитесь с администратором. Мы поможем выбрать специалиста и удобное время для консультации.</p></div>
+      <div class="trio-item reveal"><span class="trio-num">2</span><h3>Консультация врача</h3><p>На приём можно взять результаты предыдущих обследований и список принимаемых препаратов, чтобы врач мог учесть их при консультации.</p></div>
+      <div class="trio-item reveal"><span class="trio-num">3</span><h3>Обследование и восстановление</h3><p>Подобрать необходимый объём диагностики поможет врач. Программа восстановления может объединять ЛФК, массаж и аппаратные процедуры по показаниям.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============ 10. БОЛЬШОЕ ФОТО С ПОДПИСЬЮ ============ -->
-<section class="section family">
+<!-- ============ ЗАПИСЬ (кратко) ============ -->
+<section class="section cta-mini">
   <div class="container">
-    <div class="family-card zoom reveal">
-      <img loading="lazy" src="img/family.jpg" alt="Процедура экзотерапии в AIVA CLINIC">
-      <div class="family-caption">Помогаем вернуться <br>к активной жизни</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 9. ЗАПИСЬ ============ -->
-<section class="section cta" id="booking">
-  <div class="container">
-    <div class="cta-card reveal">
-      <div class="cta-body">
+    <div class="cta-mini-card reveal">
+      <div>
         <p class="eyebrow eyebrow-left">Запись на приём</p>
-        <h2 class="h2 h2-left h2-sm">Запишитесь <br>в AIVA CLINIC</h2>
-        <p class="cta-lead">Сделайте первый шаг к заботе о своём здоровье — запишитесь на консультацию.</p>
-        <p class="cta-note">Для записи свяжитесь с клиникой напрямую</p>
-        <div class="cta-btns">
-          <a class="btn btn-solid btn-sm" data-href="phoneHref" href="tel:+77472274096">Позвонить <span data-bind="phone">+7 (747) 227-40-96</span></a>
-          <a class="btn btn-light btn-sm" data-href="whatsappHref" href="https://wa.me/77472274096" target="_blank" rel="noopener">Написать в WhatsApp</a>
-        </div>
-        <a class="btn btn-grad btn-lg glow glow-on" data-href="whatsappHref" href="https://wa.me/77472274096" target="_blank" rel="noopener">Записаться</a>
+        <h2>Запишитесь в AIVA CLINIC</h2>
+        <p>Сделайте первый шаг к заботе о своём здоровье — запишитесь на консультацию.</p>
       </div>
-      <div class="cta-visual">
-        <svg class="deco deco-cta"><use href="#tri-pattern"/></svg>
-        <img loading="lazy" src="img/cta-person.jpg" alt="Врач AIVA CLINIC">
+      <div class="cta-mini-btns">
+        <a class="btn btn-solid btn-sm" data-href="phoneHref" href="tel:+77472274096">Позвонить <span data-bind="phone">+7 (747) 227-40-96</span></a>
+        <a class="btn btn-grad btn-lg glow" data-href="whatsappHref" href="https://wa.me/77472274096" target="_blank" rel="noopener">Написать в WhatsApp</a>
       </div>
     </div>
   </div>
@@ -106,8 +62,8 @@
 
 </main>
 
-<script src="js/config.js?v=17"></script>
-<script src="js/layout.js?v=17"></script>
-<script src="js/main.js?v=17"></script>
+<script src="js/config.js?v=18"></script>
+<script src="js/layout.js?v=18"></script>
+<script src="js/main.js?v=18"></script>
 </body>
 </html>
