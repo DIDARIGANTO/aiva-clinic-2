@@ -133,6 +133,15 @@
   $$('[data-accordion] .acc-head').forEach(function (head) {
     head.addEventListener('click', function () { head.parentElement.classList.toggle('is-open'); });
   });
+  // ссылка вида prices.html#svc-uzi раскрывает нужный раздел и прокручивает к нему
+  (function () {
+    if (!location.hash) return;
+    var target = document.getElementById(location.hash.slice(1));
+    var item = target && target.closest('.acc-item');
+    if (!item) return;
+    item.classList.add('is-open');
+    setTimeout(function () { target.scrollIntoView({ block: 'start' }); }, 450);
+  })();
 
   /* ---------- Вкладки ---------- */
   $$('[data-tabs]').forEach(function (root) {

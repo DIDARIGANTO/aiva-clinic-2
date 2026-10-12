@@ -379,6 +379,7 @@ a.chip:hover { transform: scale(1.15); }
 .offer-list li { position: relative; padding-left: 18px; margin-bottom: 4px; }
 .offer-list li::before { content: ''; position: absolute; left: 2px; top: 8px; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
 .offer-price { font-size: 26px; font-weight: 700; color: var(--green-dark); }
+.offer-price s { margin-right: 8px; font-size: 18px; font-weight: 500; color: #9a9a9a; }
 .offer-bonus { font-weight: 600; color: var(--green-dark); }
 .offer-note { font-size: 13px; color: #8a8a8a; }
 .offer .btn { margin-top: auto; align-self: flex-start; }
@@ -489,9 +490,12 @@ a.chip:hover { transform: scale(1.15); }
 .acc-item.is-open .acc-body { grid-template-rows: 1fr; }
 .acc-body > div { overflow: hidden; }
 .acc-body p { font-size: 14px; line-height: 1.6; max-width: 1040px; }
-.acc-body p:last-child { padding-bottom: 36px; }
+
 .acc-body strong { font-weight: 600; color: var(--ink); }
-.acc-body ul { padding-bottom: 36px; max-width: 1040px; }
+.acc-body ul { max-width: 1040px; }
+.acc-body > div > :last-child { padding-bottom: 36px; }
+.acc-body h4 { margin: 28px 0 6px; font-size: 18px; font-weight: 700; color: var(--green-dark); scroll-margin-top: 100px; }
+.acc-body h4:first-child { margin-top: 0; }
 .acc-body li { position: relative; padding-left: 20px; margin-top: 10px; font-size: 14px; line-height: 1.6; }
 .acc-body li::before { content: ''; position: absolute; left: 2px; top: 9px; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
 .acc-body p + ul { margin-top: 2px; }
