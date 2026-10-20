@@ -7,7 +7,10 @@
 (function () {
   var LANG_KEY = 'aiva-lang';
   var params = new URLSearchParams(location.search);
-  if (params.get('lang')) { try { localStorage.setItem(LANG_KEY, params.get('lang')); } catch (e) {} }
+  if (params.get('lang')) {
+    try { localStorage.setItem(LANG_KEY, params.get('lang')); } catch (e) {}
+    history.replaceState(null, '', location.pathname + location.hash);
+  }
   var lang = 'ru';
   try { lang = localStorage.getItem(LANG_KEY) || 'ru'; } catch (e) {}
 
@@ -16,7 +19,7 @@
     b.classList.toggle('is-active', b.dataset.langPick === lang);
     b.addEventListener('click', function () {
       try { localStorage.setItem(LANG_KEY, b.dataset.langPick); } catch (e) {}
-      location.reload();
+      location.href = location.pathname + location.hash;
     });
   });
 
