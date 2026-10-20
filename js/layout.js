@@ -51,8 +51,7 @@
   </div>
 
   <div class="lang" data-lang>
-    <button type="button" data-lang-pick="kz">KZ</button><span>/</span><button type="button" class="is-active" data-lang-pick="ru">RU</button>
-    <span class="lang-note" hidden>Қазақша нұсқа дайындалуда</span>
+    <button type="button" data-lang-pick="kz">KZ</button><span>/</span><button type="button" data-lang-pick="ru">RU</button>
   </div>
 
   <button class="burger" type="button" aria-label="Меню" data-menu-open><span></span><span></span><span></span></button>
@@ -133,13 +132,5 @@
   var page = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.stickynav nav a, .menu nav a').forEach(function (a) {
     if (a.getAttribute('href') === page) a.classList.add('is-active');
-  });
-
-  // переключатель языка: казахская версия появится, когда будут переводы
-  document.querySelectorAll('[data-lang-pick]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var note = b.closest('[data-lang]').querySelector('.lang-note');
-      note.hidden = b.dataset.langPick !== 'kz';
-    });
   });
 })();

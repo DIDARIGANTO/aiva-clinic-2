@@ -4,13 +4,13 @@
 Запуск:  python3 tools/build_tz.py
 Пишет:   index.html, about.html, doctors.html, prices.html, offers.html,
          business.html, contacts.html и js/layout.js (общая шапка/меню/футер).
-Тексты правятся прямо здесь, в одном файле.
+Тексты правятся здесь; блоки главного экрана, врачей, прайса и контактов — в tools/src/.
 """
 import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=21'
+V = '?v=22'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -57,8 +57,7 @@ HEADER = f'''<!-- ============ ШАПКА (по ТЗ: лого, адрес + 2Г
   </div>
 
   <div class="lang" data-lang>
-    <button type="button" data-lang-pick="kz">KZ</button><span>/</span><button type="button" class="is-active" data-lang-pick="ru">RU</button>
-    <span class="lang-note" hidden>Қазақша нұсқа дайындалуда</span>
+    <button type="button" data-lang-pick="kz">KZ</button><span>/</span><button type="button" data-lang-pick="ru">RU</button>
   </div>
 
   <button class="burger" type="button" aria-label="Меню" data-menu-open><span></span><span></span><span></span></button>
@@ -140,14 +139,6 @@ layout_js = '''/* ============================================================
   var page = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.stickynav nav a, .menu nav a').forEach(function (a) {
     if (a.getAttribute('href') === page) a.classList.add('is-active');
-  });
-
-  // переключатель языка: казахская версия появится, когда будут переводы
-  document.querySelectorAll('[data-lang-pick]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var note = b.closest('[data-lang]').querySelector('.lang-note');
-      note.hidden = b.dataset.langPick !== 'kz';
-    });
   });
 })();
 '''
@@ -271,6 +262,8 @@ TAIL = '''</main>
 <script src="js/config.js{v}"></script>
 <script src="js/layout.js{v}"></script>
 <script src="js/main.js{v}"></script>
+<script src="js/i18n-kz.js{v}"></script>
+<script src="js/i18n.js{v}"></script>
 </body>
 </html>
 '''
@@ -292,10 +285,7 @@ groups_html = ''.join(f'''      <a class="svc-group reveal" href="prices.html#{g
       </a>
 ''' for gid, title, items in GROUPS)
 
-hero = open('index.html', encoding='utf-8').read()
-hero = hero[hero.index('<!-- ============ 1. ГЛАВНЫЙ ЭКРАН'):hero.index('<!-- ============ 2. КАРТОЧКА-АКЦИЯ')]
-hero = hero.replace('<a class="btn btn-grad btn-lg glow" data-href="whatsappHref" href="https://wa.me/77472274096" target="_blank" rel="noopener">Записаться на консультацию</a>',
-                    wa_btn('Написать в WhatsApp'))
+hero = open('tools/src/hero.html', encoding='utf-8').read()
 assert 'Написать в WhatsApp' in hero and 'prices.html' in hero
 
 home = hero + f'''<!-- ============ НАШИ УСЛУГИ (структура по ТЗ) ============ -->
@@ -398,15 +388,11 @@ about = f'''<!-- ============ О КЛИНИКЕ: ГЛАВНЫЙ ЭКРАН =====
 page('about.html', 'О клинике — AIVA CLINIC', 'AIVA Clinic объединяет врачебную диагностику, современные технологии лечения и восстановительную медицину: экзотерапия, ЭКЗО-ТЕКАР 3 в 1, спортивное восстановление.', about)
 
 # ---- Врачи
-doctors = open('doctors.html', encoding='utf-8').read()
-doctors = doctors[doctors.index('<!-- ============ 5. НАШИ ВРАЧИ'):doctors.index('<!-- ============ ЗАПИСЬ (кратко)')]
-doctors = doctors.replace('<!-- ============ 5. НАШИ ВРАЧИ ============ -->', '<!-- ============ ВРАЧИ ============ -->').replace('<p class="eyebrow reveal">Наши врачи</p>', '<p class="eyebrow reveal">Врачи</p>')
+doctors = open('tools/src/doctors.html', encoding='utf-8').read()
 page('doctors.html', 'Врачи — AIVA CLINIC', 'Врачи AIVA CLINIC: терапевт, врачи общей практики, эндокринолог, травматолог-ортопед, нейрохирург.', doctors + HELP_DOCTOR + social())
 
 # ---- Прайс
-prices = open('prices.html', encoding='utf-8').read()
-prices = prices[prices.index('<!-- ============ ПРАЙС-ЛИСТ (аккордеон)'):prices.index('<!-- ============ ЗАПИСЬ (кратко)')]
-prices = prices.replace('<p class="eyebrow reveal">Прайс-лист</p>', '<p class="eyebrow reveal">Прайс</p>')
+prices = open('tools/src/prices.html', encoding='utf-8').read()
 prices = prices.replace('    </div>\n  </div>\n</section>', '    </div>\n    <p class="price-discount reveal">Скидка 10% для льготных категорий</p>\n  </div>\n</section>')
 assert 'price-discount' in prices
 page('prices.html', 'Прайс — AIVA CLINIC', 'Цены на консультации, УЗИ-диагностику, чек-апы, IV-терапию, физиотерапию и реабилитацию в AIVA CLINIC. Скидка 10% для льготных категорий.',
@@ -475,8 +461,7 @@ business = f'''<!-- ============ ДЛЯ БИЗНЕСА ============ -->
 page('business.html', 'Для бизнеса — корпоративные сертификаты AIVA CLINIC', 'Корпоративные сертификаты AIVA Clinic: компания платит до 50% меньше номинала, получатель пользуется услугами клиники на всю сумму. Три пакета: Базовый, Стандарт, VIP.', business)
 
 # ---- Контакты (как были) + соцсети
-contacts = open('contacts.html', encoding='utf-8').read()
-contacts = contacts[contacts.index('<!-- ============ 13. КОНТАКТЫ'):contacts.index('</main>')]
+contacts = open('tools/src/contacts.html', encoding='utf-8').read()
 page('contacts.html', 'Контакты — AIVA CLINIC', 'AIVA CLINIC: Астана, ул. Е 669, 13. Ежедневно с 08:00 до 20:00. Телефон и WhatsApp +7 (747) 227-40-96.', contacts + social())
 
 # устаревшая страница отзывов больше не нужна — блок рейтинга теперь на главной
@@ -571,5 +556,5 @@ open('css/style.css', 'w', encoding='utf-8').write(s)
 # удалить старые медиа-правила, которые скрывали адрес и прятали строку меню — новые добавлены выше
 for f in glob.glob('*.html'):
     t = open(f, encoding='utf-8').read()
-    assert t.count(V) == 4, f
+    assert t.count(V) == 6, f
 print('done')
