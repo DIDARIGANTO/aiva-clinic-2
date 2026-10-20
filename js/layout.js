@@ -1,7 +1,7 @@
 /* ============================================================
-   Общие части всех страниц: иконки, шапка, полоса с адресом,
-   липкое меню, выезжающее меню, футер и кнопка WhatsApp.
-   Правятся здесь один раз — и меняются на всех страницах.
+   Общие части всех страниц: иконки, шапка, строка меню,
+   выезжающее меню, футер и кнопка WhatsApp.
+   Собирается скриптом tools/build_tz.py — правьте там.
    ============================================================ */
 (function () {
   var TOP = `
@@ -32,51 +32,42 @@
   </symbol>
 </svg>
 
-<!-- ============ ШАПКА ============ -->
+<!-- ============ ШАПКА (по ТЗ: лого, адрес + 2ГИС, график, соцсети, KZ/RU, меню) ============ -->
 <header class="topbar" id="top">
   <a class="logo" href="index.html"><img src="img/logo.png" alt="AIVA CLINIC" width="854" height="211"></a>
 
-  <a class="top-info top-info-addr" href="contacts.html">
+  <a class="top-info top-info-addr" href="https://2gis.kz/astana/search/%D1%84%D1%88%D0%BC%D1%84/firm/70000001090259641?m=71.482275%2C51.082042%2F14.72&immersive=on" data-href="gisHref" target="_blank" rel="noopener">
     <svg class="top-ico"><use href="#i-pin"/></svg>
-    <span><strong data-bind="address">Астана, ул. Е 669, 13</strong><u>Контакты и схема проезда</u></span>
+    <span><strong data-bind="address">Астана, ул. Е 669, 13</strong><u>Открыть в 2ГИС</u></span>
   </a>
-  <a class="top-info" data-href="phoneHref" href="tel:+77472274096">
-    <svg class="top-ico"><use href="#i-phone"/></svg>
-    <span><strong data-bind="phone">+7 (747) 227-40-96</strong><small data-bind="hoursShort">Ежедневно с 08:00 до 20:00</small></span>
+  <a class="top-info" href="contacts.html">
+    <svg class="top-ico"><use href="#i-clock"/></svg>
+    <span><strong>График работы</strong><small data-bind="hoursShort">08:00–20:00, ежедневно</small></span>
   </a>
-
-  <a class="btn btn-grad btn-sm top-cta" data-href="whatsappHref" href="https://wa.me/77472274096" target="_blank" rel="noopener">Записаться на прием</a>
 
   <div class="top-social">
     <a class="soc-btn" data-href="instagramHref" href="https://www.instagram.com/aiva.clinic_astana" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-insta"/></svg></a>
     <a class="soc-btn soc-btn-wide" data-href="youtubeHref" href="https://www.youtube.com/channel/UC1EBxPu6hds8KHRhQzTv8gw" target="_blank" rel="noopener" aria-label="YouTube"><svg><use href="#i-yt"/></svg></a>
   </div>
 
+  <div class="lang" data-lang>
+    <button type="button" data-lang-pick="kz">KZ</button><span>/</span><button type="button" class="is-active" data-lang-pick="ru">RU</button>
+    <span class="lang-note" hidden>Қазақша нұсқа дайындалуда</span>
+  </div>
+
   <button class="burger" type="button" aria-label="Меню" data-menu-open><span></span><span></span><span></span></button>
 </header>
 
-<!-- Полоса с адресом и лицензией -->
-<div class="branchbar">
-  <strong class="branchbar-title">Найти клинику на карте</strong>
-  <div class="branchbar-item">
-    <span data-bind="address">Астана, ул. Е 669, 13</span>
-  </div>
-  <div class="branchbar-item">
-    <span data-bind="license">Лицензия № 24026583, ДКМФК МЗ РК по г. Астана</span>
-  </div>
-  <a class="branchbar-all" href="contacts.html">Все контакты →</a>
-</div>
-
-<!-- Липкое меню (появляется при прокрутке) -->
+<!-- Строка меню -->
 <div class="stickynav">
   <a class="logo" href="index.html"><img src="img/logo.png" alt="AIVA CLINIC" width="854" height="211"></a>
   <nav>
+    <a href="index.html">Главная</a>
     <a href="about.html">О клинике</a>
-    <a href="prices.html">Прайс-лист</a>
-    <a href="doctors.html">Наши врачи</a>
-    <a href="reviews.html">Отзывы</a>
+    <a href="doctors.html">Врачи</a>
+    <a href="prices.html">Прайс</a>
     <a href="offers.html">Акции</a>
-    <a href="contacts.html">Контакты</a>
+    <a href="business.html">Для бизнеса</a>
   </nav>
   <button class="burger" type="button" aria-label="Меню" data-menu-open><span></span><span></span><span></span></button>
 </div>
@@ -88,16 +79,17 @@
     <img class="menu-ornament" src="img/favicon.png" alt="" aria-hidden="true">
     <button class="menu-close" type="button" aria-label="Закрыть" data-menu-close></button>
     <nav>
+      <a href="index.html">Главная</a>
       <a href="about.html">О клинике</a>
-      <a href="prices.html">Прайс-лист</a>
-      <a href="doctors.html">Наши врачи</a>
-      <a href="reviews.html">Отзывы</a>
+      <a href="doctors.html">Врачи</a>
+      <a href="prices.html">Прайс</a>
       <a href="offers.html">Акции</a>
+      <a href="business.html">Для бизнеса</a>
       <a href="contacts.html">Контакты</a>
     </nav>
     <div class="menu-footer">
       <p class="menu-slogan">Помогаем вернуться к активной жизни.<br>© AIVA CLINIC</p>
-      <p class="menu-contact"><a data-href="phoneHref" href="tel:+77472274096" data-bind="phone">+7 (747) 227-40-96</a><span data-bind="hoursShort">Ежедневно с 08:00 до 20:00</span><span data-bind="address">Астана, ул. Е 669, 13</span></p>
+      <p class="menu-contact"><a data-href="phoneHref" href="tel:+77472274096" data-bind="phone">+7 (747) 227-40-96</a><span data-bind="hoursShort">08:00–20:00, ежедневно</span><span data-bind="address">Астана, ул. Е 669, 13</span></p>
       <div class="menu-soc">
         <a data-href="instagramHref" href="https://www.instagram.com/aiva.clinic_astana" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-insta"/></svg></a>
         <a data-href="tiktokHref" href="https://www.tiktok.com/@aiva.clinic" target="_blank" rel="noopener" aria-label="TikTok"><svg><use href="#i-tt"/></svg></a>
@@ -118,15 +110,15 @@
       <p data-bind="tagline">клиника терапии, физиотерапии и реабилитации</p>
       <div class="footer-soc">
         <a data-href="instagramHref" href="https://www.instagram.com/aiva.clinic_astana" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-insta"/></svg></a>
-        <a data-href="youtubeHref" href="#" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 28 24"><use href="#i-yt"/></svg></a>
+        <a data-href="youtubeHref" href="https://www.youtube.com/channel/UC1EBxPu6hds8KHRhQzTv8gw" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 28 24"><use href="#i-yt"/></svg></a>
         <a data-href="tiktokHref" href="https://www.tiktok.com/@aiva.clinic" target="_blank" rel="noopener" aria-label="TikTok"><svg><use href="#i-tt"/></svg></a>
       </div>
       <small data-bind="license">Лицензия № 24026583, ДКМФК МЗ РК по г. Астана</small>
       <small>Имеются противопоказания. Необходима консультация специалиста.</small>
       <small>© <span data-bind="year">2026</span> AIVA CLINIC. Все права защищены</small>
     </div>
-    <div><h4>Основное</h4><a href="index.html">Главная</a><a href="about.html">О клинике</a><a href="prices.html">Прайс-лист</a></div>
-    <div><h4>Клиника</h4><a href="doctors.html">Наши врачи</a><a href="offers.html">Акции</a><a href="reviews.html">Отзывы о клинике</a><a href="contacts.html">Контакты</a></div>
+    <div><h4>Основное</h4><a href="index.html">Главная</a><a href="about.html">О клинике</a><a href="doctors.html">Врачи</a><a href="prices.html">Прайс</a></div>
+    <div><h4>Клиника</h4><a href="offers.html">Акции</a><a href="business.html">Для бизнеса</a><a href="index.html#reviews">Отзывы о клинике</a><a href="contacts.html">Контакты</a></div>
     <div><h4>Услуги</h4><a href="prices.html#svc-diag">Консультация и диагностика</a><a href="prices.html#svc-iv">IV и интегративная терапия</a><a href="prices.html#svc-physio">Физиотерапия</a><a href="prices.html#svc-rehab">Реабилитация и восстановление</a></div>
   </div>
 </footer>
@@ -141,5 +133,13 @@
   var page = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.stickynav nav a, .menu nav a').forEach(function (a) {
     if (a.getAttribute('href') === page) a.classList.add('is-active');
+  });
+
+  // переключатель языка: казахская версия появится, когда будут переводы
+  document.querySelectorAll('[data-lang-pick]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var note = b.closest('[data-lang]').querySelector('.lang-note');
+      note.hidden = b.dataset.langPick !== 'kz';
+    });
   });
 })();
