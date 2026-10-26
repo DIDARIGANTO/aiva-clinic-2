@@ -862,17 +862,19 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
   .exo-list li { font-size: 16px; }
 }
 
-/* ---- прайс: только цены ---- */
+/* ---- прайс: только цены — три ровные колонки ---- */
 .price-section { margin-bottom: 44px; }
 .price-section h3 { font-size: 24px; font-weight: 700; text-transform: uppercase; color: var(--ink); margin-bottom: 8px; padding-bottom: 12px; border-bottom: 2px solid var(--green); scroll-margin-top: 100px; }
-.pr-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.pr-row { display: grid; grid-template-columns: 1fr 130px 170px; align-items: baseline; column-gap: 24px; padding: 14px 0; border-bottom: 1px solid var(--line); }
 .pr-name { font-size: 17px; line-height: 1.35; font-weight: 600; color: #2b2b2b; }
 .pr-name small { display: block; margin-top: 3px; font-size: 13px; font-weight: 400; color: var(--green-dark); }
 .pr-note { margin: 8px 0 0; padding: 2px 0 2px 12px; border-left: 2px solid var(--green); font-size: 13px; font-weight: 400; line-height: 1.45; color: #6a6a6a; }
-.pr-price { flex: none; text-align: right; white-space: nowrap; }
-.pr-price b { font-size: 18px; font-weight: 700; color: var(--ink); }
-.pr-multi span { display: flex; justify-content: flex-end; align-items: baseline; gap: 14px; margin-bottom: 2px; }
-.pr-multi em { font-style: normal; font-size: 13px; color: var(--green-dark); }
+.pr-price { text-align: right; white-space: nowrap; }
+.pr-price b, .pr-multi b { font-size: 18px; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+.pr-unit, .pr-multi em { font-style: normal; font-size: 13px; line-height: 1.35; color: var(--green-dark); white-space: nowrap; }
+.pr-multi { grid-column: 2 / 4; display: grid; row-gap: 4px; }
+.pr-multi span { display: grid; grid-template-columns: 130px 170px; column-gap: 24px; align-items: baseline; }
+.pr-multi b { text-align: right; }
 .discount-card { margin-top: 16px; padding: 32px 36px; background: var(--green-pale); border-left: 6px solid var(--green); border-radius: 18px; }
 .discount-card h3 { font-size: 24px; font-weight: 700; text-transform: uppercase; color: var(--ink); margin-bottom: 4px; }
 .discount-order { font-size: 14px; font-style: italic; color: var(--green-dark); margin-bottom: 20px; }
@@ -881,9 +883,14 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
 .discount-cols li { position: relative; padding-left: 16px; margin-bottom: 6px; font-size: 14px; line-height: 1.45; }
 .discount-cols li::before { content: ''; position: absolute; left: 2px; top: 8px; width: 5px; height: 5px; border-radius: 50%; background: var(--ink); }
 @media (max-width: 640px) {
-  .pr-row { flex-direction: column; gap: 6px; }
-  .pr-price { text-align: left; }
-  .pr-multi span { justify-content: flex-start; }
+  .pr-row { grid-template-columns: 1fr auto; row-gap: 4px; }
+  .pr-name { grid-column: 1 / -1; }
+  .pr-price { grid-column: 1; text-align: left; }
+  .pr-unit { grid-column: 2; text-align: right; }
+  .pr-multi { grid-column: 1 / -1; }
+  .pr-multi span { grid-template-columns: auto 1fr; }
+  .pr-multi b { text-align: left; }
+  .pr-multi em { text-align: right; }
   .discount-cols { grid-template-columns: 1fr; }
   .discount-card { padding: 24px 20px; }
 }
