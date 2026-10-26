@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=23'
+V = '?v=24'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -246,6 +246,16 @@ HEAD = '''<!DOCTYPE html>
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="canonical" href="{canonical}">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AIVA CLINIC">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:url" content="{canonical}">
+<meta property="og:image" content="{site}img/hero-1.jpg">
+<meta property="og:locale" content="ru_RU">
+<script type="application/ld+json">{ldjson}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -267,8 +277,29 @@ TAIL = '''</main>
 </body>
 </html>
 '''
+SITE = 'https://didariganto.github.io/aiva-clinic-2/'
+# Schema.org: медицинская организация (адрес, телефон, часы, профили) — читается Google, Яндексом и ИИ-поиском
+import json as _json
+ORG = {
+    "@context": "https://schema.org", "@type": "MedicalClinic", "name": "AIVA Clinic",
+    "alternateName": "AIVA CLINIC Астана", "url": SITE, "logo": SITE + "img/logo.png", "image": SITE + "img/hero-1.jpg",
+    "description": "Клиника терапии, физиотерапии и реабилитации в Астане: консультации врачей, УЗИ-диагностика, чек-апы, IV-терапия, аппаратная физиотерапия, экзотерапия, ЛФК и лечебный массаж.",
+    "telephone": "+77472274096", "email": "aivaclinic01@gmail.com",
+    "address": {"@type": "PostalAddress", "streetAddress": "ул. Е 669, 13", "addressLocality": "Астана", "addressCountry": "KZ"},
+    "geo": {"@type": "GeoCoordinates", "latitude": 51.08749, "longitude": 71.481355},
+    "hasMap": YA,
+    "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "08:00", "closes": "20:00"}],
+    "medicalSpecialty": ["Physiotherapy", "Endocrinology", "Gastroenterology", "Urology", "Musculoskeletal"],
+    "availableService": [{"@type": "MedicalTherapy", "name": n} for n in ["TECAR-терапия", "Ударно-волновая терапия", "Ультразвуковая терапия", "Магнитотерапия", "Прессотерапия", "Экзотерапия (экзомассаж)", "Лечебная физкультура (ЛФК)", "Лечебный массаж", "IV-терапия (капельницы)"]]
+                        + [{"@type": "MedicalTest", "name": "Ультразвуковая диагностика (УЗИ)"}, {"@type": "MedicalTest", "name": "Чек-ап программы"}],
+    "sameAs": [INSTA, YT, TT, GIS, YA],
+    "areaServed": {"@type": "City", "name": "Астана"}, "currenciesAccepted": "KZT", "inLanguage": ["ru", "kk"]
+}
+LDJSON = _json.dumps(ORG, ensure_ascii=False)
+
 def page(fname, title, desc, body, cls='page-inner'):
-    html = HEAD.format(title=title, desc=desc, v=V, cls=cls) + body + TAIL.format(v=V)
+    canonical = SITE if fname == 'index.html' else SITE + fname
+    html = HEAD.format(title=title, desc=desc, v=V, cls=cls, canonical=canonical, site=SITE, ldjson=LDJSON) + body + TAIL.format(v=V)
     open(fname, 'w', encoding='utf-8').write(html)
     print('wrote', fname, len(html) // 1024, 'KB')
 

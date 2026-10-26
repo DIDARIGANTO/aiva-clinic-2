@@ -1,0 +1,11 @@
+# AIVA CLINIC — сайт открыт для всех поисковых роботов,
+# в том числе для поиска ChatGPT (OAI-SearchBot).
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: *
+Allow: /
+Disallow: /tools/
+Disallow: /preview/
+
+Sitemap: https://didariganto.github.io/aiva-clinic-2/sitemap.xml
