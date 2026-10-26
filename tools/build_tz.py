@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=24'
+V = '?v=25'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -154,8 +154,8 @@ def social(extra_cls=''):
     <h2 class="h2 h2-sm reveal">Следите за нами <br>в Instagram и YouTube</h2>
     <p class="teaser-text reveal">Подпишитесь, чтобы не пропустить специальные предложения, бесплатные процедуры, новости клиники и полезные видео от наших врачей.</p>
     <div class="soc-tiles">
-      <a class="soc-tile reveal" data-href="instagramHref" href="{INSTA}" {ext}><svg><use href="#i-insta"/></svg><strong>Instagram</strong><small>@aiva.clinic_astana</small><span class="btn btn-grad btn-sm">Подписаться</span></a>
-      <a class="soc-tile reveal" data-href="youtubeHref" href="{YT}" {ext}><svg viewBox="0 0 28 24"><use href="#i-yt"/></svg><strong>YouTube</strong><small>AIVA CLINIC</small><span class="btn btn-grad btn-sm">Подписаться</span></a>
+      <a class="soc-tile soc-ig reveal" data-href="instagramHref" href="{INSTA}" {ext}><span class="soc-ico"><svg><use href="#i-insta"/></svg></span><strong>Instagram</strong><small>@aiva.clinic_astana</small><span class="btn btn-sm">Подписаться</span></a>
+      <a class="soc-tile soc-yt reveal" data-href="youtubeHref" href="{YT}" {ext}><span class="soc-ico"><svg viewBox="0 0 28 24"><use href="#i-yt"/></svg></span><strong>YouTube</strong><small>AIVA CLINIC</small><span class="btn btn-sm">Подписаться</span></a>
     </div>
   </div>
 </section>

@@ -781,8 +781,18 @@ a.chip:hover { transform: scale(1.15); }
 .soc-tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 760px; margin: 0 auto; }
 .soc-tile { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 36px 24px 30px; text-align: center; background: #fff; border: 1px solid var(--green); border-radius: 26px; transition: opacity 1s ease, transform 1s ease, box-shadow .3s; }
 .soc-tile:hover { box-shadow: 0 20px 44px -22px rgba(114, 186, 69, .7); }
-.soc-tile svg { width: 64px; height: 64px; color: var(--green-dark); }
+/* плитки соцсетей в фирменных цветах площадок */
+.soc-ico { display: grid; place-items: center; width: 84px; height: 84px; border-radius: 24px; color: #fff; margin-bottom: 6px; }
+.soc-ico svg { width: 44px; height: 44px; }
+.soc-ig .soc-ico { background: linear-gradient(45deg, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%); }
+.soc-yt .soc-ico { background: #ff0000; }
 .soc-tile strong { font-size: 22px; font-weight: 700; color: var(--green-dark); }
+.soc-ig strong { background: linear-gradient(90deg, #f58529, #dd2a7b 50%, #8134af); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.soc-yt strong { color: #ff0000; }
+.soc-ig .btn { background: linear-gradient(90deg, #f58529 0%, #dd2a7b 50%, #8134af 100%); color: #fff; }
+.soc-yt .btn { background: #ff0000; color: #fff; }
+.soc-ig:hover { border-color: #dd2a7b; box-shadow: 0 20px 44px -22px rgba(221, 42, 123, .6); }
+.soc-yt:hover { border-color: #ff0000; box-shadow: 0 20px 44px -22px rgba(255, 0, 0, .5); }
 .soc-tile small { font-size: 14px; color: #8a8a8a; margin-bottom: 10px; }
 .c-google { background: linear-gradient(90deg, #4285f4 0 25%, #ea4335 25% 50%, #fbbc05 50% 75%, #34a853 75%); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .exo-card { padding: 44px 48px; text-align: left; background: var(--green-pale); border: 1px solid #dcedd2; border-radius: var(--radius); }
