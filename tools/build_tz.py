@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=31'
+V = '?v=32'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -76,7 +76,6 @@ HEADER = f'''<!-- ============ ШАПКА (по ТЗ: лого, адрес + 2Г
 <div class="menu" aria-hidden="true">
   <div class="menu-backdrop" data-menu-close></div>
   <aside class="menu-panel">
-    <img class="menu-ornament" src="img/favicon.png" alt="" aria-hidden="true">
     <button class="menu-close" type="button" aria-label="Закрыть" data-menu-close></button>
     <nav>
 {nav('      ')}
@@ -256,9 +255,6 @@ HEAD = '''<!DOCTYPE html>
 <meta property="og:image" content="{site}img/hero-1.jpg">
 <meta property="og:locale" content="ru_RU">
 <script type="application/ld+json">{ldjson}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css{v}">
 <script>document.documentElement.classList.add('js')</script>
 </head>

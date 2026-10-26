@@ -75,7 +75,6 @@
 <div class="menu" aria-hidden="true">
   <div class="menu-backdrop" data-menu-close></div>
   <aside class="menu-panel">
-    <img class="menu-ornament" src="img/favicon.png" alt="" aria-hidden="true">
     <button class="menu-close" type="button" aria-label="Закрыть" data-menu-close></button>
     <nav>
       <a href="index.html">Главная</a>
