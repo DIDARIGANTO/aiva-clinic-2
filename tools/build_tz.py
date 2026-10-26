@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=28'
+V = '?v=29'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -426,8 +426,6 @@ page('doctors.html', 'Врачи — AIVA CLINIC', 'Врачи AIVA CLINIC: те
 
 # ---- Прайс
 prices = open('tools/src/prices.html', encoding='utf-8').read()
-prices = prices.replace('    </div>\n  </div>\n</section>', '    </div>\n    <p class="price-discount reveal">Скидка 10% для льготных категорий</p>\n  </div>\n</section>')
-assert 'price-discount' in prices
 page('prices.html', 'Прайс — AIVA CLINIC', 'Цены на консультации, УЗИ-диагностику, чек-апы, IV-терапию, физиотерапию и реабилитацию в AIVA CLINIC. Скидка 10% для льготных категорий.',
      poster_block(**DRIP, cta_label='Написать в WhatsApp', second=('Другие акции', 'offers.html'), sid='offer-drip') + prices + EXO_PROMO + social())
 
