@@ -787,7 +787,7 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
 .soc-tile { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 36px 24px 30px; text-align: center; background: #fff; border: 1px solid var(--green); border-radius: 26px; transition: opacity 1s ease, transform 1s ease, box-shadow .3s; }
 .soc-tile:hover { box-shadow: 0 20px 44px -22px rgba(114, 179, 74, .7); }
 /* плитки соцсетей в фирменных цветах площадок */
-.soc-ico { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 18px; color: #fff; margin-bottom: 6px; }
+.soc-ico { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 18px; color: #fff; margin-bottom: 6px; filter: brightness(.85) saturate(.85); /* фирменные цвета соцсетей приглушены на 15% */ }
 .soc-ico svg { width: 32px; height: 32px; }
 /* фирменный цвет соцсети — только на иконке; название и кнопка в цветах сайта, чтобы блок не кричал */
 .soc-ig .soc-ico { background: linear-gradient(45deg, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%); }
