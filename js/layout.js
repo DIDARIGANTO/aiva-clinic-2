@@ -46,7 +46,7 @@
   </a>
 
   <div class="top-social">
-    <a class="soc-btn" data-href="instagramHref" href="https://www.instagram.com/aiva.clinic_astana" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-insta"/></svg></a>
+    <a class="soc-btn" data-href="instagramHref" href="https://www.instagram.com/aiva.clinic" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-insta"/></svg></a>
     <a class="soc-btn soc-btn-wide" data-href="youtubeHref" href="https://www.youtube.com/channel/UC1EBxPu6hds8KHRhQzTv8gw" target="_blank" rel="noopener" aria-label="YouTube"><svg><use href="#i-yt"/></svg></a>
   </div>
 
@@ -89,7 +89,7 @@
       <p class="menu-slogan">Помогаем вернуться к активной жизни.<br>© AIVA CLINIC</p>
       <p class="menu-contact"><a data-href="phoneHref" href="tel:+77472274096" data-bind="phone">+7 (747) 227-40-96</a><span data-bind="hoursShort">08:00–20:00, ежедневно</span><span data-bind="address">Астана, ул. Е 669, 13</span></p>
       <div class="menu-soc">
-        <a data-href="instagramHref" href="https://www.instagram.com/aiva.clinic_astana" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-insta"/></svg></a>
+        <a data-href="instagramHref" href="https://www.instagram.com/aiva.clinic" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-insta"/></svg></a>
         <a data-href="tiktokHref" href="https://www.tiktok.com/@aiva.clinic" target="_blank" rel="noopener" aria-label="TikTok"><svg><use href="#i-tt"/></svg></a>
         <a data-href="youtubeHref" href="https://www.youtube.com/channel/UC1EBxPu6hds8KHRhQzTv8gw" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 28 24"><use href="#i-yt"/></svg></a>
       </div>
@@ -107,7 +107,7 @@
       <a class="logo logo-light" href="index.html"><img src="img/logo-white.png" alt="AIVA CLINIC" width="854" height="211"></a>
       <p data-bind="tagline">клиника терапии, физиотерапии и реабилитации</p>
       <div class="footer-soc">
-        <a data-href="instagramHref" href="https://www.instagram.com/aiva.clinic_astana" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-insta"/></svg></a>
+        <a data-href="instagramHref" href="https://www.instagram.com/aiva.clinic" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-insta"/></svg></a>
         <a data-href="youtubeHref" href="https://www.youtube.com/channel/UC1EBxPu6hds8KHRhQzTv8gw" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 28 24"><use href="#i-yt"/></svg></a>
         <a data-href="tiktokHref" href="https://www.tiktok.com/@aiva.clinic" target="_blank" rel="noopener" aria-label="TikTok"><svg><use href="#i-tt"/></svg></a>
       </div>

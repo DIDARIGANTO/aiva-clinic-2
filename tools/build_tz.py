@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=37'
+V = '?v=38'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -19,7 +19,7 @@ GIS = 'https://2gis.kz/astana/search/%D1%84%D1%88%D0%BC%D1%84/firm/7000000109025
 GIS_REV = 'https://2gis.kz/astana/firm/70000001090259641/tab/reviews'
 YA = 'https://yandex.kz/maps/ru/org/aiva_clinic/132063384129/?ll=71.481355%2C51.087490&z=16.63'
 GMAPS = 'https://www.google.com/maps/search/AIVA+Clinic+%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0'
-INSTA = 'https://www.instagram.com/aiva.clinic_astana'
+INSTA = 'https://www.instagram.com/aiva.clinic'
 YT = 'https://www.youtube.com/channel/UC1EBxPu6hds8KHRhQzTv8gw'
 TT = 'https://www.tiktok.com/@aiva.clinic'
 # пока презентаций нет — кнопки «Скачать» ведут в WhatsApp с готовым запросом
@@ -153,7 +153,7 @@ def social(extra_cls=''):
     <h2 class="h2 h2-sm reveal">Следите за нами <br>в Instagram и YouTube</h2>
     <p class="teaser-text reveal">Подпишитесь, чтобы не пропустить специальные предложения, бесплатные процедуры, новости клиники и полезные видео от наших врачей.</p>
     <div class="soc-tiles">
-      <a class="soc-tile soc-ig reveal" data-href="instagramHref" href="{INSTA}" {ext}><span class="soc-ico"><svg><use href="#i-insta"/></svg></span><strong>Instagram</strong><small>@aiva.clinic_astana</small><span class="btn btn-sm">Подписаться</span></a>
+      <a class="soc-tile soc-ig reveal" data-href="instagramHref" href="{INSTA}" {ext}><span class="soc-ico"><svg><use href="#i-insta"/></svg></span><strong>Instagram</strong><small>@aiva.clinic</small><span class="btn btn-sm">Подписаться</span></a>
       <a class="soc-tile soc-yt reveal" data-href="youtubeHref" href="{YT}" {ext}><span class="soc-ico"><svg viewBox="0 0 28 24"><use href="#i-yt"/></svg></span><strong>YouTube</strong><small>AIVA CLINIC</small><span class="btn btn-sm">Подписаться</span></a>
     </div>
   </div>
@@ -423,10 +423,20 @@ page('doctors.html', 'Врачи — AIVA CLINIC', 'Врачи AIVA CLINIC: те
 # ---- Прайс
 prices = open('tools/src/prices.html', encoding='utf-8').read()
 page('prices.html', 'Прайс — AIVA CLINIC', 'Цены на консультации, УЗИ-диагностику, чек-апы, IV-терапию, физиотерапию и реабилитацию в AIVA CLINIC. Скидка 10% для льготных категорий.',
-     poster_block(**DRIP, cta_label='Написать в WhatsApp', second=('Другие акции', 'offers.html'), sid='offer-drip') + prices + EXO_PROMO + social())
+     prices + poster_block(**DRIP, cta_label='Написать в WhatsApp', second=('Другие акции', 'offers.html'), sid='offer-drip') + EXO_PROMO + social())
 
 # ---- Акции
-offers = EXO_PROMO.replace('class="section exo-promo"', 'class="section exo-promo exo-hero"') + poster_block(**LIVER, cta_label='Записаться на чек-ап', sid='offer-liver') + poster_block(**DRIP, cta_label='Записаться на капельницу', sid='offer-drip') + social()
+OFFERS_HEAD = '''<!-- ============ АКЦИИ: ЗАГОЛОВОК СТРАНИЦЫ ============ -->
+<section class="section section-head" id="offers">
+  <div class="container container-narrow">
+    <p class="eyebrow reveal">Акции</p>
+    <h1 class="h2 reveal">Акции и специальные <br>предложения</h1>
+    <p class="teaser-text reveal">Актуальные предложения AIVA Clinic: бесплатный пробный экзомассаж, чек-ап печени «8 в 1» и скидка на капельницы. Запишитесь в WhatsApp — администратор подберёт удобное время.</p>
+  </div>
+</section>
+
+'''
+offers = OFFERS_HEAD + EXO_PROMO + poster_block(**LIVER, cta_label='Записаться на чек-ап', sid='offer-liver') + poster_block(**DRIP, cta_label='Записаться на капельницу', sid='offer-drip') + social()
 page('offers.html', 'Акции — AIVA CLINIC', 'Акции AIVA CLINIC: бесплатный экзомассаж, чек-ап печени 8 в 1 за 23 000 ₸, скидка 30% на капельницы.', offers)
 
 # ---- Для бизнеса
@@ -435,7 +445,7 @@ business = f'''<!-- ============ ДЛЯ БИЗНЕСА ============ -->
 <section class="section" id="business">
   <div class="container container-narrow">
     <p class="eyebrow reveal">Для бизнеса</p>
-    <h2 class="h2 reveal">Корпоративные сертификаты <br>AIVA Clinic</h2>
+    <h1 class="h2 reveal">Корпоративные сертификаты <br>AIVA Clinic</h1>
     <p class="teaser-text reveal">Подарите сотрудникам, клиентам и партнёрам заботу о здоровье. Компания платит до 50% меньше номинала, а получатель пользуется услугами клиники на всю сумму сертификата.</p>
     <div class="center reveal">{biz_btns}</div>
   </div>
