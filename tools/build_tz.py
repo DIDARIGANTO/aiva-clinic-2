@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=40'
+V = '?v=41'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -333,8 +333,8 @@ page('index.html', 'AIVA CLINIC — клиника терапии, физиот�
 # ---- О клинике
 about = f'''<!-- ============ О КЛИНИКЕ: ГЛАВНЫЙ ЭКРАН ============ -->
 <section class="hero hero-page">
-  <svg class="deco deco-hero-1 rock"><use href="#tri-outline"/></svg>
-  <svg class="deco deco-hero-2 rock"><use href="#tri-outline"/></svg>
+  <i class="deco deco-mark deco-mark-1 drift" aria-hidden="true"></i>
+  <i class="deco deco-mark deco-mark-2 drift drift-2" aria-hidden="true"></i>
   <div class="hero-text">
     <h1>О клинике <br>Aiva Clinic</h1>
     <p class="hero-sub">Консультации врачей, диагностика, <br>физиотерапия и реабилитация в Астане</p>
