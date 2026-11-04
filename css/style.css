@@ -623,15 +623,15 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
 /* ============================================================
    Футер
    ============================================================ */
-.footer { padding: 70px 0 110px; background: #26553c url(../img/pattern-dark.svg) center / 220px; color: #d5e2da; font-size: 15px; }
+.footer { padding: 70px 0 110px; background: #26553c url(../img/pattern-dark.svg) center / 220px; color: #d5e2da; font-size: 16.5px; }
 .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 30px; }
-.footer-brand p { font-size: 13px; color: #fff; margin: 8px 0 34px; }
+.footer-brand p { font-size: 14.5px; color: #fff; margin: 8px 0 34px; }
 .footer-soc { display: flex; gap: 10px; margin-bottom: 30px; }
 .footer-soc a { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #a9c4b5; color: #26553c; transition: background-color .2s, transform .2s; }
 .footer-soc a:hover { background: var(--green); transform: scale(1.1); }
 .footer-soc svg { width: 16px; height: 16px; }
-.footer small { display: block; font-size: 12px; line-height: 1.6; margin-bottom: 6px; }
-.footer h4 { font-size: 16px; font-weight: 700; color: #9fc0ae; margin-bottom: 18px; }
+.footer small { display: block; font-size: 13px; line-height: 1.6; margin-bottom: 6px; }
+.footer h4 { font-size: 17.5px; font-weight: 700; color: #9fc0ae; margin-bottom: 18px; }
 .footer-grid > div:not(.footer-brand) a { display: block; margin-bottom: 14px; transition: color .2s; }
 .footer-grid > div:not(.footer-brand) a:hover { color: var(--yellow); }
 
@@ -814,11 +814,36 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
 .two-col { display: grid; grid-template-columns: 1fr 480px; gap: 60px; align-items: center; }
 .two-col .lead { font-size: 18px; line-height: 1.6; }
 .two-col-img { aspect-ratio: 4 / 3; }
-.exo3 { display: grid; grid-template-columns: 1fr 300px 1fr; gap: 24px 40px; align-items: center; }
-.exo3-img { grid-row: 1 / 3; grid-column: 2; aspect-ratio: 3 / 4; border-radius: 24px; }
-.exo3-item { padding: 24px 26px; background: #fff; border: 1px solid var(--green); border-radius: 22px; }
-.exo3-item h3 { font-size: 18px; font-weight: 700; text-transform: uppercase; color: var(--green-dark); margin-bottom: 8px; }
-.exo3-item p { font-size: 14px; line-height: 1.5; }
+/* ЭКЗО-ТЕКАР 3 в 1: аппарат (png без фона) по центру, карточки со стрелками слева и справа */
+.h2-rule { display: flex; align-items: center; justify-content: center; margin: -22px 0 16px; }
+.h2-rule::before, .h2-rule::after { content: ''; width: 170px; height: 1px; background: linear-gradient(90deg, transparent, var(--green)); }
+.h2-rule::after { background: linear-gradient(90deg, var(--green), transparent); }
+.h2-rule i { width: 10px; height: 10px; border: 2px solid var(--green); border-radius: 50%; margin: 0 8px; }
+.exo3-sub { text-align: center; font-size: 18px; color: var(--text); margin-bottom: 40px; }
+.exo3 { display: grid; grid-template-columns: 1fr 400px 1fr; grid-template-rows: auto auto; gap: 40px 52px; align-items: center; }
+.exo3-device { grid-column: 2; grid-row: 1 / 3; position: relative; display: flex; justify-content: center; align-items: flex-end; min-height: 520px; }
+.exo3-device::before { content: ''; position: absolute; left: 50%; bottom: -6px; width: 520px; height: 190px; transform: translateX(-50%); border-radius: 50%; pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(114, 179, 74, .32) 0%, rgba(114, 179, 74, .14) 30%, rgba(114, 179, 74, 0) 62%),
+              repeating-radial-gradient(ellipse at center, transparent 0 17%, rgba(114, 179, 74, .28) 17% 18.5%, transparent 18.5% 33%, rgba(114, 179, 74, .2) 33% 34.5%, transparent 34.5% 47%, rgba(114, 179, 74, .12) 47% 48.5%, transparent 48.5%); }
+.exo3-device img { position: relative; width: auto; height: auto; max-height: 540px; max-width: 100%; filter: drop-shadow(0 26px 28px rgba(20, 50, 30, .22)); }
+.exo3-item { position: relative; display: flex; gap: 14px; align-items: flex-start; padding: 24px 22px 22px; background: #fff; border: 1px solid var(--green); border-radius: 22px; }
+.exo3-l { grid-column: 1; }
+.exo3-r { grid-column: 3; }
+.exo3-item:nth-child(1), .exo3-item:nth-child(4) { grid-row: 1; }
+.exo3-item:nth-child(2), .exo3-item:nth-child(5) { grid-row: 2; }
+.exo3-ico { display: grid; place-items: center; flex: none; width: 56px; height: 56px; border: 2px solid var(--green); border-radius: 50%; color: var(--green-dark); }
+.exo3-ico svg { width: 26px; height: 26px; }
+.exo3-item h3 { font-size: 17px; line-height: 1.3; font-weight: 700; text-transform: uppercase; color: var(--green-dark); margin-bottom: 8px; }
+.exo3-item p { font-size: 14px; line-height: 1.55; }
+/* стрелки от аппарата к карточкам */
+.exo3-item::before { content: ''; position: absolute; top: 50%; width: 34px; height: 2px; background: var(--green-dark); }
+.exo3-item::after { content: ''; position: absolute; top: 50%; transform: translateY(-50%); border: 7px solid transparent; }
+.exo3-l::before { left: calc(100% + 9px); }
+.exo3-l::after { left: 100%; border-right: 11px solid var(--green-dark); }
+.exo3-r::before { right: calc(100% + 9px); }
+.exo3-r::after { right: 100%; border-left: 11px solid var(--green-dark); }
+.btn-ico { display: inline-flex; align-items: center; justify-content: center; gap: 12px; }
+.btn-ico svg { width: 24px; height: 24px; flex: none; }
 .partners { margin-top: 40px; text-align: center; }
 .partners p { font-size: 20px; font-weight: 600; margin-bottom: 14px; }
 .partners div { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
@@ -840,8 +865,13 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
 @media (max-width: 1180px) { .topbar .top-info-addr { display: flex; } }
 @media (max-width: 1100px) {
   .svc-groups { grid-template-columns: 1fr 1fr; }
-  .exo3 { grid-template-columns: 1fr 1fr; }
-  .exo3-img { grid-row: auto; grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+  .exo3 { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .exo3-device { grid-column: 1 / -1; grid-row: auto; order: -1; min-height: 0; }
+  .exo3-device img { max-height: 420px; }
+  .exo3-device::before { width: 100%; }
+  .btn-ico { width: 100%; max-width: 100%; white-space: normal; line-height: 1.3; padding-top: 14px; padding-bottom: 14px; }
+  .exo3-l, .exo3-r, .exo3-item:nth-child(1), .exo3-item:nth-child(2), .exo3-item:nth-child(4), .exo3-item:nth-child(5) { grid-column: auto; grid-row: auto; }
+  .exo3-item::before, .exo3-item::after { display: none; }
   .trio-4 { grid-template-columns: 1fr 1fr; }
   .poster-card { grid-template-columns: 300px 1fr; padding: 24px; gap: 28px; }
 }
@@ -913,3 +943,22 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
   .footer, .menu-panel, .maps, .exo-card, .discount-card, .offers { background-size: 170px; }
   .hero::before { background-size: 200px; }
 }
+
+/* ============================================================
+   Новости — карточки в три колонки
+   ============================================================ */
+.news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.news-card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--green); border-radius: 22px; overflow: hidden; transition: opacity 1s ease, transform 1s ease, box-shadow .3s; }
+.news-card:hover { box-shadow: 0 20px 44px -22px rgba(114, 179, 74, .7); }
+.news-img { display: block; aspect-ratio: 16 / 10; overflow: hidden; background: var(--green-pale); }
+.news-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+.news-card:hover .news-img img { transform: scale(1.04); }
+.news-body { display: flex; flex-direction: column; flex: 1; padding: 22px 24px 24px; }
+.news-tag { align-self: flex-start; padding: 4px 12px; border-radius: 30px; background: var(--green-light); color: var(--green-dark); font-size: 13px; font-weight: 500; margin-bottom: 12px; }
+.news-card h3 { font-size: 19px; line-height: 1.3; font-weight: 700; color: var(--green-dark); margin-bottom: 10px; }
+.news-card h3 a:hover { color: var(--green); }
+.news-card p { font-size: 15px; line-height: 1.55; color: var(--text); flex: 1; margin-bottom: 14px; }
+.news-more { font-size: 14px; font-weight: 600; color: var(--green); }
+.news-more:hover { color: var(--green-dark); }
+@media (max-width: 1180px) { .news-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 760px) { .news-grid { grid-template-columns: 1fr; } }

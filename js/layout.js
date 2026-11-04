@@ -66,6 +66,7 @@
     <a href="doctors.html">Врачи</a>
     <a href="prices.html">Прайс</a>
     <a href="offers.html">Акции</a>
+    <a href="news.html">Новости</a>
     <a href="business.html">Для бизнеса</a>
   </nav>
   <button class="burger" type="button" aria-label="Меню" data-menu-open><span></span><span></span><span></span></button>
@@ -82,6 +83,7 @@
       <a href="doctors.html">Врачи</a>
       <a href="prices.html">Прайс</a>
       <a href="offers.html">Акции</a>
+      <a href="news.html">Новости</a>
       <a href="business.html">Для бизнеса</a>
       <a href="contacts.html">Контакты</a>
     </nav>
@@ -116,7 +118,7 @@
       <small>© <span data-bind="year">2026</span> AIVA CLINIC. Все права защищены</small>
     </div>
     <div><h4>Основное</h4><a href="index.html">Главная</a><a href="about.html">О клинике</a><a href="doctors.html">Врачи</a><a href="prices.html">Прайс</a></div>
-    <div><h4>Клиника</h4><a href="offers.html">Акции</a><a href="business.html">Для бизнеса</a><a href="index.html#reviews">Отзывы о клинике</a><a href="contacts.html">Контакты</a></div>
+    <div><h4>Клиника</h4><a href="offers.html">Акции</a><a href="news.html">Новости</a><a href="business.html">Для бизнеса</a><a href="index.html#reviews">Отзывы о клинике</a><a href="contacts.html">Контакты</a></div>
     <div><h4>Услуги</h4><a href="prices.html#svc-diag">Консультация и диагностика</a><a href="prices.html#svc-iv">IV и интегративная терапия</a><a href="prices.html#svc-physio">Физиотерапия</a><a href="prices.html#svc-rehab">Реабилитация и восстановление</a></div>
   </div>
 </footer>

@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=38'
+V = '?v=40'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -35,7 +35,7 @@ SPRITE = open('js/layout.js', encoding='utf-8').read()
 SPRITE = SPRITE[SPRITE.index('<!-- SVG-спрайт'):SPRITE.index('</svg>') + len('</svg>')]
 
 NAV_ITEMS = [('index.html', 'Главная'), ('about.html', 'О клинике'), ('doctors.html', 'Врачи'),
-             ('prices.html', 'Прайс'), ('offers.html', 'Акции'), ('business.html', 'Для бизнеса')]
+             ('prices.html', 'Прайс'), ('offers.html', 'Акции'), ('news.html', 'Новости'), ('business.html', 'Для бизнеса')]
 nav = lambda ind: '\n'.join(f'{ind}<a href="{h}">{t}</a>' for h, t in NAV_ITEMS)
 
 HEADER = f'''<!-- ============ ШАПКА (по ТЗ: лого, адрес + 2ГИС, график, соцсети, KZ/RU, меню) ============ -->
@@ -112,7 +112,7 @@ FOOTER = f'''<!-- ============ ФУТЕР ============ -->
       <small>© <span data-bind="year">2026</span> AIVA CLINIC. Все права защищены</small>
     </div>
     <div><h4>Основное</h4><a href="index.html">Главная</a><a href="about.html">О клинике</a><a href="doctors.html">Врачи</a><a href="prices.html">Прайс</a></div>
-    <div><h4>Клиника</h4><a href="offers.html">Акции</a><a href="business.html">Для бизнеса</a><a href="index.html#reviews">Отзывы о клинике</a><a href="contacts.html">Контакты</a></div>
+    <div><h4>Клиника</h4><a href="offers.html">Акции</a><a href="news.html">Новости</a><a href="business.html">Для бизнеса</a><a href="index.html#reviews">Отзывы о клинике</a><a href="contacts.html">Контакты</a></div>
     <div><h4>Услуги</h4><a href="prices.html#svc-diag">Консультация и диагностика</a><a href="prices.html#svc-iv">IV и интегративная терапия</a><a href="prices.html#svc-physio">Физиотерапия</a><a href="prices.html#svc-rehab">Реабилитация и восстановление</a></div>
   </div>
 </footer>
@@ -388,14 +388,16 @@ about = f'''<!-- ============ О КЛИНИКЕ: ГЛАВНЫЙ ЭКРАН =====
   <div class="container">
     <p class="eyebrow reveal">Аппаратная физиотерапия</p>
     <h2 class="h2 reveal">ЭКЗО-ТЕКАР 3 в 1</h2>
+    <div class="h2-rule reveal"><i></i></div>
+    <p class="exo3-sub reveal">Технологии для эффективного восстановления и лечения</p>
     <div class="exo3 reveal">
-      <div class="exo3-item"><h3>TECAR-терапия</h3><p>Радиочастотное воздействие на выбранную область: прогревает ткани, снимает боль и ускоряет восстановление.</p></div>
-      <div class="exo3-item"><h3>Ультразвуковая терапия</h3><p>Микромассаж тканей ультразвуком: уменьшает отёк и воспаление.</p></div>
-      <div class="zoom exo3-img"><img loading="lazy" src="img/device.jpg" alt="Аппарат ЭКЗО-ТЕКАР"></div>
-      <div class="exo3-item"><h3>Ударно-волновая терапия</h3><p>Акустические волны воздействуют на болевые зоны, суставы и связки.</p></div>
-      <div class="exo3-item"><h3>Инфракрасная терапия</h3><p>Мягкое тепловое воздействие для улучшения кровообращения и расслабления.</p></div>
+      <div class="exo3-item exo3-l"><i class="exo3-ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="16" cy="16" r="2.5" fill="currentColor" stroke="none"/><path d="M11 11a7 7 0 0 0 0 10M21 11a7 7 0 0 1 0 10M7.5 7.5a12 12 0 0 0 0 17M24.5 7.5a12 12 0 0 1 0 17"/></svg></i><div><h3>TECAR-терапия</h3><p>Радиочастотное воздействие на выбранную область: прогревает ткани, снимает боль и ускоряет восстановление.</p></div></div>
+      <div class="exo3-item exo3-l"><i class="exo3-ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16h5l3-8 4 16 4-12 2 4h8"/></svg></i><div><h3>Ударно-волновая терапия</h3><p>Акустические волны воздействуют на болевые зоны, суставы и связки.</p></div></div>
+      <div class="exo3-device"><img loading="lazy" src="img/device.webp" alt="Аппарат ЭКЗО-ТЕКАР 3 в 1" width="440" height="520"></div>
+      <div class="exo3-item exo3-r"><i class="exo3-ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="16" cy="22" r="2.5" fill="currentColor" stroke="none"/><path d="M10 16a8 8 0 0 1 12 0M6 11a14 14 0 0 1 20 0M12.5 19.5a5 5 0 0 1 7 0"/></svg></i><div><h3>Ультразвуковая терапия</h3><p>Микромассаж тканей ультразвуком: уменьшает отёк и воспаление.</p></div></div>
+      <div class="exo3-item exo3-r"><i class="exo3-ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 6c-3 4 3 6 0 10s3 6 0 10M16 6c-3 4 3 6 0 10s3 6 0 10M22 6c-3 4 3 6 0 10s3 6 0 10"/></svg></i><div><h3>Инфракрасная терапия</h3><p>Мягкое тепловое воздействие для улучшения кровообращения и расслабления.</p></div></div>
     </div>
-    <div class="center reveal" style="margin-top:32px"><a class="btn btn-light btn-lg" href="{wa_text('Здравствуйте! Пришлите, пожалуйста, презентацию «ЭКЗО-ТЕКАР 3 в 1».')}" {ext}>Скачать презентацию «ЭКЗО-ТЕКАР 3 в 1»</a></div>
+    <div class="center reveal" style="margin-top:36px"><a class="btn btn-grad btn-lg btn-ico" href="{wa_text('Здравствуйте! Пришлите, пожалуйста, презентацию «ЭКЗО-ТЕКАР 3 в 1».')}" {ext}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 7v8m-3.5-3.5L12 15l3.5-3.5M8 17h8"/></svg><span>Скачать презентацию «ЭКЗО-ТЕКАР 3 в 1»</span></a></div>
   </div>
 </section>
 
@@ -438,6 +440,40 @@ OFFERS_HEAD = '''<!-- ============ АКЦИИ: ЗАГОЛОВОК СТРАНИЦ
 '''
 offers = OFFERS_HEAD + EXO_PROMO + poster_block(**LIVER, cta_label='Записаться на чек-ап', sid='offer-liver') + poster_block(**DRIP, cta_label='Записаться на капельницу', sid='offer-drip') + social()
 page('offers.html', 'Акции — AIVA CLINIC', 'Акции AIVA CLINIC: бесплатный экзомассаж, чек-ап печени 8 в 1 за 23 000 ₸, скидка 30% на капельницы.', offers)
+
+
+# ---- Новости
+NEWS = [
+    dict(img='about-2.jpg', tag='Новость', title='Скидка 10% для льготных категорий пациентов', href='prices.html',
+         text='Согласно приказу №38 от 24.09.2026 пенсионеры, многодетные матери, люди с инвалидностью I и II группы и ветераны получают скидку 10% на консультации, анализы, УЗИ и физиопроцедуры.'),
+    dict(img='device.jpg', tag='Оборудование', title='ЭКЗО-ТЕКАР 3 в 1: аппаратная физиотерапия в AIVA Clinic', href='about.html',
+         text='TECAR-терапия, ударно-волновая, ультразвуковая и инфракрасная терапия на одном аппарате: снимает боль, ускоряет восстановление тканей и суставов.'),
+    dict(img='promo-liver.jpg', pos='top', tag='Акция', title='Чек-ап печени «8 в 1» за 23 000 ₸ вместо 34 900 ₸', href='offers.html#offer-liver',
+         text='Общий анализ крови, АЛТ, АСТ, ГГТП, глюкоза, холестерин и УЗИ органов брюшной полости за один визит. Приём врача — в подарок.'),
+]
+news_cards = '\n'.join(f'''      <article class="news-card reveal">
+        <a class="news-img" href="{n['href']}"><img src="img/{n['img']}" alt="{n['title']}" loading="lazy" style="object-position:{n.get('pos', 'center')}"></a>
+        <div class="news-body">
+          <span class="news-tag">{n['tag']}</span>
+          <h3><a href="{n['href']}">{n['title']}</a></h3>
+          <p>{n['text']}</p>
+          <a class="news-more" href="{n['href']}">Подробнее →</a>
+        </div>
+      </article>''' for n in NEWS)
+news = f'''<!-- ============ НОВОСТИ ============ -->
+<section class="section" id="news">
+  <div class="container container-narrow">
+    <p class="eyebrow reveal">Новости</p>
+    <h1 class="h2 reveal">Новости <br>AIVA CLINIC</h1>
+    <p class="teaser-text reveal">Новости клиники — акции, новое оборудование и изменения в работе. Подписывайтесь на Instagram и YouTube, чтобы узнавать первыми.</p>
+    <div class="news-grid">
+{news_cards}
+    </div>
+  </div>
+</section>
+
+''' + social()
+page('news.html', 'Новости — AIVA CLINIC', 'Новости AIVA CLINIC в Астане: акции, новое оборудование, изменения в работе клиники.', news)
 
 # ---- Для бизнеса
 biz_btns = f'''<div class="poster-btns">{wa_btn('Обсудить в WhatsApp')}<a class="btn btn-light btn-lg" href="{wa_text('Здравствуйте! Пришлите, пожалуйста, предложение по корпоративным сертификатам AIVA Clinic.')}" {ext}>Скачать предложение</a></div>'''
