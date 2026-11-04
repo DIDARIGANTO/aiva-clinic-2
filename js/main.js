@@ -67,12 +67,14 @@
   (function () {
     var nav = $('.stickynav');
     if (!nav) return;
-    var mobile = window.matchMedia('(max-width: 960px)');
+    var topbar = $('.topbar');
     var onScroll = function () {
-      var visible = window.scrollY > 160;
+      // строка меню выезжает, когда шапка ушла за верх экрана
+      var visible = window.scrollY > (topbar ? topbar.offsetHeight + 20 : 120);
       nav.classList.toggle('is-visible', visible);
-      // на компьютере строка меню видна всегда; скрываем от читалок только на телефоне
-      nav.setAttribute('aria-hidden', String(mobile.matches && !visible));
+      // пока строка скрыта — её не видят читалки и по ней не ходит Tab
+      nav.setAttribute('aria-hidden', String(!visible));
+      nav.toggleAttribute('inert', !visible);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();

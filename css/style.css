@@ -158,9 +158,9 @@ a.chip:hover { transform: scale(1.15); }
 .chip-i { background: linear-gradient(45deg, #f9ce34, #ee2a7b 55%, #6228d7); }
 
 /* липкое меню */
-/* строка меню: на компьютере видна сразу под шапкой и прилипает к верху при прокрутке */
+/* строка меню: при открытии страницы скрыта (видна только шапка), выезжает сверху после прокрутки шапки */
 .stickynav {
-  position: sticky; top: 0; z-index: 50;
+  position: fixed; inset: 0 0 auto 0; z-index: 50; transform: translateY(-110%);
   display: flex; align-items: center; justify-content: space-between; gap: 30px;
   height: 80px; padding: 0 var(--side); background: #fff;
   box-shadow: 0 4px 24px rgba(0, 0, 0, .06);
@@ -173,6 +173,7 @@ a.chip:hover { transform: scale(1.15); }
 .stickynav nav a { white-space: nowrap; }
 .stickynav nav a:hover::after { transform: scaleX(1); }
 .stickynav .burger { display: none; }
+.stickynav.is-visible { transform: none; }
 
 /* выезжающее меню: фирменный зелёный фон, эмблема-орнамент, контакты и кнопки */
 .menu { position: fixed; inset: 0; z-index: 100; visibility: hidden; }
@@ -669,8 +670,7 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
   .branchbar { grid-template-columns: 1fr 1fr; padding: 12px 20px; }
   .branchbar-title, .branchbar-all { display: none; }
   /* на телефоне строка меню появляется только при прокрутке, чтобы не дублировать шапку */
-  .stickynav { position: fixed; inset: 0 0 auto 0; padding: 0 20px; height: 64px; transform: translateY(-110%); }
-  .stickynav.is-visible { transform: none; }
+  .stickynav { padding: 0 20px; height: 64px; }
   .stickynav nav { display: none; }
   .stickynav .burger { display: flex; }
 
