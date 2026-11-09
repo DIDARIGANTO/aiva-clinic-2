@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Новости — AIVA CLINIC</title>
-<meta name="description" content="Новости AIVA CLINIC в Астане: акции, новое оборудование, изменения в работе клиники.">
+<meta name="description" content="Новости и полезные статьи AIVA CLINIC в Астане: акции, скидки, оборудование ЭКЗО-ТЕКАР, экзотерапия, чек-апы и как записаться на приём.">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="canonical" href="https://didariganto.github.io/aiva-clinic-2/news.html">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AIVA CLINIC">
 <meta property="og:title" content="Новости — AIVA CLINIC">
-<meta property="og:description" content="Новости AIVA CLINIC в Астане: акции, новое оборудование, изменения в работе клиники.">
+<meta property="og:description" content="Новости и полезные статьи AIVA CLINIC в Астане: акции, скидки, оборудование ЭКЗО-ТЕКАР, экзотерапия, чек-апы и как записаться на приём.">
 <meta property="og:url" content="https://didariganto.github.io/aiva-clinic-2/news.html">
 <meta property="og:image" content="https://didariganto.github.io/aiva-clinic-2/img/hero-1.jpg">
 <meta property="og:locale" content="ru_RU">
@@ -23,13 +23,55 @@
 
 <main>
 
-<!-- ============ НОВОСТИ ============ -->
-<section class="section" id="news">
+<!-- ============ НОВОСТИ: ПЕРВЫЙ ЭКРАН ============ -->
+<section class="hero hero-page">
+  <svg class="hero-arcs" viewBox="0 0 800 700" preserveAspectRatio="xMinYMid meet" aria-hidden="true" fill="none">
+    <circle cx="900" cy="250" r="600" stroke="#306b4b" stroke-width="44"/>
+    <circle cx="1000" cy="600" r="640" stroke="#72b34a" stroke-width="52"/>
+    <circle cx="1150" cy="450" r="400" stroke="#306b4b" stroke-width="44"/>
+  </svg>
+  <div class="hero-text">
+    <h1>Новости <br>и полезные статьи</h1>
+    <p class="hero-sub">Акции, новое оборудование и ответы <br>на частые вопросы пациентов</p>
+    <div class="hero-btns"><a class="btn btn-grad btn-lg glow" data-href="whatsappHref" href="https://wa.me/77472274096" target="_blank" rel="noopener">Записаться в WhatsApp</a><a class="btn btn-light btn-lg" href="prices.html">Открыть прайс</a></div>
+  </div>
+  <div class="hero-photos" data-hero-slider>
+    <img class="hero-slide is-active" src="img/kb-stretch.jpg" alt="Активная жизнь без боли">
+    <img class="hero-slide" loading="lazy" src="img/kb-iv.jpg" alt="IV-терапия в AIVA CLINIC">
+    <img class="hero-slide" loading="lazy" src="img/service-2.jpg" alt="Зона ожидания AIVA CLINIC">
+  </div>
+</section>
+
+<!-- ============ БАННЕР С ЦИФРОЙ ============ -->
+<section class="section kb-banner-section">
+  <div class="container">
+    <div class="kb-banner reveal">
+      <img loading="lazy" src="img/kb-wellness.jpg" alt="">
+      <svg class="hero-arcs" viewBox="0 0 800 700" preserveAspectRatio="xMinYMid meet" aria-hidden="true" fill="none">
+    <circle cx="900" cy="250" r="600" stroke="#306b4b" stroke-width="44"/>
+    <circle cx="1000" cy="600" r="640" stroke="#72b34a" stroke-width="52"/>
+    <circle cx="1150" cy="450" r="400" stroke="#306b4b" stroke-width="44"/>
+  </svg>
+      <div class="kb-banner-text"><b>4 рубрики</b><span>Новости · Акции · Оборудование · Полезно знать</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ РУБРИКИ И МАТЕРИАЛЫ ============ -->
+<section class="section kb" id="news">
   <div class="container container-narrow">
-    <p class="eyebrow reveal">Новости</p>
-    <h1 class="h2 reveal">Новости <br>AIVA CLINIC</h1>
-    <p class="teaser-text reveal">Новости клиники — акции, новое оборудование и изменения в работе. Подписывайтесь на Instagram и YouTube, чтобы узнавать первыми.</p>
-    <div class="news-grid">
+    <h2 class="h2 h2-left h2-sm reveal">Рубрики</h2>
+    <div class="kb-tabs reveal" data-kb-tabs>
+      <button type="button" class="is-active" data-kb="all">Все материалы</button>
+      <button type="button" data-kb="news">Новости клиники</button>
+      <button type="button" data-kb="promo">Акции</button>
+      <button type="button" data-kb="equip">Оборудование</button>
+      <button type="button" data-kb="know">Полезно знать</button>
+    </div>
+
+    <div class="kb-group" data-kb-group="news" id="kb-news">
+      <h2 class="kb-h2 reveal">Новости клиники</h2>
+      <div class="news-grid">
       <article class="news-card reveal">
         <a class="news-img" href="prices.html"><img src="img/about-2.jpg" alt="Скидка 10% для льготных категорий пациентов" loading="lazy" style="object-position:center"></a>
         <div class="news-body">
@@ -56,6 +98,126 @@
           <p>Общий анализ крови, АЛТ, АСТ, ГГТП, глюкоза, холестерин и УЗИ органов брюшной полости за один визит. Приём врача — в подарок.</p>
           <a class="news-more" href="offers.html#offer-liver">Подробнее →</a>
         </div>
+      </article>
+      </div>
+      <article class="kb-article reveal" id="discount">
+        <h3 class="kb-h3"><svg class="kb-mark" viewBox="0 0 46 22" fill="none" stroke-width="3.5" stroke-linecap="round" aria-hidden="true"><path d="M5 20a13 13 0 0 0 0-18" stroke="#306b4b"/><path d="M15 20a13 13 0 0 0 0-18" stroke="#72b34a"/><path d="M28 11h14" stroke="#306b4b" stroke-width="2.5"/></svg><span>Скидка 10% для льготных категорий</span></h3>
+        <div class="kb-two">
+          <div class="kb-text">
+            <p>Согласно приказу №38 от 24.09.2026 г. в AIVA Clinic действует скидка 10% для льготных категорий пациентов.</p>
+            <h4>Кто имеет право на скидку</h4><ul><li>пенсионеры по возрасту;</li><li>многодетные матери, воспитывающие 4 и более совместно проживающих несовершеннолетних детей;</li><li>лица с инвалидностью I и II групп;</li><li>ветераны Великой Отечественной войны и лица, приравненные к ним по льготам.</li></ul>
+            <h4>На какие услуги</h4><ul><li>консультация врача;</li><li>услуги процедурного кабинета;</li><li>анализы;</li><li>УЗИ;</li><li>экзостол, прессотерапия;</li><li>Tecar-терапия;</li><li>магнитотерапия;</li><li>водородная терапия.</li></ul>
+            <a class="btn btn-light btn-sm" href="prices.html">Открыть прайс</a>
+          </div>
+          <div class="zoom kb-img "><img loading="lazy" src="img/about-2.jpg" alt="Кабинет физиотерапии AIVA CLINIC"></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="kb-group" data-kb-group="promo" id="kb-promo">
+      <h2 class="kb-h2 reveal">Акции</h2>
+      <article class="kb-article reveal" id="kb-liver">
+        <h3 class="kb-h3"><svg class="kb-mark" viewBox="0 0 46 22" fill="none" stroke-width="3.5" stroke-linecap="round" aria-hidden="true"><path d="M5 20a13 13 0 0 0 0-18" stroke="#306b4b"/><path d="M15 20a13 13 0 0 0 0-18" stroke="#72b34a"/><path d="M28 11h14" stroke="#306b4b" stroke-width="2.5"/></svg><span>Чек-ап печени «8 в 1» за 23 000 ₸ вместо 34 900 ₸</span></h3>
+        <div class="kb-two">
+          <div class="kb-text">
+            <p>Комплексная проверка печени за один визит в AIVA Clinic. Приём врача — в подарок.</p>
+            <div class="pr-list">
+<div class="pr-row"><div class="pr-name">Общий анализ крови (ОАК)</div><div class="pr-price"><b>3 300 ₸</b></div></div>
+<div class="pr-row"><div class="pr-name">Аланинаминотрансфераза (АЛТ)</div><div class="pr-price"><b>1 900 ₸</b></div></div>
+<div class="pr-row"><div class="pr-name">Аспартатаминотрансфераза (АСТ)</div><div class="pr-price"><b>1 900 ₸</b></div></div>
+<div class="pr-row"><div class="pr-name">Гамма-глутамилтрансфераза (ГГТП)</div><div class="pr-price"><b>2 000 ₸</b></div></div>
+<div class="pr-row"><div class="pr-name">Глюкоза крови</div><div class="pr-price"><b>2 000 ₸</b></div></div>
+<div class="pr-row"><div class="pr-name">Общий холестерин (ХС)</div><div class="pr-price"><b>1 900 ₸</b></div></div>
+<div class="pr-row"><div class="pr-name">УЗИ органов брюшной полости (УЗИ ОБП)</div><div class="pr-price"><b>10 000 ₸</b></div></div>
+<div class="pr-row"><div class="pr-name">Приём врача</div><div class="pr-price"><b>11 900 ₸</b></div></div>
+            </div>
+            <div class="pr-total"><span>Итого</span><span><s>34 900 ₸</s><b>23 000 ₸</b></span></div>
+            <p class="pr-gift">Приём врача — в подарок</p>
+            <a class="btn btn-grad btn-sm glow" data-href="whatsappHref" href="https://wa.me/77472274096" target="_blank" rel="noopener">Записаться на чек-ап</a>
+          </div>
+          <div class="zoom kb-img "><img loading="lazy" src="img/offer-1.jpg" alt="УЗИ органов брюшной полости"></div>
+        </div>
+      </article>
+      <article class="kb-article reveal" id="kb-drip">
+        <h3 class="kb-h3"><svg class="kb-mark" viewBox="0 0 46 22" fill="none" stroke-width="3.5" stroke-linecap="round" aria-hidden="true"><path d="M5 20a13 13 0 0 0 0-18" stroke="#306b4b"/><path d="M15 20a13 13 0 0 0 0-18" stroke="#72b34a"/><path d="M28 11h14" stroke="#306b4b" stroke-width="2.5"/></svg><span>Капельницы — скидка 30% до конца месяца</span></h3>
+        <div class="kb-two">
+          <div class="kb-text">
+            <p>Специальные цены на популярные программы IV-терапии. Состав и показания подберёт врач на консультации.</p>
+            <div class="kb-cards kb-cards-2"><div class="kb-card kb-promo reveal"><h4>Восстановление и энергия</h4><small>по назначению врача</small></div><div class="kb-card kb-promo reveal"><h4>Иммунитет и детокс</h4><small>по назначению врача</small></div><div class="kb-card kb-promo reveal"><h4>Красота и антиэйдж</h4><small>по назначению врача</small></div><div class="kb-card kb-promo reveal"><h4>Индивидуальные программы</h4><small>по назначению врача</small></div></div>
+            <a class="btn btn-grad btn-sm glow" data-href="whatsappHref" href="https://wa.me/77472274096" target="_blank" rel="noopener">Записаться на капельницу</a>
+          </div>
+          <div class="zoom kb-img "><img loading="lazy" src="img/kb-iv.jpg" alt="IV-терапия: капельница в AIVA CLINIC"></div>
+        </div>
+      </article>
+      <article class="kb-article reveal" id="kb-exo-free">
+        <h3 class="kb-h3"><svg class="kb-mark" viewBox="0 0 46 22" fill="none" stroke-width="3.5" stroke-linecap="round" aria-hidden="true"><path d="M5 20a13 13 0 0 0 0-18" stroke="#306b4b"/><path d="M15 20a13 13 0 0 0 0-18" stroke="#72b34a"/><path d="M28 11h14" stroke="#306b4b" stroke-width="2.5"/></svg><span>Попробуйте экзомассаж бесплатно!</span></h3>
+        <div class="kb-two kb-two-rev">
+          <div class="zoom kb-img kb-img-wide"><img loading="lazy" src="img/kb-exo-room.jpg" alt="Кабинет экзотерапии AIVA CLINIC"></div>
+          <div class="kb-text">
+            <p>Первая процедура в AIVA Clinic — в подарок. Всего 10 минут, без прикосновений и усилий: вы просто лежите, а аппарат делает всю работу.</p>
+            <a class="btn btn-grad btn-sm glow" data-href="whatsappHref" href="https://wa.me/77472274096" target="_blank" rel="noopener">Записаться</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="kb-group" data-kb-group="equip" id="kb-equip">
+      <h2 class="kb-h2 reveal">Оборудование</h2>
+      <article class="kb-article reveal" id="kb-tecar">
+        <h3 class="kb-h3"><svg class="kb-mark" viewBox="0 0 46 22" fill="none" stroke-width="3.5" stroke-linecap="round" aria-hidden="true"><path d="M5 20a13 13 0 0 0 0-18" stroke="#306b4b"/><path d="M15 20a13 13 0 0 0 0-18" stroke="#72b34a"/><path d="M28 11h14" stroke="#306b4b" stroke-width="2.5"/></svg><span>ЭКЗО-ТЕКАР 3 в 1: аппаратная физиотерапия в AIVA Clinic</span></h3>
+        <div class="kb-two kb-two-rev">
+          <div class="kb-device"><img loading="lazy" src="img/device.webp" alt="Аппарат ЭКЗО-ТЕКАР 3 в 1" width="440" height="520"></div>
+          <div class="kb-text">
+            <p><strong>Технологии для эффективного восстановления и лечения</strong></p>
+            <p>TECAR-терапия, ударно-волновая, ультразвуковая и инфракрасная терапия на одном аппарате: снимает боль, ускоряет восстановление тканей и суставов.</p>
+            <div class="kb-cards kb-cards-2"><div class="kb-card reveal"><i class="exo3-ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="16" cy="16" r="2.5" fill="currentColor" stroke="none"/><path d="M11 11a7 7 0 0 0 0 10M21 11a7 7 0 0 1 0 10M7.5 7.5a12 12 0 0 0 0 17M24.5 7.5a12 12 0 0 1 0 17"/></svg></i><h4>TECAR-терапия</h4><p>Радиочастотное воздействие на выбранную область: прогревает ткани, снимает боль и ускоряет восстановление.</p></div><div class="kb-card reveal"><i class="exo3-ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16h5l3-8 4 16 4-12 2 4h8"/></svg></i><h4>Ударно-волновая терапия</h4><p>Акустические волны воздействуют на болевые зоны, суставы и связки.</p></div><div class="kb-card reveal"><i class="exo3-ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="16" cy="22" r="2.5" fill="currentColor" stroke="none"/><path d="M10 16a8 8 0 0 1 12 0M6 11a14 14 0 0 1 20 0M12.5 19.5a5 5 0 0 1 7 0"/></svg></i><h4>Ультразвуковая терапия</h4><p>Микромассаж тканей ультразвуком: уменьшает отёк и воспаление.</p></div><div class="kb-card reveal"><i class="exo3-ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 6c-3 4 3 6 0 10s3 6 0 10M16 6c-3 4 3 6 0 10s3 6 0 10M22 6c-3 4 3 6 0 10s3 6 0 10"/></svg></i><h4>Инфракрасная терапия</h4><p>Мягкое тепловое воздействие для улучшения кровообращения и расслабления.</p></div></div>
+            <a class="btn btn-light btn-sm" href="about.html#tecar">Подробнее об аппарате</a>
+          </div>
+        </div>
+      </article>
+      <article class="kb-article reveal" id="kb-exostol">
+        <h3 class="kb-h3"><svg class="kb-mark" viewBox="0 0 46 22" fill="none" stroke-width="3.5" stroke-linecap="round" aria-hidden="true"><path d="M5 20a13 13 0 0 0 0-18" stroke="#306b4b"/><path d="M15 20a13 13 0 0 0 0-18" stroke="#72b34a"/><path d="M28 11h14" stroke="#306b4b" stroke-width="2.5"/></svg><span>Аппарат для экзотерапии</span></h3>
+        <div class="kb-two">
+          <div class="kb-text">
+            <p>Магнитно-волновой массаж на специальном аппарате.</p>
+            <p>Во время процедуры вы просто лежите и отдыхаете — без ручного массажа и переодевания.</p>
+            <a class="btn btn-light btn-sm" href="prices.html#svc-exo">Цены на экзотерапию</a>
+          </div>
+          <div class="zoom kb-img kb-img-wide"><img loading="lazy" src="img/kb-exo-bed.jpg" alt="Процедура экзотерапии"></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="kb-group" data-kb-group="know" id="kb-know">
+      <h2 class="kb-h2 reveal">Полезно знать</h2>
+      <article class="kb-article reveal" id="kb-exo-what">
+        <h3 class="kb-h3"><svg class="kb-mark" viewBox="0 0 46 22" fill="none" stroke-width="3.5" stroke-linecap="round" aria-hidden="true"><path d="M5 20a13 13 0 0 0 0-18" stroke="#306b4b"/><path d="M15 20a13 13 0 0 0 0-18" stroke="#72b34a"/><path d="M28 11h14" stroke="#306b4b" stroke-width="2.5"/></svg><span>Что такое ЭкзоТерапия?</span></h3>
+        <div class="kb-two">
+          <div class="kb-text"><ul>
+      <li>Магнитно-волновой массаж на специальном аппарате.</li>
+      <li>Во время процедуры вы просто лежите и отдыхаете — без ручного массажа и переодевания.</li>
+      <li>Расслабляет напряжённые мышцы.</li>
+      <li>Уменьшает дискомфорт и скованность.</li>
+      <li>Улучшает общее самочувствие.</li>
+      <li>Ускоряет восстановление после нагрузок.</li>
+    </ul><a class="btn btn-light btn-sm" href="about.html#exo">Подробнее об экзотерапии</a></div>
+          <div class="zoom kb-img "><img loading="lazy" src="img/kb-exo-sit.jpg" alt="Пациентка после процедуры экзотерапии"></div>
+        </div>
+      </article>
+      <article class="kb-article reveal" id="kb-checkups">
+        <h3 class="kb-h3"><svg class="kb-mark" viewBox="0 0 46 22" fill="none" stroke-width="3.5" stroke-linecap="round" aria-hidden="true"><path d="M5 20a13 13 0 0 0 0-18" stroke="#306b4b"/><path d="M15 20a13 13 0 0 0 0-18" stroke="#72b34a"/><path d="M28 11h14" stroke="#306b4b" stroke-width="2.5"/></svg><span>Какой чек-ап выбрать?</span></h3>
+        <p class="kb-lead">Девять программ обследования: от базового чек-апа до детских и мужского. Анализы, УЗИ и приём врача — за один визит и по фиксированной цене.</p>
+        <div class="kb-cards kb-cards-3"><a class="kb-card reveal" href="prices.html#checkups"><h4>Базовый чек-ап (для всех)</h4><p>Анализы крови, печень, щитовидная железа, витамины, УЗИ ОБП и БЦА, приём врача.</p><b>69 700 ₸</b></a><a class="kb-card reveal" href="prices.html#checkups"><h4>Чек-ап печени</h4><p>ОАК, АЛТ, АСТ, ГГТП, глюкоза, холестерин, УЗИ органов брюшной полости.</p><b><s>34 900 ₸</s>23 000 ₸</b></a><a class="kb-card reveal" href="prices.html#checkups"><h4>Чек-ап щитовидной железы</h4><p>ТТГ, Анти-ТПО, Т4 свободный, УЗИ щитовидной железы, приём врача.</p><b>32 900 ₸</b></a><a class="kb-card reveal" href="prices.html#checkups"><h4>Чек-ап сосудов</h4><p>УЗДГ брахиоцефальных артерий, холестерин, ЛПНП, ЛПВП, триглицериды.</p><b>31 800 ₸</b></a><a class="kb-card reveal" href="prices.html#checkups"><h4>Чек-ап суставов</h4><p>ОАК, С-реактивный белок, мочевая кислота, ревматоидный фактор, приём врача.</p><b>23 500 ₸</b></a><a class="kb-card reveal" href="prices.html#checkups"><h4>Чек-ап мужской</h4><p>Гормоны, УЗИ мошонки, простаты и мочевого пузыря, консультация уролога, ОАК.</p><b>45 760 ₸</b></a><a class="kb-card reveal" href="prices.html#checkups"><h4>Чек-ап «Малыш» (3 месяца – 1 год)</h4><p>Детский ортопед, анализы крови и мочи, витамин D. Приём педиатра — в подарок.</p><b><s>49 090 ₸</s>37 190 ₸</b></a><a class="kb-card reveal" href="prices.html#checkups"><h4>Чек-ап «Растём и развиваемся» (1–5 лет)</h4><p>Детский ортопед, анализы крови и мочи, витамин D, ферритин. Приём педиатра — в подарок.</p><b><s>50 630 ₸</s>38 730 ₸</b></a><a class="kb-card reveal" href="prices.html#checkups"><h4>Чек-ап «Школьный старт» (от 5 лет)</h4><p>Детский ортопед, анализы, комплексное УЗИ. Приём педиатра — в подарок.</p><b><s>59 500 ₸</s>47 600 ₸</b></a></div>
+        <div class="center" style="margin-top:28px"><a class="btn btn-grad btn-lg glow" href="prices.html#checkups">Все чек-апы в прайсе</a></div>
+      </article>
+      <article class="kb-article reveal" id="kb-how">
+        <h3 class="kb-h3"><svg class="kb-mark" viewBox="0 0 46 22" fill="none" stroke-width="3.5" stroke-linecap="round" aria-hidden="true"><path d="M5 20a13 13 0 0 0 0-18" stroke="#306b4b"/><path d="M15 20a13 13 0 0 0 0-18" stroke="#72b34a"/><path d="M28 11h14" stroke="#306b4b" stroke-width="2.5"/></svg><span>Как записаться на приём</span></h3>
+        <div class="trio">
+          <div class="trio-item"><span class="trio-num">1</span><h3>Напишите в WhatsApp или позвоните</h3><p>Расскажите, что беспокоит, или назовите нужную услугу.</p></div>
+          <div class="trio-item"><span class="trio-num">2</span><h3>Администратор подберёт врача и время</h3><p>Подскажем подготовку к анализам и УЗИ, если она нужна.</p></div>
+          <div class="trio-item"><span class="trio-num">3</span><h3>Приходите в клинику</h3><p>Астана, ул. Е 669, 13. Ежедневно с 08:00 до 20:00.</p></div>
+        </div>
+        <div class="center" style="margin-top:28px"><a class="btn btn-grad btn-lg glow" data-href="whatsappHref" href="https://wa.me/77472274096" target="_blank" rel="noopener">Записаться в WhatsApp</a></div>
       </article>
     </div>
   </div>

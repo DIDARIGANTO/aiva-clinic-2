@@ -156,4 +156,23 @@
       });
     });
   });
+
+  /* ---------- Новости: фильтр по рубрикам ---------- */
+  (function () {
+    var tabs = $('[data-kb-tabs]');
+    if (!tabs) return;
+    var buttons = $$('button', tabs);
+    var groups = $$('[data-kb-group]');
+    tabs.addEventListener('click', function (e) {
+      var btn = e.target.closest('button');
+      if (!btn) return;
+      var key = btn.dataset.kb;
+      buttons.forEach(function (b) { b.classList.toggle('is-active', b === btn); });
+      groups.forEach(function (g) {
+        g.hidden = key !== 'all' && g.dataset.kbGroup !== key;
+        // блоки внутри открытой рубрики показываем сразу, без ожидания прокрутки
+        if (!g.hidden) $$('.reveal', g).forEach(function (el) { el.classList.add('is-in'); });
+      });
+    });
+  })();
 })();

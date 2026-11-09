@@ -979,6 +979,80 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
 }
 
 /* ============================================================
+   Новости — база знаний: баннер с цифрой, рубрики-фильтр, статьи «текст + фото», карточки
+   (структура как у блога-эталона, оформление фирменное: дуги, палитра, скругления)
+   ============================================================ */
+.kb-banner-section { padding-top: 0; }
+.kb-banner { position: relative; overflow: hidden; display: grid; place-items: center; aspect-ratio: 1200 / 420; border-radius: var(--radius); text-align: center; color: #fff; background: var(--green-dark); }
+.kb-banner > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.kb-banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(48, 107, 75, .55) 0%, rgba(48, 107, 75, .25) 60%, rgba(48, 107, 75, .1) 100%); }
+.kb-banner .hero-arcs { left: auto; right: -160px; width: 60%; height: 100%; opacity: .5; }
+.kb-banner .hero-arcs circle { stroke: #fff; }
+.kb-banner-text { position: relative; z-index: 1; padding: 28px 44px 30px; border-radius: 24px; background: rgba(48, 107, 75, .55); border: 1.5px solid rgba(255, 255, 255, .45); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.kb-banner-text b { display: block; font-size: 64px; line-height: 1; font-weight: 700; text-transform: uppercase; }
+.kb-banner-text span { display: block; margin-top: 14px; font-size: 15px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.kb .h2-left { margin-bottom: 22px; }
+.kb-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+.kb-tabs button { padding: 12px 22px; border: 1px solid var(--green); border-radius: 30px; font-size: 14px; font-weight: 600; letter-spacing: .03em; text-transform: uppercase; color: var(--green-dark); background: #fff; transition: background-color .2s, color .2s, border-color .2s; }
+.kb-tabs button:hover { background: var(--green-light); }
+.kb-tabs button.is-active { background: var(--green); border-color: var(--green); color: #fff; }
+.kb-group { padding: 44px 0 10px; }
+.kb-group + .kb-group { border-top: 1px solid var(--line); }
+.kb-group[hidden] { display: none; }
+.kb-h2 { font-size: 28px; line-height: 1.2; font-weight: 700; text-transform: uppercase; color: var(--ink); margin-bottom: 30px; }
+.kb .news-grid { margin-bottom: 48px; }
+.kb-article { margin-bottom: 56px; scroll-margin-top: 100px; }
+.kb-h3 { display: flex; align-items: center; gap: 14px; font-size: 22px; line-height: 1.3; font-weight: 700; text-transform: uppercase; color: var(--green-dark); margin-bottom: 22px; }
+.kb-mark { flex: none; width: 46px; height: 22px; }
+.kb-two { display: grid; grid-template-columns: 1fr 460px; gap: 48px; align-items: start; }
+.kb-two-rev { grid-template-columns: 460px 1fr; }
+.kb-text p { font-size: 16px; line-height: 1.6; margin-bottom: 14px; }
+.kb-text h4 { font-size: 17px; font-weight: 700; color: var(--ink); margin: 18px 0 8px; }
+.kb-text ul { margin-bottom: 14px; }
+.kb-text li { position: relative; padding-left: 18px; margin-bottom: 6px; font-size: 15px; line-height: 1.5; }
+.kb-text li::before { content: ''; position: absolute; left: 2px; top: 9px; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+.kb-text .btn { margin-top: 10px; }
+.kb-text .pr-total { margin-bottom: 4px; }
+.kb-text .pr-gift { text-align: left; margin-bottom: 14px; }
+.kb-img { aspect-ratio: 4 / 3; border-radius: 24px; }
+.kb-img-wide { aspect-ratio: 4 / 3; }
+.kb-device { display: flex; justify-content: center; align-items: flex-start; padding: 24px; background: var(--green-pale); border-radius: 24px; }
+.kb-device img { width: auto; max-height: 520px; filter: drop-shadow(0 22px 24px rgba(20, 50, 30, .2)); }
+.kb-lead { max-width: 820px; font-size: 16px; line-height: 1.6; margin-bottom: 24px; }
+.kb-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.kb-cards-3 { grid-template-columns: repeat(3, 1fr); }
+.kb-cards-2 { grid-template-columns: 1fr 1fr; margin: 6px 0 18px; }
+.kb-card { display: flex; flex-direction: column; gap: 8px; padding: 20px 20px 18px; background: #fff; border: 1px solid var(--green); border-radius: 20px; color: var(--text); transition: opacity 1s ease, transform 1s ease, box-shadow .3s; }
+a.kb-card:hover { box-shadow: 0 20px 44px -22px rgba(114, 179, 74, .7); }
+.kb-card .exo3-ico { width: 48px; height: 48px; margin-bottom: 4px; }
+.kb-card .exo3-ico svg { width: 22px; height: 22px; }
+.kb-card h4 { font-size: 16px; line-height: 1.3; font-weight: 700; color: var(--green-dark); }
+.kb-card p { font-size: 14px; line-height: 1.5; flex: 1; margin: 0; }
+.kb-card b { font-size: 20px; font-weight: 700; color: var(--green-dark); font-variant-numeric: tabular-nums; }
+.kb-card b s { margin-right: 8px; font-size: 14px; font-weight: 400; color: #9a9a9a; }
+.kb-card small { font-size: 13px; font-weight: 600; color: var(--green); }
+.kb-promo { background: var(--cream); border-color: var(--peach); }
+.kb .trio-item h3 { font-size: 18px; font-weight: 700; }
+@media (max-width: 1100px) {
+  .kb-two, .kb-two-rev { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .kb-cards { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 760px) {
+  .kb-banner { aspect-ratio: 4 / 3; border-radius: 22px; }
+  .kb-banner-text { padding: 18px 20px; margin: 0 16px; }
+  .kb-banner-text b { font-size: 36px; }
+  .kb-banner-text span { font-size: 12px; letter-spacing: .06em; }
+  .kb-tabs button { padding: 10px 14px; font-size: 12px; }
+  .kb-two, .kb-two-rev { grid-template-columns: 1fr; }
+  .kb-two-rev .kb-img, .kb-two-rev .kb-device { order: -1; }
+  .kb-h2 { font-size: 22px; }
+  .kb-h3 { font-size: 18px; gap: 10px; }
+  .kb-mark { width: 36px; height: 18px; }
+  .kb-cards, .kb-cards-2, .kb-cards-3 { grid-template-columns: 1fr; }
+  .kb-device img { max-height: 360px; }
+}
+
+/* ============================================================
    Новости — карточки в три колонки
    ============================================================ */
 .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }

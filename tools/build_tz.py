@@ -510,20 +510,193 @@ news_cards = '\n'.join(f'''      <article class="news-card reveal">
           <a class="news-more" href="{n['href']}">Подробнее →</a>
         </div>
       </article>''' for n in NEWS)
-news = f'''<!-- ============ НОВОСТИ ============ -->
-<section class="section" id="news">
+# ---- Новости: база знаний (структура как у блога-эталона: первый экран, баннер с цифрой, рубрики-фильтр,
+#      разделы со статьями «текст + фото», карточки), оформление и вставки — фирменные (дуги, палитра)
+KB_MARK = '<svg class="kb-mark" viewBox="0 0 46 22" fill="none" stroke-width="3.5" stroke-linecap="round" aria-hidden="true"><path d="M5 20a13 13 0 0 0 0-18" stroke="#306b4b"/><path d="M15 20a13 13 0 0 0 0-18" stroke="#72b34a"/><path d="M28 11h14" stroke="#306b4b" stroke-width="2.5"/></svg>'
+def kb_h3(t):
+    return f'<h3 class="kb-h3">{KB_MARK}<span>{t}</span></h3>'
+def kb_img(src, alt, cls=''):
+    return f'<div class="zoom kb-img {cls}"><img loading="lazy" src="img/{src}" alt="{alt}"></div>'
+
+EXO3 = re.findall(r'<div class="exo3-item exo3-[lr]"><i class="exo3-ico">(<svg.*?</svg>)</i><div><h3>(.*?)</h3><p>(.*?)</p></div></div>', about)
+assert len(EXO3) == 4, len(EXO3)
+EXO_LIST = re.search(r'<ul class="exo-list reveal">(.*?)</ul>', about, re.S).group(1)
+_disc = prices[prices.index('<div class="discount-cols">'):]
+DISC_ULS = re.findall(r'<ul>(.*?)</ul>', _disc, re.S)[:2]
+assert len(DISC_ULS) == 2
+LIVER_CHECK = CHECKUPS[1]
+SUMMARY = {
+    'Базовый чек-ап (для всех)': 'Анализы крови, печень, щитовидная железа, витамины, УЗИ ОБП и БЦА, приём врача.',
+    'Чек-ап печени': 'ОАК, АЛТ, АСТ, ГГТП, глюкоза, холестерин, УЗИ органов брюшной полости.',
+    'Чек-ап щитовидной железы': 'ТТГ, Анти-ТПО, Т4 свободный, УЗИ щитовидной железы, приём врача.',
+    'Чек-ап сосудов': 'УЗДГ брахиоцефальных артерий, холестерин, ЛПНП, ЛПВП, триглицериды.',
+    'Чек-ап суставов': 'ОАК, С-реактивный белок, мочевая кислота, ревматоидный фактор, приём врача.',
+    'Чек-ап мужской': 'Гормоны, УЗИ мошонки, простаты и мочевого пузыря, консультация уролога, ОАК.',
+    'Чек-ап «Малыш» (3 месяца – 1 год)': 'Детский ортопед, анализы крови и мочи, витамин D. Приём педиатра — в подарок.',
+    'Чек-ап «Растём и развиваемся» (1–5 лет)': 'Детский ортопед, анализы крови и мочи, витамин D, ферритин. Приём педиатра — в подарок.',
+    'Чек-ап «Школьный старт» (от 5 лет)': 'Детский ортопед, анализы, комплексное УЗИ. Приём педиатра — в подарок.',
+}
+def checkup_card(c):
+    old = f'<s>{c["old"]} ₸</s>' if c.get('old') else ''
+    return f'<a class="kb-card reveal" href="prices.html#checkups"><h4>{c["title"]}</h4><p>{SUMMARY[c["title"]]}</p><b>{old}{c["total"]} ₸</b></a>'
+liver_rows = ''.join(f'<div class="pr-row"><div class="pr-name">{n}</div><div class="pr-price"><b>{p} ₸</b></div></div>\n' for n, p in LIVER_CHECK['items'])
+drip_cards = ''.join(f'<div class="kb-card kb-promo reveal"><h4>{t}</h4><small>по назначению врача</small></div>' for t in ['Восстановление и энергия', 'Иммунитет и детокс', 'Красота и антиэйдж', 'Индивидуальные программы'])
+exo3_cards = ''.join(f'<div class="kb-card reveal"><i class="exo3-ico">{svg}</i><h4>{h}</h4><p>{p}</p></div>' for svg, h, p in EXO3)
+checkup_cards = ''.join(checkup_card(c) for c in CHECKUPS)
+
+news = f'''<!-- ============ НОВОСТИ: ПЕРВЫЙ ЭКРАН ============ -->
+<section class="hero hero-page">
+  {ARCS}
+  <div class="hero-text">
+    <h1>Новости <br>и полезные статьи</h1>
+    <p class="hero-sub">Акции, новое оборудование и ответы <br>на частые вопросы пациентов</p>
+    <div class="hero-btns">{wa_btn('Записаться в WhatsApp')}<a class="btn btn-light btn-lg" href="prices.html">Открыть прайс</a></div>
+  </div>
+  <div class="hero-photos" data-hero-slider>
+    <img class="hero-slide is-active" src="img/kb-stretch.jpg" alt="Активная жизнь без боли">
+    <img class="hero-slide" loading="lazy" src="img/kb-iv.jpg" alt="IV-терапия в AIVA CLINIC">
+    <img class="hero-slide" loading="lazy" src="img/service-2.jpg" alt="Зона ожидания AIVA CLINIC">
+  </div>
+</section>
+
+<!-- ============ БАННЕР С ЦИФРОЙ ============ -->
+<section class="section kb-banner-section">
+  <div class="container">
+    <div class="kb-banner reveal">
+      <img loading="lazy" src="img/kb-wellness.jpg" alt="">
+      {ARCS}
+      <div class="kb-banner-text"><b>4 рубрики</b><span>Новости · Акции · Оборудование · Полезно знать</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ РУБРИКИ И МАТЕРИАЛЫ ============ -->
+<section class="section kb" id="news">
   <div class="container container-narrow">
-    <p class="eyebrow reveal">Новости</p>
-    <h1 class="h2 reveal">Новости <br>AIVA CLINIC</h1>
-    <p class="teaser-text reveal">Новости клиники — акции, новое оборудование и изменения в работе. Подписывайтесь на Instagram и YouTube, чтобы узнавать первыми.</p>
-    <div class="news-grid">
+    <h2 class="h2 h2-left h2-sm reveal">Рубрики</h2>
+    <div class="kb-tabs reveal" data-kb-tabs>
+      <button type="button" class="is-active" data-kb="all">Все материалы</button>
+      <button type="button" data-kb="news">Новости клиники</button>
+      <button type="button" data-kb="promo">Акции</button>
+      <button type="button" data-kb="equip">Оборудование</button>
+      <button type="button" data-kb="know">Полезно знать</button>
+    </div>
+
+    <div class="kb-group" data-kb-group="news" id="kb-news">
+      <h2 class="kb-h2 reveal">Новости клиники</h2>
+      <div class="news-grid">
 {news_cards}
+      </div>
+      <article class="kb-article reveal" id="discount">
+        {kb_h3('Скидка 10% для льготных категорий')}
+        <div class="kb-two">
+          <div class="kb-text">
+            <p>Согласно приказу №38 от 24.09.2026 г. в AIVA Clinic действует скидка 10% для льготных категорий пациентов.</p>
+            <h4>Кто имеет право на скидку</h4><ul>{DISC_ULS[0]}</ul>
+            <h4>На какие услуги</h4><ul>{DISC_ULS[1]}</ul>
+            <a class="btn btn-light btn-sm" href="prices.html">Открыть прайс</a>
+          </div>
+          {kb_img('about-2.jpg', 'Кабинет физиотерапии AIVA CLINIC')}
+        </div>
+      </article>
+    </div>
+
+    <div class="kb-group" data-kb-group="promo" id="kb-promo">
+      <h2 class="kb-h2 reveal">Акции</h2>
+      <article class="kb-article reveal" id="kb-liver">
+        {kb_h3('Чек-ап печени «8 в 1» за 23 000 ₸ вместо 34 900 ₸')}
+        <div class="kb-two">
+          <div class="kb-text">
+            <p>{LIVER['text']}</p>
+            <div class="pr-list">
+{liver_rows}            </div>
+            <div class="pr-total"><span>Итого</span><span><s>{LIVER_CHECK['old']} ₸</s><b>{LIVER_CHECK['total']} ₸</b></span></div>
+            <p class="pr-gift">{LIVER_CHECK['gift']}</p>
+            {wa_btn('Записаться на чек-ап', 'btn btn-grad btn-sm glow')}
+          </div>
+          {kb_img('offer-1.jpg', 'УЗИ органов брюшной полости')}
+        </div>
+      </article>
+      <article class="kb-article reveal" id="kb-drip">
+        {kb_h3(DRIP['title'])}
+        <div class="kb-two">
+          <div class="kb-text">
+            <p>{DRIP['text']}</p>
+            <div class="kb-cards kb-cards-2">{drip_cards}</div>
+            {wa_btn('Записаться на капельницу', 'btn btn-grad btn-sm glow')}
+          </div>
+          {kb_img('kb-iv.jpg', 'IV-терапия: капельница в AIVA CLINIC')}
+        </div>
+      </article>
+      <article class="kb-article reveal" id="kb-exo-free">
+        {kb_h3('Попробуйте экзомассаж бесплатно!')}
+        <div class="kb-two kb-two-rev">
+          {kb_img('kb-exo-room.jpg', 'Кабинет экзотерапии AIVA CLINIC', 'kb-img-wide')}
+          <div class="kb-text">
+            <p>Первая процедура в AIVA Clinic — в подарок. Всего 10 минут, без прикосновений и усилий: вы просто лежите, а аппарат делает всю работу.</p>
+            {wa_btn('Записаться', 'btn btn-grad btn-sm glow')}
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="kb-group" data-kb-group="equip" id="kb-equip">
+      <h2 class="kb-h2 reveal">Оборудование</h2>
+      <article class="kb-article reveal" id="kb-tecar">
+        {kb_h3('ЭКЗО-ТЕКАР 3 в 1: аппаратная физиотерапия в AIVA Clinic')}
+        <div class="kb-two kb-two-rev">
+          <div class="kb-device"><img loading="lazy" src="img/device.webp" alt="Аппарат ЭКЗО-ТЕКАР 3 в 1" width="440" height="520"></div>
+          <div class="kb-text">
+            <p><strong>Технологии для эффективного восстановления и лечения</strong></p>
+            <p>TECAR-терапия, ударно-волновая, ультразвуковая и инфракрасная терапия на одном аппарате: снимает боль, ускоряет восстановление тканей и суставов.</p>
+            <div class="kb-cards kb-cards-2">{exo3_cards}</div>
+            <a class="btn btn-light btn-sm" href="about.html#tecar">Подробнее об аппарате</a>
+          </div>
+        </div>
+      </article>
+      <article class="kb-article reveal" id="kb-exostol">
+        {kb_h3('Аппарат для экзотерапии')}
+        <div class="kb-two">
+          <div class="kb-text">
+            <p>Магнитно-волновой массаж на специальном аппарате.</p>
+            <p>Во время процедуры вы просто лежите и отдыхаете — без ручного массажа и переодевания.</p>
+            <a class="btn btn-light btn-sm" href="prices.html#svc-exo">Цены на экзотерапию</a>
+          </div>
+          {kb_img('kb-exo-bed.jpg', 'Процедура экзотерапии', 'kb-img-wide')}
+        </div>
+      </article>
+    </div>
+
+    <div class="kb-group" data-kb-group="know" id="kb-know">
+      <h2 class="kb-h2 reveal">Полезно знать</h2>
+      <article class="kb-article reveal" id="kb-exo-what">
+        {kb_h3('Что такое ЭкзоТерапия?')}
+        <div class="kb-two">
+          <div class="kb-text"><ul>{EXO_LIST}</ul><a class="btn btn-light btn-sm" href="about.html#exo">Подробнее об экзотерапии</a></div>
+          {kb_img('kb-exo-sit.jpg', 'Пациентка после процедуры экзотерапии')}
+        </div>
+      </article>
+      <article class="kb-article reveal" id="kb-checkups">
+        {kb_h3('Какой чек-ап выбрать?')}
+        <p class="kb-lead">Девять программ обследования: от базового чек-апа до детских и мужского. Анализы, УЗИ и приём врача — за один визит и по фиксированной цене.</p>
+        <div class="kb-cards kb-cards-3">{checkup_cards}</div>
+        <div class="center" style="margin-top:28px"><a class="btn btn-grad btn-lg glow" href="prices.html#checkups">Все чек-апы в прайсе</a></div>
+      </article>
+      <article class="kb-article reveal" id="kb-how">
+        {kb_h3('Как записаться на приём')}
+        <div class="trio">
+          <div class="trio-item"><span class="trio-num">1</span><h3>Напишите в WhatsApp или позвоните</h3><p>Расскажите, что беспокоит, или назовите нужную услугу.</p></div>
+          <div class="trio-item"><span class="trio-num">2</span><h3>Администратор подберёт врача и время</h3><p>Подскажем подготовку к анализам и УЗИ, если она нужна.</p></div>
+          <div class="trio-item"><span class="trio-num">3</span><h3>Приходите в клинику</h3><p>Астана, ул. Е 669, 13. Ежедневно с 08:00 до 20:00.</p></div>
+        </div>
+        <div class="center" style="margin-top:28px">{wa_btn('Записаться в WhatsApp')}</div>
+      </article>
     </div>
   </div>
 </section>
 
 ''' + social()
-page('news.html', 'Новости — AIVA CLINIC', 'Новости AIVA CLINIC в Астане: акции, новое оборудование, изменения в работе клиники.', news)
+page('news.html', 'Новости — AIVA CLINIC', 'Новости и полезные статьи AIVA CLINIC в Астане: акции, скидки, оборудование ЭКЗО-ТЕКАР, экзотерапия, чек-апы и как записаться на приём.', news)
 
 # ---- Для бизнеса
 biz_btns = f'''<div class="poster-btns">{wa_btn('Обсудить в WhatsApp')}<a class="btn btn-light btn-lg" href="{wa_text('Здравствуйте! Пришлите, пожалуйста, предложение по корпоративным сертификатам AIVA Clinic.')}" {ext}>Скачать предложение</a></div>'''
