@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=44'
+V = '?v=45'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -30,11 +30,15 @@ def wa_text(t):
 wa_btn = lambda label, cls='btn btn-grad btn-lg glow': f'<a class="{cls}" data-href="whatsappHref" href="{WA}" target="_blank" rel="noopener">{label}</a>'
 ext = 'target="_blank" rel="noopener"'
 
-# фирменная графика: дуги (как на макете главного экрана); используется на первых экранах всех страниц
+# фирменная графика клиента: ленты (широкие дуги) — на первых экранах, кольца (тонкие дуги) — в баннерах и подложках
 ARCS = '''<svg class="hero-arcs" viewBox="0 0 800 700" preserveAspectRatio="xMinYMid meet" aria-hidden="true" fill="none">
-    <circle cx="900" cy="250" r="600" stroke="#306b4b" stroke-width="44"/>
-    <circle cx="1000" cy="600" r="640" stroke="#72b34a" stroke-width="52"/>
-    <circle cx="1150" cy="450" r="400" stroke="#306b4b" stroke-width="44"/>
+    <circle cx="700" cy="940" r="960" stroke="#72b34a" stroke-width="96"/>
+    <circle cx="760" cy="1350" r="930" stroke="#72b34a" stroke-width="96"/>
+  </svg>'''
+RINGS = '''<svg class="hero-arcs hero-rings" viewBox="0 0 800 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none">
+    <circle cx="-200" cy="-60" r="420" stroke="#fff" stroke-width="28"/>
+    <circle cx="1120" cy="330" r="480" stroke="#fff" stroke-width="28"/>
+    <circle cx="60" cy="1050" r="440" stroke="#fff" stroke-width="28"/>
   </svg>'''
 
 # ---------------------------------------------------------------- общие части
@@ -566,7 +570,7 @@ news = f'''<!-- ============ НОВОСТИ: ПЕРВЫЙ ЭКРАН ===========
   <div class="container">
     <div class="kb-banner reveal">
       <img loading="lazy" src="img/kb-wellness.jpg" alt="">
-      {ARCS}
+      {RINGS}
       <div class="kb-banner-text"><b>4 рубрики</b><span>Новости · Акции · Оборудование · Полезно знать</span></div>
     </div>
   </div>
@@ -789,7 +793,7 @@ business = f'''<!-- ============ ДЛЯ БИЗНЕСА: ПЕРВЫЙ ЭКРАН 
 <section class="section biz-cta">
   <div class="container">
     <div class="biz-cta-card reveal">
-      {ARCS}
+      {RINGS}
       <div>
         <h2>Подарите здоровье <br>своей команде</h2>
         <p>Напишите нам — подготовим предложение с условиями и описанием пакетов для вашей компании.</p>

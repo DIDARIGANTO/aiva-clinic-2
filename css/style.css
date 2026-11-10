@@ -188,7 +188,7 @@ a.chip:hover { transform: scale(1.15); }
 .menu-panel {
   position: absolute; top: 0; right: 0; bottom: 0; width: min(420px, 100%); overflow: hidden auto;
   display: flex; flex-direction: column; padding: 96px 44px 40px; color: #fff;
-  background: url(../img/arcs-dark.svg) right -200px bottom -160px / 640px auto no-repeat, var(--green-dark);
+  background: url(../img/arcs-dark.svg) center / cover no-repeat, var(--green-dark);
   transform: translateX(100%); transition: transform .35s ease, visibility .35s;
 }
 .menu.is-open .menu-panel { transform: none; }
@@ -632,7 +632,7 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
 /* ============================================================
    Футер
    ============================================================ */
-.footer { padding: 70px 0 110px; background: var(--green-dark) url(../img/arcs-dark.svg) right -240px top -120px / 900px auto no-repeat; color: #d5e2da; font-size: 16.5px; }
+.footer { padding: 70px 0 110px; background: var(--green-dark) url(../img/arcs-dark.svg) center / cover no-repeat; color: #d5e2da; font-size: 16.5px; }
 .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 30px; }
 .footer-brand p { font-size: 14.5px; color: #fff; margin: 8px 0 34px; }
 .footer-soc { display: flex; gap: 10px; margin-bottom: 30px; }
@@ -913,7 +913,7 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
 }
 
 /* ---- прайс в стиле фирменного прайс-листа (PDF): зелёная полоса слева, название — цена, «Итого»; вместо знака-листа — дуги ---- */
-.price-page { background: url(../img/arcs-wm.svg) right -300px top 60px / 900px auto repeat-y; }
+.price-page { background: url(../img/arcs-wm.svg) right -200px top 40px / 900px auto repeat-y; }
 .price-section { margin-bottom: 44px; }
 .price-section h3, .checkup h3 { font-size: 23px; line-height: 1.25; font-weight: 700; color: var(--ink); margin-bottom: 16px; scroll-margin-top: 100px; }
 .pr-list { border-left: 4px solid var(--green); padding-left: 18px; }
@@ -971,13 +971,12 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
    Фирменная графика: дуги (как на макете главного экрана) — на подложках
    блоков вместо паттерна из знака логотипа; сам знак остаётся только в логотипе
    ============================================================ */
-.offers { background-image: url(../img/arcs-light.svg); background-repeat: no-repeat; background-position: right -220px top -120px; background-size: 820px auto; }
-.maps { background-image: url(../img/arcs-light.svg); background-repeat: no-repeat; background-position: right -260px top -200px; background-size: 760px auto; }
-.exo-card, .discount-card, .poster-card { background-image: url(../img/arcs-light.svg); background-repeat: no-repeat; background-position: right -200px top -170px; background-size: 560px auto; }
+.offers { background-image: url(../img/arcs-light.svg); background-repeat: no-repeat; background-position: center; background-size: cover; }
+.maps { background-image: url(../img/arcs-light.svg); background-repeat: no-repeat; background-position: center; background-size: cover; }
+.exo-card, .discount-card, .poster-card { background-image: url(../img/arcs-light.svg); background-repeat: no-repeat; background-position: center; background-size: cover; }
 .hero-text, .hero-photos { z-index: 1; }
 .hero-text { z-index: 2; }
 @media (max-width: 760px) {
-  .offers, .maps, .exo-card, .discount-card, .poster-card { background-size: 420px auto; background-position: right -160px top -120px; }
 }
 
 /* ============================================================
@@ -1006,8 +1005,6 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
 .fit-item i::before { content: ''; position: absolute; left: 11px; top: 11px; width: 13px; height: 7px; border-left: 2.5px solid var(--green-dark); border-bottom: 2.5px solid var(--green-dark); transform: rotate(-45deg); }
 .biz-cta { padding-top: 0; }
 .biz-cta-card { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 56px 60px; border-radius: var(--radius); background: var(--green-dark); color: #fff; }
-.biz-cta-card .hero-arcs { left: auto; right: -160px; width: 55%; opacity: .55; }
-.biz-cta-card .hero-arcs circle { stroke: #fff; }
 .biz-cta-card > div { position: relative; z-index: 1; }
 .biz-cta-card h2 { font-size: 30px; line-height: 1.2; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; }
 .biz-cta-card p { max-width: 540px; font-size: 17px; line-height: 1.5; }
@@ -1021,7 +1018,6 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
 @media (max-width: 960px) {
   .biz-cta-card { flex-direction: column; align-items: stretch; padding: 34px 24px; }
   .biz-cta-card h2 { font-size: 24px; }
-  .biz-cta-card .hero-arcs { width: 90%; right: -40%; opacity: .35; }
   .cert-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
 }
 @media (max-width: 640px) {
@@ -1038,8 +1034,7 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
 .kb-banner { position: relative; overflow: hidden; display: grid; place-items: center; aspect-ratio: 1200 / 420; border-radius: var(--radius); text-align: center; color: #fff; background: var(--green-dark); }
 .kb-banner > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .kb-banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(48, 107, 75, .55) 0%, rgba(48, 107, 75, .25) 60%, rgba(48, 107, 75, .1) 100%); }
-.kb-banner .hero-arcs { left: auto; right: -160px; width: 60%; height: 100%; opacity: .5; }
-.kb-banner .hero-arcs circle { stroke: #fff; }
+.hero-rings { left: 0; top: 0; width: 100%; height: 100%; opacity: .45; }
 .kb-banner-text { position: relative; z-index: 1; padding: 28px 44px 30px; border-radius: 24px; background: rgba(48, 107, 75, .55); border: 1.5px solid rgba(255, 255, 255, .45); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
 .kb-banner-text b { display: block; font-size: 64px; line-height: 1; font-weight: 700; text-transform: uppercase; }
 .kb-banner-text span { display: block; margin-top: 14px; font-size: 15px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
