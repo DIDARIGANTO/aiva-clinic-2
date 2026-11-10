@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=54'
+V = '?v=55'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -770,18 +770,6 @@ business = f'''<!-- ============ ДЛЯ БИЗНЕСА: ПЕРВЫЙ ЭКРАН 
       <div class="trio-item reveal"><span class="trio-num">2</span><h3>Подарок, которым пользуются</h3><p>Диагностика, терапия и восстановление вместо очередного сувенира.</p></div>
       <div class="trio-item reveal"><span class="trio-num">3</span><h3>Всё в одной клинике</h3><p>Консультации врачей, анализы, УЗИ, чек-апы, IV-терапия, физиотерапия и реабилитация.</p></div>
       <div class="trio-item reveal"><span class="trio-num">4</span><h3>Именной сертификат</h3><p>У каждого получателя свой номер и QR-код.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ КАК ЭТО РАБОТАЕТ ============ -->
-<section class="section">
-  <div class="container container-narrow">
-    <h2 class="h2 h2-sm reveal">Как это работает</h2>
-    <div class="trio">
-      <div class="trio-item reveal"><span class="trio-num">1</span><h3>Выбираете пакет</h3><p>Напишите нам в WhatsApp: подскажем номинал и количество сертификатов под ваш бюджет.</p></div>
-      <div class="trio-item reveal"><span class="trio-num">2</span><h3>Получаете именные сертификаты</h3><p>Оформляем сертификат на каждого получателя — со своим номером и QR-кодом.</p></div>
-      <div class="trio-item reveal"><span class="trio-num">3</span><h3>Получатель приходит в клинику</h3><p>Записывается в WhatsApp и пользуется услугами на всю сумму сертификата.</p></div>
     </div>
   </div>
 </section>
