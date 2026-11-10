@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=45'
+V = '?v=46'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -31,9 +31,13 @@ wa_btn = lambda label, cls='btn btn-grad btn-lg glow': f'<a class="{cls}" data-h
 ext = 'target="_blank" rel="noopener"'
 
 # фирменная графика клиента: ленты (широкие дуги) — на первых экранах, кольца (тонкие дуги) — в баннерах и подложках
-ARCS = '''<svg class="hero-arcs" viewBox="0 0 800 700" preserveAspectRatio="xMinYMid meet" aria-hidden="true" fill="none">
-    <circle cx="700" cy="940" r="960" stroke="#72b34a" stroke-width="96"/>
-    <circle cx="760" cy="1350" r="930" stroke="#72b34a" stroke-width="96"/>
+ARCS = '''<svg class="hero-arcs" viewBox="0 0 1320 760" preserveAspectRatio="xMinYMid meet" aria-hidden="true" fill="none">
+    <circle cx="1700" cy="900" r="1000" stroke="#72b34a" stroke-width="88"/>
+    <circle cx="1700" cy="900" r="790" stroke="#72b34a" stroke-width="88"/>
+  </svg>'''
+# внутренние страницы: тонкое кольцо у правого верхнего угла (вторая форма фирменной графики)
+ARCS_PAGE = '''<svg class="hero-arcs" viewBox="0 0 1320 760" preserveAspectRatio="xMinYMid meet" aria-hidden="true" fill="none">
+    <circle cx="1620" cy="-20" r="420" stroke="#72b34a" stroke-width="28"/>
   </svg>'''
 RINGS = '''<svg class="hero-arcs hero-rings" viewBox="0 0 800 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none">
     <circle cx="-200" cy="-60" r="420" stroke="#fff" stroke-width="28"/>
@@ -346,7 +350,7 @@ page('index.html', 'AIVA CLINIC — клиника терапии, физиот�
 # ---- О клинике
 about = f'''<!-- ============ О КЛИНИКЕ: ГЛАВНЫЙ ЭКРАН ============ -->
 <section class="hero hero-page">
-  {ARCS}
+  {ARCS_PAGE}
   <div class="hero-text">
     <h1>О клинике <br>Aiva Clinic</h1>
     <p class="hero-sub">Консультации врачей, диагностика, <br>физиотерапия и реабилитация в Астане</p>
@@ -552,7 +556,7 @@ checkup_cards = ''.join(checkup_card(c) for c in CHECKUPS)
 
 news = f'''<!-- ============ НОВОСТИ: ПЕРВЫЙ ЭКРАН ============ -->
 <section class="hero hero-page">
-  {ARCS}
+  {ARCS_PAGE}
   <div class="hero-text">
     <h1>Новости <br>и полезные статьи</h1>
     <p class="hero-sub">Акции, новое оборудование и ответы <br>на частые вопросы пациентов</p>
@@ -729,7 +733,7 @@ def cert_card(t):
 '''
 business = f'''<!-- ============ ДЛЯ БИЗНЕСА: ПЕРВЫЙ ЭКРАН ============ -->
 <section class="hero hero-page">
-  {ARCS}
+  {ARCS_PAGE}
   <div class="hero-text">
     <h1>Корпоративные <br>сертификаты</h1>
     <p class="hero-sub">Компания платит до 50% меньше номинала, <br>получатель пользуется услугами на всю сумму</p>

@@ -239,7 +239,7 @@ a.chip:hover { transform: scale(1.15); }
 .hero-slide.is-leaving { transform: translateX(-105%); }
 
 /* ---- главный экран по макету: AIVA CLINIC, человек с подсветкой позвоночника, выноски и фирменные дуги ---- */
-.hero-arcs { position: absolute; z-index: 0; top: 0; left: calc(var(--side) + 500px); width: 900px; height: 100%; pointer-events: none; }
+.hero-arcs { position: absolute; z-index: 0; top: 0; left: var(--side); width: calc(100% - var(--side)); height: 100%; overflow: visible; pointer-events: none; }
 .hero-main { align-items: center; min-height: 0; padding: 30px var(--side) 0; gap: 20px; }
 .hero-main .hero-text { flex: 0 1 520px; max-width: 520px; padding-bottom: 70px; }
 .hero-main .hero-brand { display: flex; flex-direction: column; font-size: clamp(56px, 8vw, 116px); line-height: .9; font-weight: 700; letter-spacing: -.03em; text-transform: uppercase; color: var(--green); }
@@ -309,7 +309,8 @@ a.chip:hover { transform: scale(1.15); }
 /* ============================================================
    Короткие блоки главной страницы и внутренние страницы
    ============================================================ */
-.teaser-gray { background: var(--gray-bg); }
+.teaser-gray { background: var(--gray-bg) url(../img/ring-corner.svg) right -150px top -170px / 600px auto no-repeat; }
+.section-ring { background-image: url(../img/ring-corner.svg); background-repeat: no-repeat; background-position: right -150px top -170px; background-size: 600px auto; }
 .teaser-text { max-width: 760px; margin: -10px auto 32px; text-align: center; font-size: 18px; line-height: 1.6; }
 .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 40px; }
 .cat {
@@ -699,7 +700,7 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
   .hero-figure { flex: none; width: 100%; max-width: 440px; align-self: center; margin-top: 10px; }
   .hero-man { left: 50%; transform: translateX(-50%); }
   .hero-leads, .hero-tags { display: none; }
-  .hero-arcs { left: 30%; top: auto; bottom: 0; height: 52%; width: 100%; }
+  .hero-arcs { left: 0; top: auto; bottom: 0; width: 100%; height: 58%; transform: translateX(-38%); }
 
   .h2 { font-size: 30px; margin-bottom: 30px; }
   .h2-sm, .about-card .h2 { font-size: 26px; }
