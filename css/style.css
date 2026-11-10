@@ -804,19 +804,20 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
 .poster-body > p { font-size: 16px; margin-bottom: 14px; }
 .poster-body .offer-list { margin-bottom: 24px; font-size: 14px; }
 .poster-btns { display: flex; flex-wrap: wrap; gap: 14px; }
-.soc-tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 760px; margin: 0 auto; }
-.soc-tile { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 36px 24px 30px; text-align: center; background: #fff; border: 1px solid var(--green); border-radius: 26px; transition: opacity 1s ease, transform 1s ease, box-shadow .3s; }
+.soc-tiles { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.soc-tile { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 28px 14px 24px; text-align: center; background: #fff; border: 1px solid var(--green); border-radius: 26px; transition: opacity 1s ease, transform 1s ease, box-shadow .3s; }
 .soc-tile:hover { box-shadow: 0 20px 44px -22px rgba(114, 179, 74, .7); }
 /* плитки соцсетей в фирменных цветах площадок */
-.soc-ico { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 18px; color: #fff; margin-bottom: 6px; filter: brightness(.9) saturate(.9); /* фирменные цвета соцсетей приглушены на 10% */ }
-.soc-ico svg { width: 32px; height: 32px; }
+.soc-ico { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 15px; color: #fff; margin-bottom: 6px; filter: brightness(.9) saturate(.9); /* фирменные цвета соцсетей приглушены на 10% */ }
+.soc-ico svg { width: 26px; height: 26px; }
 /* фирменный цвет соцсети — только на иконке; название и кнопка в цветах сайта, чтобы блок не кричал */
 .soc-ig .soc-ico { background: linear-gradient(45deg, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%); }
 .soc-yt .soc-ico { background: #ff0000; }
-.soc-tile strong { font-size: 22px; font-weight: 700; color: var(--green-dark); }
+.soc-tile strong { font-size: 16px; line-height: 1.25; font-weight: 700; color: var(--green-dark); overflow-wrap: anywhere; }
 .soc-tile .btn { background: var(--green-light); color: var(--green-dark); transition: background-color .2s, color .2s; }
 .soc-tile:hover .btn { background: var(--green-dark); color: #fff; }
-.soc-tile small { font-size: 14px; color: #8a8a8a; margin-bottom: 10px; }
+.soc-tile small { font-size: 13px; line-height: 1.35; color: #8a8a8a; margin-bottom: 10px; flex: 1; }
+@media (max-width: 1100px) { .soc-tiles { grid-template-columns: repeat(3, 1fr); } }
 .c-google { background: linear-gradient(90deg, #4285f4 0 25%, #ea4335 25% 50%, #fbbc05 50% 75%, #34a853 75%); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .exo-card { padding: 44px 48px; text-align: left; background: var(--cream); border: 1px solid var(--peach); border-radius: var(--radius); }
 .exo-card h2 { font-size: 30px; line-height: 1.2; font-weight: 700; text-transform: uppercase; color: var(--green-dark); margin-bottom: 12px; }
@@ -896,7 +897,8 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
 @media (max-width: 960px) {
   .topbar .top-info { display: none; }
   .lang { display: none; }
-  .svc-groups, .exo3, .trio-4, .soc-tiles { grid-template-columns: 1fr; }
+  .svc-groups, .exo3, .trio-4 { grid-template-columns: 1fr; }
+  .soc-tiles { grid-template-columns: 1fr 1fr; gap: 12px; }
   .svc-group ol { columns: 1; }
   .poster-card { grid-template-columns: 1fr; }
   .poster-img { max-width: 360px; margin: 0 auto; }

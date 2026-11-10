@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=42'
+V = '?v=43'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -152,16 +152,18 @@ assert '${' not in layout_js and layout_js.count('`') == 4
 open('js/layout.js', 'w', encoding='utf-8').write(layout_js)
 
 # ---------------------------------------------------------------- блоки
+INSTAS = [('aiva.clinic', 'Основной аккаунт клиники', 'data-href="instagramHref" '), ('aiva.clinic_sport', 'Клиника реабилитации', ''),
+          ('aiva.clinic_exo', 'Экзотерапия · Экзомассаж', ''), ('aiva.clinic_urology', 'Уролог · Андролог', ''), ('aiva.clinic_kids', 'Педиатр · Ортопед', '')]
 def social(extra_cls=''):
-    return f'''<!-- ============ СОЦИАЛЬНЫЕ СЕТИ (по ТЗ, на каждой странице) ============ -->
+    tiles = '\n'.join(f'      <a class="soc-tile soc-ig reveal" {attr}href="https://www.instagram.com/{h}" {ext}><span class="soc-ico"><svg><use href="#i-insta"/></svg></span><strong>{h}</strong><small>{d}</small><span class="btn btn-sm">Подписаться</span></a>' for h, d, attr in INSTAS)
+    return f'''<!-- ============ СОЦИАЛЬНЫЕ СЕТИ (по ТЗ, на каждой странице): пять Instagram-аккаунтов клиники ============ -->
 <section class="section social-tz {extra_cls}">
   <div class="container container-narrow">
     <p class="eyebrow reveal">Социальные сети</p>
-    <h2 class="h2 h2-sm reveal">Следите за нами <br>в Instagram и YouTube</h2>
+    <h2 class="h2 h2-sm reveal">Следите за нами <br>в Instagram</h2>
     <p class="teaser-text reveal">Подпишитесь, чтобы не пропустить специальные предложения, бесплатные процедуры, новости клиники и полезные видео от наших врачей.</p>
     <div class="soc-tiles">
-      <a class="soc-tile soc-ig reveal" data-href="instagramHref" href="{INSTA}" {ext}><span class="soc-ico"><svg><use href="#i-insta"/></svg></span><strong>Instagram</strong><small>@aiva.clinic</small><span class="btn btn-sm">Подписаться</span></a>
-      <a class="soc-tile soc-yt reveal" data-href="youtubeHref" href="{YT}" {ext}><span class="soc-ico"><svg viewBox="0 0 28 24"><use href="#i-yt"/></svg></span><strong>YouTube</strong><small>AIVA CLINIC</small><span class="btn btn-sm">Подписаться</span></a>
+{tiles}
     </div>
   </div>
 </section>
