@@ -810,10 +810,11 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
 .soc-tile { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 28px 14px 24px; text-align: center; background: #fff; border: 1px solid var(--green); border-radius: 26px; transition: opacity 1s ease, transform 1s ease, box-shadow .3s; }
 .soc-tile:hover { box-shadow: 0 20px 44px -22px rgba(114, 179, 74, .7); }
 /* плитки соцсетей в фирменных цветах площадок */
-.soc-ico { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 15px; color: #fff; margin-bottom: 6px; filter: brightness(.9) saturate(.9); /* фирменные цвета соцсетей приглушены на 10% */ }
+.soc-ico { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 15px; color: #fff; margin-bottom: 6px; }
 .soc-ico svg { width: 26px; height: 26px; }
 /* фирменный цвет соцсети — только на иконке; название и кнопка в цветах сайта, чтобы блок не кричал */
-.soc-ig .soc-ico { background: linear-gradient(45deg, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%); }
+/* натуральный градиент Instagram */
+.soc-ig .soc-ico { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%); }
 .soc-yt .soc-ico { background: #ff0000; }
 .soc-tile strong { font-size: 16px; line-height: 1.25; font-weight: 700; color: var(--green-dark); overflow-wrap: anywhere; }
 .soc-tile .btn { background: var(--green-light); color: var(--green-dark); transition: background-color .2s, color .2s; }
