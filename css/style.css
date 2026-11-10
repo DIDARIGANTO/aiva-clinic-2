@@ -826,7 +826,14 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
 .exo-card h2 { font-size: 30px; line-height: 1.2; font-weight: 700; text-transform: uppercase; color: var(--green-dark); margin-bottom: 12px; }
 .exo-card p { max-width: 720px; font-size: 17px; line-height: 1.55; margin-bottom: 24px; }
 .exo-hero { padding-top: 70px; }
-.about-text .lead { max-width: 820px; margin: 0 0 18px; font-size: 19px; line-height: 1.6; }
+.about-text { padding: 0 0 70px; }
+.about-intro { display: grid; grid-template-columns: 1fr 360px; gap: 48px; align-items: center; padding: 44px 48px; background: var(--green-pale); border-radius: var(--radius); }
+.about-text .lead { max-width: 720px; margin: 0 0 18px; font-size: 19px; line-height: 1.6; }
+.about-text .lead:last-child { margin-bottom: 0; }
+.about-facts { display: grid; gap: 14px; }
+.fact { padding: 18px 22px; background: #fff; border: 1px solid var(--green); border-radius: 18px; }
+.fact b { display: block; font-size: 34px; line-height: 1.1; font-weight: 700; color: var(--green); font-variant-numeric: tabular-nums; }
+.fact span { display: block; margin-top: 4px; font-size: 14.5px; line-height: 1.4; }
 .about-text .lead-first strong { font-size: 34px; line-height: 1.1; font-weight: 700; color: var(--green-dark); margin-right: 6px; }
 .goal { font-size: 26px; line-height: 1.45; font-weight: 300; color: var(--green-dark); }
 .exo-list { max-width: 760px; margin: 0 auto; }
@@ -910,6 +917,9 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
   .exo-card { padding: 28px 22px; }
   .exo-card h2 { font-size: 24px; }
   .about-text .lead { font-size: 17px; }
+  .about-text { padding-top: 24px; }
+  .about-intro { grid-template-columns: 1fr; gap: 24px; padding: 26px 20px; }
+  .about-facts { grid-template-columns: 1fr; }
   .about-text .lead-first strong { font-size: 26px; }
   .goal { font-size: 20px; }
   .exo-list li { font-size: 16px; }

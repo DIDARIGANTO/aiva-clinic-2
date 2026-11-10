@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=56'
+V = '?v=57'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -383,9 +383,18 @@ about = f'''<!-- ============ О КЛИНИКЕ: ГЛАВНЫЙ ЭКРАН =====
 
 <!-- ============ О КЛИНИКЕ: ТЕКСТ ============ -->
 <section class="section about-text">
-  <div class="container container-narrow">
-    <p class="lead lead-first reveal"><strong>В AIVA Clinic</strong> мы объединяем врачебную диагностику, современные технологии лечения и восстановительную медицину.</p>
-    <p class="lead reveal">В основе нашей работы — индивидуальный подход и последовательное сопровождение пациента: от первичной консультации и обследования до лечения, восстановления и возвращения к привычной активности.</p>
+  <div class="container">
+    <div class="about-intro reveal">
+      <div>
+        <p class="lead lead-first"><strong>В AIVA Clinic</strong> мы объединяем врачебную диагностику, современные технологии лечения и восстановительную медицину.</p>
+        <p class="lead">В основе нашей работы — индивидуальный подход и последовательное сопровождение пациента: от первичной консультации и обследования до лечения, восстановления и возвращения к привычной активности.</p>
+      </div>
+      <div class="about-facts">
+        <div class="fact"><b>4</b><span>направления: диагностика, IV-терапия, физиотерапия, реабилитация</span></div>
+        <div class="fact"><b>9</b><span>программ чек-апов по фиксированной цене</span></div>
+        <div class="fact"><b>08:00–20:00</b><span>принимаем ежедневно</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
