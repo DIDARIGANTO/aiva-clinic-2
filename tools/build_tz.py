@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=52'
+V = '?v=53'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -394,7 +394,7 @@ about = f'''<!-- ============ О КЛИНИКЕ: ГЛАВНЫЙ ЭКРАН =====
   <div class="container">
     <div class="two-col reveal">
       <p class="goal">Наша цель — помочь человеку лучше понимать своё здоровье, вовремя получать необходимую помощь и возвращаться к активной жизни.</p>
-      <div class="zoom two-col-img"><img loading="lazy" src="img/offer-3.jpg" alt="Врач AIVA CLINIC"></div>
+      <div class="zoom two-col-img"><img loading="lazy" src="img/kb-iv.jpg" alt="Врач AIVA CLINIC с пациентом"></div>
     </div>
   </div>
 </section>
