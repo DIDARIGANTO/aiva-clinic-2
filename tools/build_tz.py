@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=51'
+V = '?v=52'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -244,6 +244,28 @@ def poster_block(img, alt, eyebrow, title, text, bullets, cta_label, second=None
 LIVER = dict(img='promo-liver.jpg', alt='Чек-ап печени 8 в 1 за 23 000 ₸', eyebrow='Акция', title='Чек-ап печени «8 в 1» — 23 000 ₸ <s>34 900 ₸</s>',
              text='Комплексная проверка печени за один визит в AIVA Clinic. Приём врача — в подарок.',
              bullets=['общий анализ крови', 'АЛТ, АСТ, ГГТП', 'глюкоза крови', 'общий холестерин', 'УЗИ органов брюшной полости', 'приём врача — в подарок'])
+# чек-ап печени — широкий баннер по макету: текст, чипы состава и цена слева, анатомия с аппаратом УЗИ справа, кнопки поверх
+def liver_block(cta_label, second=None, sid='offer-liver'):
+    second_html = f'<a class="btn btn-light btn-lg" href="{second[1]}">{second[0]}</a>' if second else ''
+    chips = ''.join(f'<li>{c}</li>' for c in ['УЗИ органов брюшной полости', 'АЛТ', 'АСТ', 'ГГТП', 'Глюкоза', 'Общий анализ крови', 'Холестерин', 'Приём врача — в подарок'])
+    return f'''<section class="section liver-section" id="{sid}">
+  <div class="container">
+    <div class="liver-card reveal">
+      <img class="liver-img" loading="lazy" src="img/promo-liver-wide.jpg" alt="Чек-ап печени: анатомия и аппарат УЗИ" width="1000" height="690">
+      <div class="liver-body">
+        <p class="eyebrow eyebrow-left">Акция</p>
+        <h2 class="liver-title"><b>8 в 1</b><span>Чек-ап печени</span></h2>
+        <p class="liver-text">Комплексная проверка печени за один визит в AIVA Clinic.</p>
+        <ul class="liver-chips">{chips}</ul>
+        <div class="liver-price"><b>23 000 ₸</b><s>34 900 ₸</s></div>
+        <div class="poster-btns">{wa_btn(cta_label, 'btn btn-grad btn-lg glow')}{second_html}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+'''
+
 DRIP = dict(img='promo-drip.jpg', alt='Капельницы — скидка 30% до конца месяца', eyebrow='Акция', title='Капельницы — скидка 30% до конца месяца',
             text='Специальные цены на популярные программы IV-терапии. Состав и показания подберёт врач на консультации.',
             bullets=['восстановление и энергия', 'иммунитет и детокс', 'красота и антиэйдж', 'индивидуальные программы по назначению врача'])
@@ -338,7 +360,7 @@ home = hero + f'''<!-- ============ НАШИ УСЛУГИ (структура п
   </div>
 </section>
 
-''' + HELP_DOCTOR + poster_block(**LIVER, cta_label='Написать в WhatsApp', second=('Другие акции', 'offers.html'), sid='offer-liver') + social() + RATING
+''' + HELP_DOCTOR + liver_block('Написать в WhatsApp', second=('Другие акции', 'offers.html')) + social() + RATING
 page('index.html', 'AIVA CLINIC — клиника терапии, физиотерапии и реабилитации в Астане',
      'AIVA CLINIC в Астане: консультации врачей, УЗИ-диагностика, чек-апы, IV-терапия, физиотерапия и реабилитация. Ежедневно с 08:00 до 20:00, ул. Е 669, 13.', home, 'home')
 
@@ -493,7 +515,7 @@ OFFERS_HEAD = '''<!-- ============ АКЦИИ: ЗАГОЛОВОК СТРАНИЦ
 </section>
 
 '''
-offers = OFFERS_HEAD + EXO_PROMO + poster_block(**LIVER, cta_label='Записаться на чек-ап', sid='offer-liver') + poster_block(**DRIP, cta_label='Записаться на капельницу', sid='offer-drip') + social()
+offers = OFFERS_HEAD + EXO_PROMO + liver_block('Записаться на чек-ап') + poster_block(**DRIP, cta_label='Записаться на капельницу', sid='offer-drip') + social()
 page('offers.html', 'Акции — AIVA CLINIC', 'Акции AIVA CLINIC: бесплатный экзомассаж, чек-ап печени 8 в 1 за 23 000 ₸, скидка 30% на капельницы.', offers)
 
 
