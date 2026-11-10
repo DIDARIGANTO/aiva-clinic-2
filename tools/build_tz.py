@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=47'
+V = '?v=48'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -38,11 +38,6 @@ ARCS = '''<svg class="hero-arcs" viewBox="0 0 1320 760" preserveAspectRatio="xMi
 # внутренние страницы: тонкое кольцо у правого верхнего угла (вторая форма фирменной графики)
 ARCS_PAGE = '''<svg class="hero-arcs" viewBox="0 0 1320 760" preserveAspectRatio="xMinYMin slice" aria-hidden="true" fill="none">
     <circle cx="1620" cy="-20" r="420" stroke="#72b34a" stroke-width="28"/>
-  </svg>'''
-RINGS = '''<svg class="hero-arcs hero-rings" viewBox="0 0 800 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none">
-    <circle cx="-200" cy="-60" r="420" stroke="#fff" stroke-width="28"/>
-    <circle cx="1120" cy="330" r="480" stroke="#fff" stroke-width="28"/>
-    <circle cx="60" cy="1050" r="440" stroke="#fff" stroke-width="28"/>
   </svg>'''
 
 # ---------------------------------------------------------------- общие части
@@ -574,7 +569,6 @@ news = f'''<!-- ============ НОВОСТИ: ПЕРВЫЙ ЭКРАН ===========
   <div class="container">
     <div class="kb-banner reveal">
       <img loading="lazy" src="img/kb-wellness.jpg" alt="">
-      {RINGS}
       <div class="kb-banner-text"><b>4 рубрики</b><span>Новости · Акции · Оборудование · Полезно знать</span></div>
     </div>
   </div>
@@ -797,7 +791,6 @@ business = f'''<!-- ============ ДЛЯ БИЗНЕСА: ПЕРВЫЙ ЭКРАН 
 <section class="section biz-cta">
   <div class="container">
     <div class="biz-cta-card reveal">
-      {RINGS}
       <div>
         <h2>Подарите здоровье <br>своей команде</h2>
         <p>Напишите нам — подготовим предложение с условиями и описанием пакетов для вашей компании.</p>
