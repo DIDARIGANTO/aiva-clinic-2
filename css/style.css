@@ -103,7 +103,7 @@ ul { list-style: none; }
 .logo-mark { width: 30px; height: 34px; background: var(--grad); clip-path: polygon(0 8%, 100% 0, 62% 100%); border-radius: 4px; }
 .logo-light b { color: #fff; }
 .logo img { display: block; height: 46px; width: auto; }
-.footer .logo img { height: 52px; }
+.footer .logo img { height: 56px; }
 
 /* ============================================================
    Шапка
@@ -632,16 +632,16 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
 /* ============================================================
    Футер
    ============================================================ */
-.footer { padding: 70px 0 110px; background: var(--green-dark); color: #d5e2da; font-size: 16.5px; }
+.footer { padding: 70px 0 110px; background: var(--green-dark); color: #d5e2da; font-size: 18px; }
 .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 30px; }
-.footer-brand p { font-size: 14.5px; color: #fff; margin: 8px 0 34px; }
-.footer-soc { display: flex; gap: 10px; margin-bottom: 30px; }
-.footer-soc a { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(255, 255, 255, .16); color: #fff; transition: background-color .2s, transform .2s; }
+.footer-brand p { font-size: 16.5px; color: #fff; margin: 10px 0 30px; }
+.footer-soc { display: flex; gap: 12px; margin-bottom: 32px; }
+.footer-soc a { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: rgba(255, 255, 255, .16); color: #fff; transition: background-color .2s, transform .2s; }
 .footer-soc a:hover { background: var(--green); transform: scale(1.1); }
-.footer-soc svg { width: 16px; height: 16px; }
-.footer small { display: block; font-size: 13px; line-height: 1.6; margin-bottom: 6px; }
-.footer h4 { font-size: 17.5px; font-weight: 700; color: #e4f1db; margin-bottom: 18px; }
-.footer-grid > div:not(.footer-brand) a { display: block; margin-bottom: 14px; transition: color .2s; }
+.footer-soc svg { width: 24px; height: 24px; }
+.footer small { display: block; font-size: 14.5px; line-height: 1.6; margin-bottom: 8px; }
+.footer h4 { font-size: 19px; font-weight: 700; color: #e4f1db; margin-bottom: 20px; }
+.footer-grid > div:not(.footer-brand) a { display: block; margin-bottom: 16px; transition: color .2s; }
 .footer-grid > div:not(.footer-brand) a:hover { color: var(--yellow); }
 
 /* плавающая кнопка WhatsApp */
