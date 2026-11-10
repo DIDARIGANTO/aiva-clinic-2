@@ -31,12 +31,12 @@ wa_btn = lambda label, cls='btn btn-grad btn-lg glow': f'<a class="{cls}" data-h
 ext = 'target="_blank" rel="noopener"'
 
 # фирменная графика клиента: ленты (широкие дуги) — на первых экранах, кольца (тонкие дуги) — в баннерах и подложках
-ARCS = '''<svg class="hero-arcs" viewBox="0 0 1320 760" preserveAspectRatio="xMinYMid meet" aria-hidden="true" fill="none">
+ARCS = '''<svg class="hero-arcs" viewBox="0 0 1320 760" preserveAspectRatio="xMinYMin slice" aria-hidden="true" fill="none">
     <circle cx="1700" cy="900" r="1000" stroke="#72b34a" stroke-width="88"/>
     <circle cx="1700" cy="900" r="790" stroke="#72b34a" stroke-width="88"/>
   </svg>'''
 # внутренние страницы: тонкое кольцо у правого верхнего угла (вторая форма фирменной графики)
-ARCS_PAGE = '''<svg class="hero-arcs" viewBox="0 0 1320 760" preserveAspectRatio="xMinYMid meet" aria-hidden="true" fill="none">
+ARCS_PAGE = '''<svg class="hero-arcs" viewBox="0 0 1320 760" preserveAspectRatio="xMinYMin slice" aria-hidden="true" fill="none">
     <circle cx="1620" cy="-20" r="420" stroke="#72b34a" stroke-width="28"/>
   </svg>'''
 RINGS = '''<svg class="hero-arcs hero-rings" viewBox="0 0 800 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none">
