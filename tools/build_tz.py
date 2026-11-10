@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=53'
+V = '?v=54'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -386,16 +386,6 @@ about = f'''<!-- ============ О КЛИНИКЕ: ГЛАВНЫЙ ЭКРАН =====
   <div class="container container-narrow">
     <p class="lead lead-first reveal"><strong>В AIVA Clinic</strong> мы объединяем врачебную диагностику, современные технологии лечения и восстановительную медицину.</p>
     <p class="lead reveal">В основе нашей работы — индивидуальный подход и последовательное сопровождение пациента: от первичной консультации и обследования до лечения, восстановления и возвращения к привычной активности.</p>
-  </div>
-</section>
-
-<!-- ============ НАША ЦЕЛЬ ============ -->
-<section class="section teaser-gray">
-  <div class="container">
-    <div class="two-col reveal">
-      <p class="goal">Наша цель — помочь человеку лучше понимать своё здоровье, вовремя получать необходимую помощь и возвращаться к активной жизни.</p>
-      <div class="zoom two-col-img"><img loading="lazy" src="img/kb-iv.jpg" alt="Врач AIVA CLINIC с пациентом"></div>
-    </div>
   </div>
 </section>
 
