@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=49'
+V = '?v=50'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -207,7 +207,7 @@ HELP_DOCTOR = f'''<!-- ============ НЕ ЗНАЕТЕ, К КАКОМУ ВРАЧ�
 <section class="section promo">
   <div class="container">
     <div class="promo-card reveal">
-      <div class="zoom promo-img"><img loading="lazy" src="img/promo.jpg" alt="Боль в спине — повод обратиться к врачу"></div>
+      <div class="zoom promo-img"><img loading="lazy" src="img/promo.jpg?v=2" alt="Главный врач AIVA CLINIC Саламбекова Жулдыз Сериковна"></div>
       <div class="promo-body">
         <h2>Не знаете, к какому врачу обратиться?</h2>
         <p>Поможем выбрать специалиста. На приёме врач <strong>выслушает жалобы</strong> и определит, какие обследования необходимы.</p>
