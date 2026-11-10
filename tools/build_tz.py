@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=43'
+V = '?v=44'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -700,18 +700,54 @@ news = f'''<!-- ============ НОВОСТИ: ПЕРВЫЙ ЭКРАН ===========
 ''' + social()
 page('news.html', 'Новости — AIVA CLINIC', 'Новости и полезные статьи AIVA CLINIC в Астане: акции, скидки, оборудование ЭКЗО-ТЕКАР, экзотерапия, чек-апы и как записаться на приём.', news)
 
-# ---- Для бизнеса
-biz_btns = f'''<div class="poster-btns">{wa_btn('Обсудить в WhatsApp')}<a class="btn btn-light btn-lg" href="{wa_text('Здравствуйте! Пришлите, пожалуйста, предложение по корпоративным сертификатам AIVA Clinic.')}" {ext}>Скачать предложение</a></div>'''
-business = f'''<!-- ============ ДЛЯ БИЗНЕСА ============ -->
-<section class="section" id="business">
-  <div class="container container-narrow">
-    <p class="eyebrow reveal">Для бизнеса</p>
-    <h1 class="h2 reveal">Корпоративные сертификаты <br>AIVA Clinic</h1>
-    <p class="teaser-text reveal">Подарите сотрудникам, клиентам и партнёрам заботу о здоровье. Компания платит до 50% меньше номинала, а получатель пользуется услугами клиники на всю сумму сертификата.</p>
-    <div class="center reveal">{biz_btns}</div>
+# ---- Для бизнеса: сертификаты (визуал по макету: белый «Базовый», зелёный «Стандарт», золотой «Gold»)
+BIZ_OFFER = wa_text('Здравствуйте! Пришлите, пожалуйста, предложение по корпоративным сертификатам AIVA Clinic.')
+TIERS = [dict(cls='base', tier='Базовый', nominal='150 000', price='100 000', disc='30%', gain='50 000', logo='logo.png'),
+         dict(cls='std', tier='Стандарт', nominal='500 000', price='300 000', disc='40%', gain='200 000', logo='logo-white.png'),
+         dict(cls='gold', tier='Gold', nominal='1 000 000', price='500 000', disc='50%', gain='500 000', logo='logo.png')]
+def cert_card(t):
+    return f'''      <div class="cert-item reveal">
+        <div class="cert cert-{t['cls']}">
+          <img class="cert-logo" src="img/{t['logo']}" alt="AIVA CLINIC" width="854" height="211">
+          <span class="cert-title">Подарочный сертификат</span>
+          <b class="cert-sum">{t['nominal']} ₸</b>
+          <span class="cert-note">на услуги AIVA Clinic</span>
+          <span class="cert-tier">{t['tier']}</span>
+        </div>
+        <ul class="cert-specs">
+          <li><span>Цена для компании</span><b>{t['price']} ₸</b></li>
+          <li><span>Номинал сертификата</span><b>{t['nominal']} ₸</b></li>
+          <li><span>Скидка</span><b>{t['disc']}</b></li>
+          <li><span>Выгода</span><b>{t['gain']} ₸</b></li>
+        </ul>
+        <a class="btn btn-light btn-sm" href="{wa_text('Здравствуйте! Хочу заказать корпоративные сертификаты AIVA Clinic, пакет «' + t['tier'] + '».')}" {ext}>Выбрать пакет</a>
+      </div>
+'''
+business = f'''<!-- ============ ДЛЯ БИЗНЕСА: ПЕРВЫЙ ЭКРАН ============ -->
+<section class="hero hero-page">
+  {ARCS}
+  <div class="hero-text">
+    <h1>Корпоративные <br>сертификаты</h1>
+    <p class="hero-sub">Компания платит до 50% меньше номинала, <br>получатель пользуется услугами на всю сумму</p>
+    <div class="hero-btns">{wa_btn('Обсудить в WhatsApp')}<a class="btn btn-light btn-lg" href="{BIZ_OFFER}" {ext}>Скачать предложение</a></div>
+  </div>
+  <div class="hero-photos">
+    <img class="hero-slide is-active" src="img/biz-certs.jpg" alt="Подарочные сертификаты AIVA Clinic: Базовый, Стандарт и Gold">
   </div>
 </section>
 
+<!-- ============ ТРИ ПАКЕТА ============ -->
+<section class="section" id="packages">
+  <div class="container">
+    <p class="eyebrow reveal">Три пакета</p>
+    <h2 class="h2 h2-sm reveal">Выберите номинал сертификата</h2>
+    <p class="teaser-text reveal">Подарите сотрудникам, клиентам и партнёрам заботу о здоровье. Чем выше номинал, тем больше скидка для компании.</p>
+    <div class="cert-grid">
+{''.join(cert_card(t) for t in TIERS)}    </div>
+  </div>
+</section>
+
+<!-- ============ ПОЧЕМУ ЭТО ВЫГОДНО ============ -->
 <section class="section teaser-gray">
   <div class="container">
     <h2 class="h2 h2-sm reveal">Почему это выгодно</h2>
@@ -724,39 +760,47 @@ business = f'''<!-- ============ ДЛЯ БИЗНЕСА ============ -->
   </div>
 </section>
 
+<!-- ============ КАК ЭТО РАБОТАЕТ ============ -->
 <section class="section">
   <div class="container container-narrow">
-    <h2 class="h2 h2-sm reveal">Кому подойдёт</h2>
-    <ul class="check-list reveal">
-      <li>Компаниям, которые хотят дополнить соцпакет сотрудников</li>
-      <li>Для подарков коллективу к праздникам</li>
-      <li>Для благодарности клиентам и партнёрам</li>
-      <li>Для мотивации лучших сотрудников</li>
-    </ul>
+    <h2 class="h2 h2-sm reveal">Как это работает</h2>
+    <div class="trio">
+      <div class="trio-item reveal"><span class="trio-num">1</span><h3>Выбираете пакет</h3><p>Напишите нам в WhatsApp: подскажем номинал и количество сертификатов под ваш бюджет.</p></div>
+      <div class="trio-item reveal"><span class="trio-num">2</span><h3>Получаете именные сертификаты</h3><p>Оформляем сертификат на каждого получателя — со своим номером и QR-кодом.</p></div>
+      <div class="trio-item reveal"><span class="trio-num">3</span><h3>Получатель приходит в клинику</h3><p>Записывается в WhatsApp и пользуется услугами на всю сумму сертификата.</p></div>
+    </div>
   </div>
 </section>
 
+<!-- ============ КОМУ ПОДОЙДЁТ ============ -->
 <section class="section teaser-gray">
   <div class="container container-narrow">
-    <h2 class="h2 h2-sm reveal">Три пакета</h2>
-    <div class="biz-table-wrap reveal">
-      <table class="biz-table">
-        <thead><tr><th></th><th>Базовый</th><th class="is-std">Стандарт</th><th class="is-vip">VIP</th></tr></thead>
-        <tbody>
-          <tr><td>Цена для компании</td><td>100 000 ₸</td><td class="is-std">300 000 ₸</td><td class="is-vip">500 000 ₸</td></tr>
-          <tr><td>Номинал сертификата</td><td><b>150 000 ₸</b></td><td class="is-std"><b>500 000 ₸</b></td><td class="is-vip"><b>1 000 000 ₸</b></td></tr>
-          <tr><td>Скидка</td><td><b>30%</b></td><td class="is-std"><b>40%</b></td><td class="is-vip"><b>50%</b></td></tr>
-          <tr><td>Выгода</td><td>50 000 ₸</td><td class="is-std">200 000 ₸</td><td class="is-vip">500 000 ₸</td></tr>
-        </tbody>
-      </table>
+    <h2 class="h2 h2-sm reveal">Кому подойдёт</h2>
+    <div class="fit-grid">
+      <div class="fit-item reveal"><i></i><span>Компаниям, которые хотят дополнить соцпакет сотрудников</span></div>
+      <div class="fit-item reveal"><i></i><span>Для подарков коллективу к праздникам</span></div>
+      <div class="fit-item reveal"><i></i><span>Для благодарности клиентам и партнёрам</span></div>
+      <div class="fit-item reveal"><i></i><span>Для мотивации лучших сотрудников</span></div>
     </div>
-    <p class="teaser-text reveal" style="margin-top:32px">Скачайте предложение с условиями и описанием пакетов или напишите нам в WhatsApp.</p>
-    <div class="center reveal">{biz_btns}</div>
+  </div>
+</section>
+
+<!-- ============ ПРИЗЫВ ============ -->
+<section class="section biz-cta">
+  <div class="container">
+    <div class="biz-cta-card reveal">
+      {ARCS}
+      <div>
+        <h2>Подарите здоровье <br>своей команде</h2>
+        <p>Напишите нам — подготовим предложение с условиями и описанием пакетов для вашей компании.</p>
+      </div>
+      <div class="biz-cta-btns">{wa_btn('Обсудить в WhatsApp', 'btn btn-white btn-lg')}<a class="btn btn-outline" href="{BIZ_OFFER}" {ext}>Скачать предложение</a></div>
+    </div>
   </div>
 </section>
 
 ''' + social()
-page('business.html', 'Для бизнеса — корпоративные сертификаты AIVA CLINIC', 'Корпоративные сертификаты AIVA Clinic: компания платит до 50% меньше номинала, получатель пользуется услугами клиники на всю сумму. Три пакета: Базовый, Стандарт, VIP.', business)
+page('business.html', 'Для бизнеса — корпоративные сертификаты AIVA CLINIC', 'Корпоративные сертификаты AIVA Clinic: компания платит до 50% меньше номинала, получатель пользуется услугами клиники на всю сумму. Три пакета: Базовый, Стандарт, Gold.', business)
 
 # ---- Контакты (как были) + соцсети
 contacts = open('tools/src/contacts.html', encoding='utf-8').read()

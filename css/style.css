@@ -981,6 +981,56 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
 }
 
 /* ============================================================
+   Для бизнеса — сертификаты как на макете (белый, зелёный, золотой), шаги, призыв
+   ============================================================ */
+.cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; align-items: start; }
+.cert-item { display: flex; flex-direction: column; align-items: center; }
+.cert { position: relative; display: flex; flex-direction: column; width: 100%; aspect-ratio: 1.586; padding: 22px 26px 20px; border-radius: 20px; box-shadow: 0 26px 50px -26px rgba(20, 50, 30, .5); transition: transform .4s ease, box-shadow .4s ease; }
+.cert-item:hover .cert { transform: translateY(-6px) rotate(-1.5deg); box-shadow: 0 34px 60px -26px rgba(20, 50, 30, .55); }
+.cert-logo { height: 24px; width: auto; align-self: center; }
+.cert-title { margin-top: 16px; text-align: center; font-size: 11px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; }
+.cert-sum { display: block; margin-top: 6px; text-align: center; font-size: 40px; line-height: 1; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.cert-note { margin-top: auto; font-size: 11px; opacity: .85; }
+.cert-tier { position: absolute; right: 26px; bottom: 20px; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.cert-base { background: #fff; border: 1px solid var(--line); color: var(--green-dark); }
+.cert-std { background: linear-gradient(135deg, #649f6d 0%, #306b4b 100%); color: #fff; }
+.cert-gold { background: linear-gradient(135deg, #f1de95 0%, #cfae52 42%, #f4e7aa 66%, #b8953a 100%); color: #2b2b2b; }
+.cert-gold .cert-tier, .cert-gold .cert-note { color: #5a4717; }
+.cert-specs { width: 100%; margin: 24px 0 18px; }
+.cert-specs li { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 9px 4px; border-bottom: 1px solid var(--line); font-size: 15px; }
+.cert-specs b { color: var(--green-dark); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cert-specs li:last-child b { color: var(--green); font-size: 17px; }
+.fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 900px; margin: 0 auto; }
+.fit-item { display: flex; align-items: center; gap: 14px; padding: 20px 22px; background: #fff; border: 1px solid var(--green); border-radius: 18px; font-size: 16px; line-height: 1.4; }
+.fit-item i { position: relative; flex: none; width: 36px; height: 36px; border-radius: 50%; background: var(--green-light); }
+.fit-item i::before { content: ''; position: absolute; left: 11px; top: 11px; width: 13px; height: 7px; border-left: 2.5px solid var(--green-dark); border-bottom: 2.5px solid var(--green-dark); transform: rotate(-45deg); }
+.biz-cta { padding-top: 0; }
+.biz-cta-card { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 56px 60px; border-radius: var(--radius); background: var(--green-dark); color: #fff; }
+.biz-cta-card .hero-arcs { left: auto; right: -160px; width: 55%; opacity: .55; }
+.biz-cta-card .hero-arcs circle { stroke: #fff; }
+.biz-cta-card > div { position: relative; z-index: 1; }
+.biz-cta-card h2 { font-size: 30px; line-height: 1.2; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; }
+.biz-cta-card p { max-width: 540px; font-size: 17px; line-height: 1.5; }
+.biz-cta-btns { display: flex; flex-direction: column; align-items: stretch; gap: 12px; flex: none; }
+.btn-white { background: #fff; color: var(--green-dark); font-weight: 600; }
+.btn-white:hover { background: var(--yellow); }
+@media (max-width: 1100px) {
+  .cert-grid { grid-template-columns: 1fr 1fr; }
+  .cert-sum { font-size: 34px; }
+}
+@media (max-width: 960px) {
+  .biz-cta-card { flex-direction: column; align-items: stretch; padding: 34px 24px; }
+  .biz-cta-card h2 { font-size: 24px; }
+  .biz-cta-card .hero-arcs { width: 90%; right: -40%; opacity: .35; }
+  .cert-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+}
+@media (max-width: 640px) {
+  .fit-grid { grid-template-columns: 1fr; }
+  .cert-sum { font-size: 36px; }
+  .cert { padding: 18px 20px 16px; }
+}
+
+/* ============================================================
    Новости — база знаний: баннер с цифрой, рубрики-фильтр, статьи «текст + фото», карточки
    (структура как у блога-эталона, оформление фирменное: дуги, палитра, скругления)
    ============================================================ */
