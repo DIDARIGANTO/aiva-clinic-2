@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=65'
+V = '?v=66'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -348,8 +348,11 @@ groups_html = ''.join(f'''      <a class="svc-group reveal" href="prices.html#{g
 
 hero = open('tools/src/hero.html', encoding='utf-8').read().replace('<!--ARCS-->', ARCS)
 assert 'WhatsApp' in hero and 'prices.html' in hero and 'hero-arcs' in hero
+# классический первый экран главной (текст + фото) — вернули по просьбе клиента; экран с человеком остался на «О клинике»
+hero_classic = open('tools/src/hero-classic.html', encoding='utf-8').read().replace('<!--ARCS-->', ARCS_PAGE)
+assert 'hero-photos' in hero_classic and 'hero-arcs' in hero_classic
 
-home = hero + f'''<!-- ============ НАШИ УСЛУГИ (структура по ТЗ) ============ -->
+home = hero_classic + f'''<!-- ============ НАШИ УСЛУГИ (структура по ТЗ) ============ -->
 <section class="section teaser-gray" id="services">
   <div class="container">
     <p class="eyebrow reveal">Наши услуги</p>
