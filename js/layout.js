@@ -34,7 +34,7 @@
 
 <!-- ============ ШАПКА (по ТЗ: лого, адрес + 2ГИС, график, соцсети, KZ/RU, меню) ============ -->
 <header class="topbar" id="top">
-  <a class="logo" href="index.html"><img src="img/logo.png" alt="AIVA CLINIC" width="854" height="211"></a>
+  <a class="logo" href="index.html"><img src="img/logo.png?v=2" alt="AIVA CLINIC" width="329" height="113"></a>
 
   <a class="top-info top-info-addr" href="https://2gis.kz/astana/search/%D1%84%D1%88%D0%BC%D1%84/firm/70000001090259641?m=71.482275%2C51.082042%2F14.72&immersive=on" data-href="gisHref" target="_blank" rel="noopener">
     <svg class="top-ico"><use href="#i-pin"/></svg>
@@ -59,7 +59,7 @@
 
 <!-- Строка меню -->
 <div class="stickynav">
-  <a class="logo" href="index.html"><img src="img/logo.png" alt="AIVA CLINIC" width="854" height="211"></a>
+  <a class="logo" href="index.html"><img src="img/logo.png?v=2" alt="AIVA CLINIC" width="329" height="113"></a>
   <nav>
     <a href="index.html">Главная</a>
     <a href="about.html">О клинике</a>
@@ -106,7 +106,7 @@
 <footer class="footer">
   <div class="container container-narrow footer-grid">
     <div class="footer-brand">
-      <a class="logo logo-light" href="index.html"><img src="img/logo-white.png" alt="AIVA CLINIC" width="854" height="211"></a>
+      <a class="logo logo-light" href="index.html"><img src="img/logo-white.png?v=2" alt="AIVA CLINIC" width="329" height="113"></a>
       <p data-bind="tagline">клиника терапии, физиотерапии и реабилитации</p>
       <div class="footer-soc">
         <a data-href="instagramHref" href="https://www.instagram.com/aiva.clinic" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-insta"/></svg></a>

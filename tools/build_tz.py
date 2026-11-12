@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=58'
+V = '?v=59'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -50,7 +50,7 @@ nav = lambda ind: '\n'.join(f'{ind}<a href="{h}">{t}</a>' for h, t in NAV_ITEMS)
 
 HEADER = f'''<!-- ============ ШАПКА (по ТЗ: лого, адрес + 2ГИС, график, соцсети, KZ/RU, меню) ============ -->
 <header class="topbar" id="top">
-  <a class="logo" href="index.html"><img src="img/logo.png" alt="AIVA CLINIC" width="854" height="211"></a>
+  <a class="logo" href="index.html"><img src="img/logo.png?v=2" alt="AIVA CLINIC" width="329" height="113"></a>
 
   <a class="top-info top-info-addr" href="{GIS}" data-href="gisHref" {ext}>
     <svg class="top-ico"><use href="#i-pin"/></svg>
@@ -75,7 +75,7 @@ HEADER = f'''<!-- ============ ШАПКА (по ТЗ: лого, адрес + 2Г
 
 <!-- Строка меню -->
 <div class="stickynav">
-  <a class="logo" href="index.html"><img src="img/logo.png" alt="AIVA CLINIC" width="854" height="211"></a>
+  <a class="logo" href="index.html"><img src="img/logo.png?v=2" alt="AIVA CLINIC" width="329" height="113"></a>
   <nav>
 {nav('    ')}
   </nav>
@@ -110,7 +110,7 @@ FOOTER = f'''<!-- ============ ФУТЕР ============ -->
 <footer class="footer">
   <div class="container container-narrow footer-grid">
     <div class="footer-brand">
-      <a class="logo logo-light" href="index.html"><img src="img/logo-white.png" alt="AIVA CLINIC" width="854" height="211"></a>
+      <a class="logo logo-light" href="index.html"><img src="img/logo-white.png?v=2" alt="AIVA CLINIC" width="329" height="113"></a>
       <p data-bind="tagline">клиника терапии, физиотерапии и реабилитации</p>
       <div class="footer-soc">
         <a data-href="instagramHref" href="{INSTA}" {ext} aria-label="Instagram"><svg><use href="#i-insta"/></svg></a>
@@ -722,7 +722,7 @@ TIERS = [dict(cls='base', tier='Базовый', nominal='150 000', price='100 0
 def cert_card(t):
     return f'''      <div class="cert-item reveal">
         <div class="cert cert-{t['cls']}">
-          <img class="cert-logo" src="img/{t['logo']}" alt="AIVA CLINIC" width="854" height="211">
+          <img class="cert-logo" src="img/{t['logo']}?v=2" alt="AIVA CLINIC" width="329" height="113">
           <span class="cert-title">Подарочный сертификат</span>
           <b class="cert-sum">{t['nominal']} ₸</b>
           <span class="cert-note">на услуги AIVA Clinic</span>
