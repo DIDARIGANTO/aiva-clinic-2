@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=61'
+V = '?v=62'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
