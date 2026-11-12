@@ -632,17 +632,17 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
 /* ============================================================
    Футер
    ============================================================ */
-.footer { padding: 70px 0 110px; background: var(--green-dark); color: #d5e2da; font-size: 18px; }
+.footer { padding: 70px 0 110px; background: var(--green); color: #fff; font-size: 18px; } /* салатовый по брендбуку */
 .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 30px; }
 .footer-brand p { font-size: 16.5px; color: #fff; margin: 10px 0 30px; }
 .footer-soc { display: flex; gap: 12px; margin-bottom: 32px; }
-.footer-soc a { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: rgba(255, 255, 255, .16); color: #fff; transition: background-color .2s, transform .2s; }
-.footer-soc a:hover { background: var(--green); transform: scale(1.1); }
+.footer-soc a { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: rgba(255, 255, 255, .22); color: #fff; transition: background-color .2s, transform .2s; }
+.footer-soc a:hover { background: var(--green-dark); transform: scale(1.1); }
 .footer-soc svg { width: 24px; height: 24px; }
 .footer small { display: block; font-size: 14.5px; line-height: 1.6; margin-bottom: 8px; }
-.footer h4 { font-size: 19px; font-weight: 700; color: #e4f1db; margin-bottom: 20px; }
+.footer h4 { font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 20px; }
 .footer-grid > div:not(.footer-brand) a { display: block; margin-bottom: 16px; transition: color .2s; }
-.footer-grid > div:not(.footer-brand) a:hover { color: var(--yellow); }
+.footer-grid > div:not(.footer-brand) a:hover { color: var(--green-dark); }
 
 /* плавающая кнопка WhatsApp */
 .wa-float { position: fixed; right: 24px; bottom: 24px; z-index: 40; display: grid; place-items: center; width: 60px; height: 60px; border-radius: 50%; background: #25d366; color: #fff; box-shadow: 0 12px 30px -8px rgba(37, 211, 102, .8); transition: transform .2s; }
