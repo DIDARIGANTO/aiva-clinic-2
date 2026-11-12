@@ -10,7 +10,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-V = '?v=59'
+V = '?v=60'
 
 WA = 'https://wa.me/77472274096'
 PHONE = '+7 (747) 227-40-96'
@@ -365,23 +365,8 @@ page('index.html', 'AIVA CLINIC — клиника терапии, физиот�
      'AIVA CLINIC в Астане: консультации врачей, УЗИ-диагностика, чек-апы, IV-терапия, физиотерапия и реабилитация. Ежедневно с 08:00 до 20:00, ул. Е 669, 13.', home, 'home')
 
 # ---- О клинике
-about = f'''<!-- ============ О КЛИНИКЕ: ГЛАВНЫЙ ЭКРАН ============ -->
-<section class="hero hero-page">
-  {ARCS_PAGE}
-  <div class="hero-text">
-    <h1>О клинике <br>Aiva Clinic</h1>
-    <p class="hero-sub">Консультации врачей, диагностика, <br>физиотерапия и реабилитация в Астане</p>
-    <div class="hero-btns">{wa_btn('Написать в WhatsApp')}</div>
-  </div>
-  <div class="hero-photos" data-hero-slider>
-    <img class="hero-slide is-active" src="img/about-3.jpg" alt="Кабинет экзотерапии AIVA CLINIC">
-    <img class="hero-slide" loading="lazy" src="img/about-2.jpg" alt="Кабинет физиотерапии">
-    <img class="hero-slide" loading="lazy" src="img/service-2.jpg" alt="Зона ожидания">
-    <img class="hero-slide" loading="lazy" src="img/service-6.jpg" alt="Кабинет IV-терапии">
-  </div>
-</section>
-
-<!-- ============ О КЛИНИКЕ: ТЕКСТ ============ -->
+# первый экран «О клинике» — такой же, как на главной (по просьбе клиента)
+about = hero + f'''<!-- ============ О КЛИНИКЕ: ТЕКСТ ============ -->
 <section class="section about-text">
   <div class="container container-narrow">
     <p class="lead lead-first reveal"><strong>В AIVA Clinic</strong> мы объединяем врачебную диагностику, современные технологии лечения и восстановительную медицину.</p>
