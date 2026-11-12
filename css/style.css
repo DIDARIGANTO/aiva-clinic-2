@@ -60,7 +60,7 @@ ul { list-style: none; }
 .eyebrow-left { text-align: left; }
 .h2 {
   font-size: 46px; line-height: 1.2; font-weight: 700;
-  text-transform: uppercase; text-align: center; margin-bottom: 40px; color: var(--green-dark);
+  text-transform: uppercase; text-align: center; margin-bottom: 40px; color: var(--green); /* салатовый по просьбе клиента */
 }
 .h2-left { text-align: left; }
 .h2-sm { font-size: 36px; line-height: 1.25; }
@@ -222,7 +222,7 @@ a.chip:hover { transform: scale(1.15); }
   min-height: 700px; padding: 60px var(--side); overflow: hidden;
 }
 .hero-text { position: relative; z-index: 2; flex: 1 1 0; min-width: 0; max-width: 580px; }
-.hero h1 { color: var(--green-dark); font-size: 52px; line-height: 57px; font-weight: 700; text-transform: uppercase; }
+.hero h1 { color: var(--green); font-size: 52px; line-height: 57px; font-weight: 700; text-transform: uppercase; }
 .hero-sub { margin-top: 18px; font-size: 26px; line-height: 31px; font-weight: 300; }
 .hero-btns { display: flex; flex-wrap: wrap; gap: 19px; margin-top: 40px; }
 .hero-btns .btn-grad { min-width: 321px; }
@@ -937,7 +937,7 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
 .pr-total s { margin-right: 10px; font-size: 15px; color: #9a9a9a; }
 .pr-gift { margin-top: 4px; text-align: right; font-size: 14px; font-weight: 500; color: var(--green); }
 .pr-desc { margin-top: 14px; padding: 16px 20px; background: var(--green-pale); border-radius: 12px; font-size: 14.5px; line-height: 1.55; }
-.price-h2 { font-size: 30px; line-height: 1.2; font-weight: 700; text-transform: uppercase; color: var(--ink); margin-bottom: 10px; }
+.price-h2 { font-size: 30px; line-height: 1.2; font-weight: 700; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
 .price-intro { max-width: 760px; font-size: 16px; line-height: 1.5; margin-bottom: 34px; }
 .section-checkups { padding-top: 0; }
 .checkups { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 60px; }
@@ -1071,7 +1071,7 @@ a.doctor { display: flex; flex-direction: column; align-items: center; color: va
 .kb-group { padding: 44px 0 10px; }
 .kb-group + .kb-group { border-top: 1px solid var(--line); }
 .kb-group[hidden] { display: none; }
-.kb-h2 { font-size: 28px; line-height: 1.2; font-weight: 700; text-transform: uppercase; color: var(--ink); margin-bottom: 30px; }
+.kb-h2 { font-size: 28px; line-height: 1.2; font-weight: 700; text-transform: uppercase; color: var(--green); margin-bottom: 30px; }
 .kb .news-grid { margin-bottom: 48px; }
 .kb-article { margin-bottom: 56px; scroll-margin-top: 100px; }
 .kb-h3 { display: flex; align-items: center; gap: 14px; font-size: 22px; line-height: 1.3; font-weight: 700; text-transform: uppercase; color: var(--green-dark); margin-bottom: 22px; }
